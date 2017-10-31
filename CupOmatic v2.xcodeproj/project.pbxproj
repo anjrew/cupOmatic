@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D288BD4C1FA877B10050BB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD4B1FA877B10050BB48 /* AppDelegate.swift */; };
+		D288BD4E1FA877B20050BB48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD4D1FA877B20050BB48 /* ViewController.swift */; };
+		D288BD511FA877B20050BB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D288BD4F1FA877B20050BB48 /* Main.storyboard */; };
+		D288BD531FA877B20050BB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D288BD521FA877B20050BB48 /* Assets.xcassets */; };
+		D288BD561FA877B20050BB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D288BD541FA877B20050BB48 /* LaunchScreen.storyboard */; };
+		D288BD611FA877B20050BB48 /* CupOmatic_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD601FA877B20050BB48 /* CupOmatic_v2Tests.swift */; };
+		D288BD6C1FA877B20050BB48 /* CupOmatic_v2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD6B1FA877B20050BB48 /* CupOmatic_v2UITests.swift */; };
+		D288BD881FA8ADCA0050BB48 /* Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = D288BD871FA8ADCA0050BB48 /* Stop.png */; };
+		D288BD8B1FA8ADFA0050BB48 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = D288BD8A1FA8ADFA0050BB48 /* Start.png */; };
+		D288BD8D1FA8AE070050BB48 /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = D288BD8C1FA8AE070050BB48 /* Reset.png */; };
+		D288BD8F1FA8BC040050BB48 /* ParentTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */; };
+		D288BD911FA8C0270050BB48 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD901FA8C0270050BB48 /* TimerCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D288BD5D1FA877B20050BB48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D288BD401FA877B10050BB48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D288BD471FA877B10050BB48;
+			remoteInfo = "CupOmatic v2";
+		};
+		D288BD681FA877B20050BB48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D288BD401FA877B10050BB48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D288BD471FA877B10050BB48;
+			remoteInfo = "CupOmatic v2";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D288BD481FA877B10050BB48 /* CupOmatic v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CupOmatic v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D288BD4B1FA877B10050BB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D288BD4D1FA877B20050BB48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D288BD501FA877B20050BB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D288BD521FA877B20050BB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D288BD551FA877B20050BB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D288BD571FA877B20050BB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D288BD5C1FA877B20050BB48 /* CupOmatic v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CupOmatic v2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D288BD601FA877B20050BB48 /* CupOmatic_v2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupOmatic_v2Tests.swift; sourceTree = "<group>"; };
+		D288BD621FA877B20050BB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D288BD671FA877B20050BB48 /* CupOmatic v2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CupOmatic v2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D288BD6B1FA877B20050BB48 /* CupOmatic_v2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupOmatic_v2UITests.swift; sourceTree = "<group>"; };
+		D288BD6D1FA877B20050BB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D288BD871FA8ADCA0050BB48 /* Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stop.png; sourceTree = "<group>"; };
+		D288BD8A1FA8ADFA0050BB48 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Start.png; sourceTree = "<group>"; };
+		D288BD8C1FA8AE070050BB48 /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
+		D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTimer.swift; sourceTree = "<group>"; };
+		D288BD901FA8C0270050BB48 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D288BD451FA877B10050BB48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D288BD591FA877B20050BB48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D288BD641FA877B20050BB48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D288BD3F1FA877B10050BB48 = {
+			isa = PBXGroup;
+			children = (
+				D288BD4A1FA877B10050BB48 /* CupOmatic v2 */,
+				D288BD5F1FA877B20050BB48 /* CupOmatic v2Tests */,
+				D288BD6A1FA877B20050BB48 /* CupOmatic v2UITests */,
+				D288BD491FA877B10050BB48 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D288BD491FA877B10050BB48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D288BD481FA877B10050BB48 /* CupOmatic v2.app */,
+				D288BD5C1FA877B20050BB48 /* CupOmatic v2Tests.xctest */,
+				D288BD671FA877B20050BB48 /* CupOmatic v2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D288BD4A1FA877B10050BB48 /* CupOmatic v2 */ = {
+			isa = PBXGroup;
+			children = (
+				D288BD891FA8ADD60050BB48 /* Icons */,
+				D288BD4B1FA877B10050BB48 /* AppDelegate.swift */,
+				D288BD4D1FA877B20050BB48 /* ViewController.swift */,
+				D288BD901FA8C0270050BB48 /* TimerCell.swift */,
+				D288BD4F1FA877B20050BB48 /* Main.storyboard */,
+				D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */,
+				D288BD521FA877B20050BB48 /* Assets.xcassets */,
+				D288BD541FA877B20050BB48 /* LaunchScreen.storyboard */,
+				D288BD571FA877B20050BB48 /* Info.plist */,
+			);
+			path = "CupOmatic v2";
+			sourceTree = "<group>";
+		};
+		D288BD5F1FA877B20050BB48 /* CupOmatic v2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D288BD601FA877B20050BB48 /* CupOmatic_v2Tests.swift */,
+				D288BD621FA877B20050BB48 /* Info.plist */,
+			);
+			path = "CupOmatic v2Tests";
+			sourceTree = "<group>";
+		};
+		D288BD6A1FA877B20050BB48 /* CupOmatic v2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				D288BD6B1FA877B20050BB48 /* CupOmatic_v2UITests.swift */,
+				D288BD6D1FA877B20050BB48 /* Info.plist */,
+			);
+			path = "CupOmatic v2UITests";
+			sourceTree = "<group>";
+		};
+		D288BD891FA8ADD60050BB48 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D288BD871FA8ADCA0050BB48 /* Stop.png */,
+				D288BD8A1FA8ADFA0050BB48 /* Start.png */,
+				D288BD8C1FA8AE070050BB48 /* Reset.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D288BD471FA877B10050BB48 /* CupOmatic v2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D288BD701FA877B20050BB48 /* Build configuration list for PBXNativeTarget "CupOmatic v2" */;
+			buildPhases = (
+				D288BD441FA877B10050BB48 /* Sources */,
+				D288BD451FA877B10050BB48 /* Frameworks */,
+				D288BD461FA877B10050BB48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CupOmatic v2";
+			productName = "CupOmatic v2";
+			productReference = D288BD481FA877B10050BB48 /* CupOmatic v2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D288BD5B1FA877B20050BB48 /* CupOmatic v2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D288BD731FA877B20050BB48 /* Build configuration list for PBXNativeTarget "CupOmatic v2Tests" */;
+			buildPhases = (
+				D288BD581FA877B20050BB48 /* Sources */,
+				D288BD591FA877B20050BB48 /* Frameworks */,
+				D288BD5A1FA877B20050BB48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D288BD5E1FA877B20050BB48 /* PBXTargetDependency */,
+			);
+			name = "CupOmatic v2Tests";
+			productName = "CupOmatic v2Tests";
+			productReference = D288BD5C1FA877B20050BB48 /* CupOmatic v2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D288BD661FA877B20050BB48 /* CupOmatic v2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D288BD761FA877B20050BB48 /* Build configuration list for PBXNativeTarget "CupOmatic v2UITests" */;
+			buildPhases = (
+				D288BD631FA877B20050BB48 /* Sources */,
+				D288BD641FA877B20050BB48 /* Frameworks */,
+				D288BD651FA877B20050BB48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D288BD691FA877B20050BB48 /* PBXTargetDependency */,
+			);
+			name = "CupOmatic v2UITests";
+			productName = "CupOmatic v2UITests";
+			productReference = D288BD671FA877B20050BB48 /* CupOmatic v2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D288BD401FA877B10050BB48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Rinson;
+				TargetAttributes = {
+					D288BD471FA877B10050BB48 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					D288BD5B1FA877B20050BB48 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D288BD471FA877B10050BB48;
+					};
+					D288BD661FA877B20050BB48 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D288BD471FA877B10050BB48;
+					};
+				};
+			};
+			buildConfigurationList = D288BD431FA877B10050BB48 /* Build configuration list for PBXProject "CupOmatic v2" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D288BD3F1FA877B10050BB48;
+			productRefGroup = D288BD491FA877B10050BB48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D288BD471FA877B10050BB48 /* CupOmatic v2 */,
+				D288BD5B1FA877B20050BB48 /* CupOmatic v2Tests */,
+				D288BD661FA877B20050BB48 /* CupOmatic v2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D288BD461FA877B10050BB48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D288BD561FA877B20050BB48 /* LaunchScreen.storyboard in Resources */,
+				D288BD881FA8ADCA0050BB48 /* Stop.png in Resources */,
+				D288BD531FA877B20050BB48 /* Assets.xcassets in Resources */,
+				D288BD511FA877B20050BB48 /* Main.storyboard in Resources */,
+				D288BD8B1FA8ADFA0050BB48 /* Start.png in Resources */,
+				D288BD8D1FA8AE070050BB48 /* Reset.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D288BD5A1FA877B20050BB48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D288BD651FA877B20050BB48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D288BD441FA877B10050BB48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D288BD4E1FA877B20050BB48 /* ViewController.swift in Sources */,
+				D288BD4C1FA877B10050BB48 /* AppDelegate.swift in Sources */,
+				D288BD8F1FA8BC040050BB48 /* ParentTimer.swift in Sources */,
+				D288BD911FA8C0270050BB48 /* TimerCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D288BD581FA877B20050BB48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D288BD611FA877B20050BB48 /* CupOmatic_v2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D288BD631FA877B20050BB48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D288BD6C1FA877B20050BB48 /* CupOmatic_v2UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D288BD5E1FA877B20050BB48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D288BD471FA877B10050BB48 /* CupOmatic v2 */;
+			targetProxy = D288BD5D1FA877B20050BB48 /* PBXContainerItemProxy */;
+		};
+		D288BD691FA877B20050BB48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D288BD471FA877B10050BB48 /* CupOmatic v2 */;
+			targetProxy = D288BD681FA877B20050BB48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D288BD4F1FA877B20050BB48 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D288BD501FA877B20050BB48 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D288BD541FA877B20050BB48 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D288BD551FA877B20050BB48 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D288BD6E1FA877B20050BB48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D288BD6F1FA877B20050BB48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D288BD711FA877B20050BB48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V97H765GZ8;
+				INFOPLIST_FILE = "CupOmatic v2/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rinson.CupOmatic-v2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D288BD721FA877B20050BB48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V97H765GZ8;
+				INFOPLIST_FILE = "CupOmatic v2/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rinson.CupOmatic-v2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D288BD741FA877B20050BB48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V97H765GZ8;
+				INFOPLIST_FILE = "CupOmatic v2Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rinson.CupOmatic-v2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CupOmatic v2.app/CupOmatic v2";
+			};
+			name = Debug;
+		};
+		D288BD751FA877B20050BB48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V97H765GZ8;
+				INFOPLIST_FILE = "CupOmatic v2Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rinson.CupOmatic-v2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CupOmatic v2.app/CupOmatic v2";
+			};
+			name = Release;
+		};
+		D288BD771FA877B20050BB48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V97H765GZ8;
+				INFOPLIST_FILE = "CupOmatic v2UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rinson.CupOmatic-v2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CupOmatic v2";
+			};
+			name = Debug;
+		};
+		D288BD781FA877B20050BB48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V97H765GZ8;
+				INFOPLIST_FILE = "CupOmatic v2UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rinson.CupOmatic-v2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CupOmatic v2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D288BD431FA877B10050BB48 /* Build configuration list for PBXProject "CupOmatic v2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D288BD6E1FA877B20050BB48 /* Debug */,
+				D288BD6F1FA877B20050BB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D288BD701FA877B20050BB48 /* Build configuration list for PBXNativeTarget "CupOmatic v2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D288BD711FA877B20050BB48 /* Debug */,
+				D288BD721FA877B20050BB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D288BD731FA877B20050BB48 /* Build configuration list for PBXNativeTarget "CupOmatic v2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D288BD741FA877B20050BB48 /* Debug */,
+				D288BD751FA877B20050BB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D288BD761FA877B20050BB48 /* Build configuration list for PBXNativeTarget "CupOmatic v2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D288BD771FA877B20050BB48 /* Debug */,
+				D288BD781FA877B20050BB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D288BD401FA877B10050BB48 /* Project object */;
+}

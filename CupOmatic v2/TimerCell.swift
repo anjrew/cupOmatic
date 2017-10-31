@@ -14,13 +14,14 @@ class TimerCell{
     
     var timerSetting: Int
     var bowlCount: Int
+    var active: Bool
     
     init(label: String, timerSetting: Int, bowlCount:Int){
        
         self.label = label
         self.bowlCount = bowlCount
         self.timerSetting = timerSetting
-        
+        self.active = false
         
     }
 //    

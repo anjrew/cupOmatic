@@ -14,7 +14,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var collectionViewBowlId = [String]()
     var collectionViewTimer = [String]()
     
-    var parentTimer = ParentTimer()
+    var parentTimer : ParentTimer?
+    
+    @IBOutlet var mainTimerLabel: UILabel!
+    
+    @IBAction func startButton(_ sender: Any) {
+    }
+    
+    @IBAction func stopButton(_ sender: Any) {
+    }
+    
+    
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -46,9 +57,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionViewHeader = parentTimer.getTitlesArray()
-        collectionViewBowlId = parentTimer.getBowlsArray()
-        collectionViewTimer = parentTimer.getTimersArray()
+        parentTimer = ParentTimer(viewController : self)
+        
+        collectionViewHeader = (parentTimer?.getTitlesArray())!
+        collectionViewBowlId = (parentTimer?.getBowlsArray())!
+        collectionViewTimer = (parentTimer?.getTimersArray())!
+        mainTimerLabel.text = parentTimer?.getMainTimerString()
         
         
         // Do any additional setup after loading the view, typically from a nib.

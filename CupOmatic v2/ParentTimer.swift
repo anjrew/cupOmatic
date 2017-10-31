@@ -40,15 +40,15 @@ class ParentTimer {
         ]
         
         timers = [
-            TimerCell(label: "Pour", timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Break", timerSetting: timersIntervals[1], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Sample", timerSetting: timersIntervals[2], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Round 1", timerSetting: timersIntervals[3], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Round 2", timerSetting: timersIntervals[4], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Round 3", timerSetting: timersIntervals[5], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int)
+            TimerCell(label: "Pour", interval: interval, timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
+            TimerCell(label: "Break", interval: interval, timerSetting: timersIntervals[1], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
+            TimerCell(label: "Sample", interval: interval, timerSetting: timersIntervals[2], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
+            TimerCell(label: "Round 1", interval: interval, timerSetting: timersIntervals[3], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
+            TimerCell(label: "Round 2", interval: interval, timerSetting: timersIntervals[4], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
+            TimerCell(label: "Round 3", interval: interval, timerSetting: timersIntervals[5], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int)
         ]
         
-        
+        timers[0].activate()
         
         
         print("HERE")
@@ -95,6 +95,13 @@ class ParentTimer {
         mainTimer += 1
         print(mainTimer)
         viewController?.mainTimerLabel.text = getMainTimerString()
+        for timer in timers{
+            timer.decreaseTimer()
+        }
+        
+        viewController?.collectionViewBowlId = (getBowlsArray())
+        viewController?.collectionViewTimer = (getTimersArray())
+      //  viewController?.reloadData()
     }
     
     func startTimer(){
@@ -132,7 +139,7 @@ class ParentTimer {
         for bowlCell in timers{
             print(bowlCell.getBowlCount())
             
-            bowlsArray.append(String(bowlCell.getBowlCount()))
+            bowlsArray.append(String(bowlCell.getBowlsPassed()))
             
         }
         
@@ -149,7 +156,7 @@ class ParentTimer {
         for timersCell in timers{
             print(timersCell.getTimerSetting())
             
-            timersArray.append(String(timersCell.getTimerSetting()))
+            timersArray.append(String(timersCell.getTimePassed()))
             
         }
         

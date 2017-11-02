@@ -71,44 +71,87 @@ class ParentTimer {
             
             UserDefaults.standard.set(12, forKey: "numberOfBowlsSave")
             
-            UserDefaults.standard.set(20, forKey: "intervalSettingSave")
+            UserDefaults.standard.set(5, forKey: "intervalSettingSave")
             
-            UserDefaults.standard.set(240, forKey: "breakSettingSave")
+            UserDefaults.standard.set(60, forKey: "breakSettingSave")
             
-            UserDefaults.standard.set(600, forKey: "sampleSettingSave")
+            UserDefaults.standard.set(120, forKey: "sampleSettingSave")
             
-            UserDefaults.standard.set(660, forKey: "round1SettingSave")
+            UserDefaults.standard.set(180, forKey: "round1SettingSave")
             
-            UserDefaults.standard.set(1080, forKey: "round2SettingSave")
+            UserDefaults.standard.set(200, forKey: "round2SettingSave")
             
-            UserDefaults.standard.set(1320, forKey: "round3SettingSave")
+            UserDefaults.standard.set(300, forKey: "round3SettingSave")
             
             UserDefaults.standard.set(true, forKey: "isInitiated")
             
         }
     }
     
+    // Reloading data in the containerview
     
+    //    func refeshContainerview(collectionViewSection: [String]){
+    //
+    //        for n in collectionViewSection {
+    //
+    //            collectionViewSection[n].reloadItemsAtIndexPaths(n)
+    //        }
+    //
+    //    }
     
-    @objc func decreaseTimer(){
-       
+    @objc func increaseTimer(){
+        
         mainTimer += 1
-        print(mainTimer)
+        print(String(mainTimer) + " Main Timer")
+        
         viewController?.mainTimerLabel.text = getMainTimerString()
+        
+        
+        //      Checking to initiate timer
+        
+        var i = 0
+        
         for timer in timers{
+            
+            if (timers[i].getTimerSetting()) > mainTimer {
+                
+                print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + String(timers[i].getTimerSetting() - mainTimer))
+                
+            } else if (timers[i].getTimerSetting() == mainTimer){
+                
+                timers[i].activate()
+                timers[i].bowlsPassed -= 1
+                
+                print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + String(timers[i].getTimePassed()))
+                
+            } else {
+                
+                print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + String(timers[i].getTimePassed()))
+                
+            }
+            
             timer.decreaseTimer()
+            
+            
+            
+            i += 1
+            
         }
         
         viewController?.collectionViewBowlId = (getBowlsArray())
         viewController?.collectionViewTimer = (getTimersArray())
-      //  viewController?.reloadData()
+        
+        
+        
+        
+        
     }
     
     func startTimer(){
         
         timer.invalidate()
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decreaseTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(increaseTimer), userInfo: nil, repeats: true)
         
         
     }
@@ -120,7 +163,7 @@ class ParentTimer {
         
         
         for timerCell in timers{
-            print(timerCell.getLabel())
+            //    print(timerCell.getLabel())
             
             titlesArray.append(timerCell.getLabel())
             
@@ -137,7 +180,7 @@ class ParentTimer {
         
         
         for bowlCell in timers{
-            print(bowlCell.getBowlCount())
+            // print(String(bowlCell.getBowlsPassed()) + " Bowls passed")
             
             bowlsArray.append(String(bowlCell.getBowlsPassed()))
             
@@ -154,7 +197,7 @@ class ParentTimer {
         
         
         for timersCell in timers{
-            print(timersCell.getTimerSetting())
+            //   print(timersCell.getTimerSetting())
             
             timersArray.append(String(timersCell.getTimePassed()))
             
@@ -195,7 +238,7 @@ class ParentTimer {
     }
     
     func getMainTimerString() -> String{
-      return convertSecsmmss(timeInput: mainTimer)
+        return convertSecsmmss(timeInput: mainTimer)
     }
     
     

@@ -57,6 +57,7 @@
 		D288BD8C1FA8AE070050BB48 /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
 		D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTimer.swift; sourceTree = "<group>"; };
 		D288BD901FA8C0270050BB48 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
+		D2A769A51FAB031D00B2756D /* CupOmatic v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CupOmatic v2.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +108,13 @@
 		D288BD4A1FA877B10050BB48 /* CupOmatic v2 */ = {
 			isa = PBXGroup;
 			children = (
+				D2A769A51FAB031D00B2756D /* CupOmatic v2.entitlements */,
 				D288BD891FA8ADD60050BB48 /* Icons */,
 				D288BD4B1FA877B10050BB48 /* AppDelegate.swift */,
 				D288BD4D1FA877B20050BB48 /* ViewController.swift */,
+				D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */,
 				D288BD901FA8C0270050BB48 /* TimerCell.swift */,
 				D288BD4F1FA877B20050BB48 /* Main.storyboard */,
-				D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */,
 				D288BD521FA877B20050BB48 /* Assets.xcassets */,
 				D288BD541FA877B20050BB48 /* LaunchScreen.storyboard */,
 				D288BD571FA877B20050BB48 /* Info.plist */,
@@ -217,6 +219,17 @@
 					D288BD471FA877B10050BB48 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 0;
+							};
+						};
 					};
 					D288BD5B1FA877B20050BB48 = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -454,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CupOmatic v2/CupOmatic v2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V97H765GZ8;
 				INFOPLIST_FILE = "CupOmatic v2/Info.plist";
@@ -469,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CupOmatic v2/CupOmatic v2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V97H765GZ8;
 				INFOPLIST_FILE = "CupOmatic v2/Info.plist";

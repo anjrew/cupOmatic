@@ -35,22 +35,23 @@ class TimerCell{
     }
     
     func decreaseTimer(){
-        print(String(timePassed) + "aaaaa")
+      
         if (active){
+            
             timePassed -= 1
+            
             if (bowlsPassed == 0){
                 
+                timePassed = 0
                 self.active = false
 
                 
             }else if (timePassed == 0){
-                
-                timePassed = interval
                 bowlsPassed -= 1
+                timePassed = interval
+               
             }
-            
         }
-        
     }
 //    
 //    init(label: String){

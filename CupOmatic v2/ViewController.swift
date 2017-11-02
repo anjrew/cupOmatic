@@ -53,6 +53,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
 
+ 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +65,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionViewTimer = (parentTimer?.getTimersArray())!
         mainTimerLabel.text = parentTimer?.getMainTimerString()
         
+      
+
         
         // Do any additional setup after loading the view, typically from a nib.
     }

@@ -14,15 +14,46 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var collectionViewBowlId = [String]()
     var collectionViewTimer = [String]()
     
+    @IBOutlet var startStopButton: UIButton!
+    
     var parentTimer : ParentTimer?
     
     @IBOutlet var mainTimerLabel: UILabel!
     
     @IBAction func startButton(_ sender: Any) {
+        
+        if parentTimer?.initiateMainTimer == true {
+        
+            if (parentTimer!.mainTimer > 0){
+            
+            parentTimer?.startMainTimer()
+            parentTimer?.initiateMainTimer = false
+            startStopButton.setImage(UIImage(named: "Stop"), for: UIControlState.normal)
+            
+            }else{
+            
+            parentTimer?.startStartTimer()
+            parentTimer?.initiateMainTimer = false
+            
+            startStopButton.setImage(UIImage(named: "Stop"), for: UIControlState.normal)
+           
+        }
+            }else{
+                
+                parentTimer?.invalidateMainTimer()
+                parentTimer?.initiateMainTimer = true
+                startStopButton.setImage(UIImage(named: "Start"), for: UIControlState.normal)
+            }
     }
     
-    @IBAction func stopButton(_ sender: Any) {
+    
+    @IBAction func resetButton(_ sender: Any) {
+        
+    parentTimer?.reset()
+    startStopButton.setImage(UIImage(named: "Start.png"), for: UIControlState.normal)
+        
     }
+    
     
     
    
@@ -58,12 +89,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       // parentTimer?.isKeyPresentInUserDefaults()
         parentTimer = ParentTimer(viewController : self)
         
         collectionViewHeader = (parentTimer?.getTitlesArray())!
         collectionViewBowlId = (parentTimer?.getBowlsArray())!
         collectionViewTimer = (parentTimer?.getTimersArray())!
-        mainTimerLabel.text = parentTimer?.getMainTimerString()
+        mainTimerLabel.text = parentTimer?.getMainTimerString(timerInput: (parentTimer?.mainTimer)! )
         
       
 
@@ -74,6 +106,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.isNavigationBarHidden = true
+
     }
 
 

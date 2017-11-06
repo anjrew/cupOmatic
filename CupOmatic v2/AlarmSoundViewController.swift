@@ -13,7 +13,7 @@ import UIKit
 class AlarmSoundViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var alarmSelection = ["Index" : Int(), "Sound" : Int()]
-    var AudioService = Audio(inputAudioSelection: 0)
+    var AudioService = Audio()
     var rowChoice = Int()
     
     @IBOutlet var alarmSoundPickerView: UIPickerView!

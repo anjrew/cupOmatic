@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dq-uf-Neu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="133.5832083958021"/>
+            <point key="canvasLocation" x="919" y="134"/>
         </scene>
         <!--Interval View Controller-->
         <scene sceneID="O0m-Bg-Qty">
@@ -695,7 +695,7 @@
                                 </connections>
                             </switch>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-1L-DiP">
-                                <rect key="frame" x="27" y="114" width="320" height="216"/>
+                                <rect key="frame" x="27" y="114" width="320" height="136"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zW1-rG-HDP" id="QXp-zr-cs9"/>
                                 </connections>
@@ -722,7 +722,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Z5-L4-P9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="813"/>
+            <point key="canvasLocation" x="885.60000000000002" y="812.74362818590714"/>
         </scene>
         <!--Break View Controller-->
         <scene sceneID="E3s-Jc-tnQ">
@@ -732,20 +732,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8h-WO-QGN">
-                                <rect key="frame" x="0.0" y="70" width="375" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Break Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8h-WO-QGN">
+                                <rect key="frame" x="0.0" y="47" width="375" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFs-Tp-v44">
-                                <rect key="frame" x="27.5" y="156" width="320" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="lkc-Si-G5k" id="YCo-cV-NSg"/>
-                                </connections>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfM-rh-E0p">
-                                <rect key="frame" x="137.5" y="527" width="100" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfM-rh-E0p">
+                                <rect key="frame" x="137" y="572" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="8ja-D3-5aC"/>
                                     <constraint firstAttribute="height" constant="40" id="qP0-kj-4KC"/>
@@ -757,6 +751,12 @@
                                     <segue destination="Wo6-g6-XQV" kind="show" id="dzC-7d-pmy"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFs-Tp-v44">
+                                <rect key="frame" x="0.0" y="175" width="374" height="133"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lkc-Si-G5k" id="YCo-cV-NSg"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -776,7 +776,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFB-NI-FnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2281" y="134"/>
+            <point key="canvasLocation" x="2280.8000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
@@ -786,7 +786,7 @@
         <image name="Start.png" width="115" height="116"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CUS-af-QzL"/>
+        <segue reference="3Ax-bI-aMl"/>
         <segue reference="9DY-v2-oRs"/>
     </inferredMetricsTieBreakers>
 </document>

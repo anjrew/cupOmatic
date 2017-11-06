@@ -24,7 +24,9 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     @IBOutlet var breakPickerView: UIPickerView!
     
-    var dataBase = [[String]]()
+    var audioCodes = Audio().getListOfCodes()
+    
+    var timeDataBase = [[String]]()
     var minutes = ["0"]
     var minutesLabel = ["min"]
     var seconds = ["0"]
@@ -61,24 +63,24 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     func updatePickerView(){
         
-        dataBase.append(minutes)
-        dataBase.append(minutesLabel)
-        dataBase.append(seconds)
-        dataBase.append(secondsLabel)
+        timeDataBase.append(minutes)
+        timeDataBase.append(minutesLabel)
+        timeDataBase.append(seconds)
+        timeDataBase.append(secondsLabel)
     }
     
     
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return dataBase.count    }
+        return timeDataBase.count    }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataBase[component].count
+        return timeDataBase[component].count
     }
     
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataBase[component][row]
+        return timeDataBase[component][row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -87,11 +89,11 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         
         switch (component) {
         case 0:
-            minutesResult = Int(dataBase[component][row])!
+            minutesResult = Int(timeDataBase[component][row])!
             print(minutesResult)
             
         case 2:
-            secondsResult = Int(dataBase[component][row])!
+            secondsResult = Int(timeDataBase[component][row])!
             print(secondsResult)
             
         default:break

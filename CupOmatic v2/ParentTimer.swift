@@ -13,7 +13,8 @@ import AudioToolbox
 class ParentTimer {
     
     var interval = Int()
-    var bowl = Int() 
+    var bowl = Int()
+    var timerAlarms = Int()
     var timersIntervals = [Int]()
     var timer = Timer()
     var timers = [TimerCell]()
@@ -43,6 +44,7 @@ class ParentTimer {
         self.startTimerSetting = 4
         reset()
         
+        
         timersIntervals = [
             0,
             UserDefaults.standard.object(forKey: "breakSettingSave")  as! Int,
@@ -51,6 +53,10 @@ class ParentTimer {
             UserDefaults.standard.object(forKey: "roundTwoSettingSave") as! Int,
             UserDefaults.standard.object(forKey: "roundThreeSettingSave") as! Int
         ]
+        
+//        timerAlarams = [
+//        
+//        ]
         
         timers = [
             TimerCell(label: "Pour", interval: interval, timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),

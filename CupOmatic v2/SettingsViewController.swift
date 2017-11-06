@@ -134,7 +134,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         roudnOneSetting = UserDefaults.standard.object(forKey: "roundOneSettingSave") as! Int
         roundTwoSetting = UserDefaults.standard.object(forKey: "roundTwoSettingSave") as! Int
         roundThreeSetting = UserDefaults.standard.object(forKey: "roundThreeSettingSave") as! Int
-        //
+        
         tableViewDetails[0] = String(bowlSetting)
         tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
         tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)

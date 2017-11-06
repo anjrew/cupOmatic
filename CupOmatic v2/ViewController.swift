@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController{
     
     var collectionViewHeader = [String]()
     var collectionViewBowlId = [String]()
@@ -54,37 +54,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     
+    @IBOutlet var label: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var bowlLabel: UILabel!
     
-    
-   
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return collectionViewHeader.count
-        
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as UICollectionViewCell
-        
-        let cellHeader = cell.viewWithTag(1) as! UILabel
-        cellHeader.text = collectionViewHeader[indexPath.row]
-        
-        let cellCup = cell.viewWithTag(2) as! UILabel
-        cellCup.text = collectionViewBowlId[indexPath.row]
-        
-        let cellTimer = cell.viewWithTag(3) as! UILabel
-        cellTimer.text = collectionViewTimer[indexPath.row]
-        
-        return cell
-    
- 
-    }
-    
-
- 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +71,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         mainTimerLabel.text = parentTimer?.getMainTimerString(timerInput: (parentTimer?.mainTimer)! )
         
       
-
+// update timers
         
         // Do any additional setup after loading the view, typically from a nib.
     }

@@ -176,8 +176,8 @@ class ParentTimer {
         print(String(mainTimer) + " Main Timer")
         
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
-        
-        
+        viewController?.timeLabel.text = convertSecsmmss(timeInput: timers[0].getTimePassed())
+        viewController?.bowlLabel.text = String(timers[0].getBowlsPassed())
         //      Checking to initiate timer
         
         var i = 0

@@ -18,8 +18,9 @@ class TimerCell{
     var interval: Int
     var timePassed : Int
     var bowlsPassed : Int
+    var iD = String()
     
-    init(label: String, interval: Int, timerSetting: Int, bowlCount:Int){
+    init(label: String, interval: Int, timerSetting: Int, bowlCount:Int, iD: String){
        
         self.label = label
         self.bowlCount = bowlCount
@@ -28,6 +29,7 @@ class TimerCell{
         self.interval = interval
         self.timePassed = interval
         self.bowlsPassed = bowlCount
+        self.iD = iD
     }
     
     func activate(){
@@ -79,6 +81,11 @@ class TimerCell{
     func getTimePassed() -> Int{
         return self.timePassed
     }
+    
+    func getId() -> String{
+        return self.iD
+    }
+    
 
 
 }

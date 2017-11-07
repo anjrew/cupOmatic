@@ -54,9 +54,34 @@ class ViewController: UIViewController{
         
     }
     
-    @IBOutlet var label: UILabel!
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var bowlLabel: UILabel!
+    // `timer outlets
+    
+    @IBOutlet var pourTimeLabel: UILabel!
+    @IBOutlet var pourBowlLabel: UILabel!
+    
+    @IBOutlet var breakLabel: UILabel!
+    @IBOutlet var breakTimeLabel: UILabel!
+    @IBOutlet var breakBowLabel: UILabel!
+    
+    @IBOutlet var sampleLabel: UILabel!
+    @IBOutlet var sampleTimeLabel: UILabel!
+    @IBOutlet var sampleBowlLabel: UILabel!
+    
+    @IBOutlet var roundOneLabel: UILabel!
+    @IBOutlet var roundOneTimeLabel: UILabel!
+    @IBOutlet var roundOneBowlLabel: UILabel!
+    
+    @IBOutlet var roundTwoLabel: UILabel!
+    @IBOutlet var roundTwoTimeLabel: UILabel!
+    @IBOutlet var roundTwoBowlLabel: UILabel!
+    
+    @IBOutlet var roundThreeLabel: UILabel!
+    @IBOutlet var roundThreeTimeLabel: UILabel!
+    @IBOutlet var roundThreeBowlLabel: UILabel!
+    
+    
+    
+    
     
 
     override func viewDidLoad() {

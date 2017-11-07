@@ -59,12 +59,12 @@ class ParentTimer {
 //        ]
         
         timers = [
-            TimerCell(label: "Pour", interval: interval, timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Break", interval: interval, timerSetting: timersIntervals[1], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Sample", interval: interval, timerSetting: timersIntervals[2], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Round 1", interval: interval, timerSetting: timersIntervals[3], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Round 2", interval: interval, timerSetting: timersIntervals[4], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int),
-            TimerCell(label: "Round 3", interval: interval, timerSetting: timersIntervals[5], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int)
+            TimerCell(label: "Pour", interval: interval, timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave" ) as! Int, iD: "pour"),
+            TimerCell(label: "Break", interval: interval, timerSetting: timersIntervals[1], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "break"),
+            TimerCell(label: "Sample", interval: interval, timerSetting: timersIntervals[2], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "roundOne"),
+            TimerCell(label: "Round 1", interval: interval, timerSetting: timersIntervals[3], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "roundTwo"),
+            TimerCell(label: "Round 2", interval: interval, timerSetting: timersIntervals[4], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "roundThree"),
+            TimerCell(label: "Round 3", interval: interval, timerSetting: timersIntervals[5], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "roundFour")
         ]
         
         timers[0].activate()
@@ -176,8 +176,28 @@ class ParentTimer {
         print(String(mainTimer) + " Main Timer")
         
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
-        viewController?.timeLabel.text = convertSecsmmss(timeInput: timers[0].getTimePassed())
-        viewController?.bowlLabel.text = String(timers[0].getBowlsPassed())
+        
+        // timers update
+        
+        viewController?.pourTimeLabel.text = convertSecsmmss(timeInput: timers[0].getTimePassed())
+        viewController?.pourBowlLabel.text = String(timers[0].getBowlsPassed())
+        
+        viewController?.breakTimeLabel.text = convertSecsmmss(timeInput: timers[1].getTimePassed())
+        viewController?.breakBowLabel.text = String(timers[1].getBowlsPassed())
+        
+        viewController?.sampleTimeLabel.text = convertSecsmmss(timeInput: timers[2].getTimePassed())
+        viewController?.sampleBowlLabel.text = String(timers[2].getBowlsPassed())
+
+        viewController?.roundOneTimeLabel.text = convertSecsmmss(timeInput: timers[3].getTimePassed())
+        viewController?.roundOneBowlLabel.text = String(timers[3].getBowlsPassed())
+        
+        viewController?.roundTwoTimeLabel.text = convertSecsmmss(timeInput: timers[4].getTimePassed())
+        viewController?.roundTwoBowlLabel.text = String(timers[4].getBowlsPassed())
+        
+        viewController?.roundThreeTimeLabel.text = convertSecsmmss(timeInput: timers[5].getTimePassed())
+        viewController?.roundThreeBowlLabel.text = String(timers[5].getBowlsPassed())
+        
+    
         //      Checking to initiate timer
         
         var i = 0

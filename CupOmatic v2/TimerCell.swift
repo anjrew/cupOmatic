@@ -19,7 +19,7 @@ class TimerCell{
     var timePassed : Int
     var bowlsPassed : Int
     var iD = String()
-    
+        
     init(label: String, interval: Int, timerSetting: Int, bowlCount:Int, iD: String){
        
         self.label = label
@@ -28,7 +28,7 @@ class TimerCell{
         self.active = false
         self.interval = interval
         self.timePassed = interval
-        self.bowlsPassed = bowlCount
+        self.bowlsPassed = 0
         self.iD = iD
     }
     
@@ -42,25 +42,25 @@ class TimerCell{
             
             timePassed -= 1
             
-            if (bowlsPassed == 0){
+            if (bowlsPassed == bowlCount){
                 
                 timePassed = 0
                 self.active = false
 
                 
             }else if (timePassed == 0){
-                bowlsPassed -= 1
+                bowlsPassed += 1
                 timePassed = interval
                
             }
         }
     }
-//    
-//    init(label: String){
-//        self.label = label
-//        self.timerSetting = 0
-//        self.bowlCount = 0
-//    }
+    
+    func resetTimer(){
+        timePassed = interval
+        bowlsPassed = 0
+    }
+
   
     func getLabel() -> String{
         return self.label
@@ -86,7 +86,27 @@ class TimerCell{
         return self.iD
     }
     
-
-
+    func getTimeUntil(mainTimerTime:Int) -> Int{
+        return mainTimerTime - timePassed
+    }
+    
+    func getDisplayTime(mainTimer: Int) -> Int {
+        if mainTimer <= timerSetting {
+            
+            return timerSetting - mainTimer
+            
+            }else if(timerSetting == mainTimer){
+            
+            activate()
+            return 0
+            
+            }else{
+            
+            return getTimePassed()
+        
+        }
+        
+      }
+    
 }
 

@@ -13,10 +13,12 @@ class ViewController: UIViewController{
     var collectionViewHeader = [String]()
     var collectionViewBowlId = [String]()
     var collectionViewTimer = [String]()
+   
     
     @IBOutlet var startStopButton: UIButton!
     
     var parentTimer : ParentTimer?
+    var audio: Audio?
     
     @IBOutlet var mainTimerLabel: UILabel!
     
@@ -49,8 +51,11 @@ class ViewController: UIViewController{
     
     @IBAction func resetButton(_ sender: Any) {
         
-    parentTimer?.reset()
-    startStopButton.setImage(UIImage(named: "Start.png"), for: UIControlState.normal)
+        parentTimer?.reset()
+        startStopButton.setImage(UIImage(named: "Start.png"), for: UIControlState.normal)
+        parentTimer?.resetAllTimers()
+        parentTimer?.updateUI()
+    
         
     }
     
@@ -89,14 +94,20 @@ class ViewController: UIViewController{
         
        // parentTimer?.isKeyPresentInUserDefaults()
         parentTimer = ParentTimer(viewController : self)
-        
+
         collectionViewHeader = (parentTimer?.getTitlesArray())!
         collectionViewBowlId = (parentTimer?.getBowlsArray())!
         collectionViewTimer = (parentTimer?.getTimersArray())!
         mainTimerLabel.text = parentTimer?.getMainTimerString(timerInput: (parentTimer?.mainTimer)! )
         
-      
+   //     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+   //     label.center = CGPoint(x: 160, y: 285)
+   //     label.textAlignment = .center
+   //     label.text = "I'am a test label"
+   //     self.view.addSubview(label)
 // update timers
+        
+     
         
         // Do any additional setup after loading the view, typically from a nib.
     }

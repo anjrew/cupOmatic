@@ -13,7 +13,7 @@ import UIKit
 class AlarmSoundViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var alarmSelection = ["Index" : Int(), "Sound" : Int()]
-    var AudioService = Audio()
+    var audioService = Audio()
     var rowChoice = Int()
     
     @IBOutlet var alarmSoundPickerView: UIPickerView!
@@ -23,18 +23,18 @@ class AlarmSoundViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return AudioService.listOfCodes.count
+        return audioService.listOfCodes.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
        
-        return String(AudioService.listOfCodes[row])
+        return String(audioService.listOfCodes[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        AudioServicesPlaySystemSound(SystemSoundID(AudioService.listOfCodes[row]))
+        AudioServicesPlaySystemSound(SystemSoundID(audioService.listOfCodes[row]))
         alarmSelection["Index"] = row
-        alarmSelection["Sound"] = AudioService.listOfCodes[row]
+        alarmSelection["Sound"] = audioService.listOfCodes[row]
         UserDefaults.standard.set(alarmSelection, forKey: "alarmSoundSave")
         print(alarmSelection)
     }
@@ -54,8 +54,6 @@ class AlarmSoundViewController: UIViewController, UIPickerViewDelegate, UIPicker
         super.viewDidLoad()
         
         alarmSelection = UserDefaults.standard.object(forKey: "alarmSoundSave") as! [String : Int]
-      
-        
         alarmSoundPickerView.selectRow(alarmSelection["Index"]!, inComponent: 0, animated: true)
         
         // Do any additional setup after loading the view.

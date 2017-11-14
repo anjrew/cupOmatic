@@ -22,6 +22,7 @@ class ParentTimer {
     var viewController : ViewController?
     var alarmSound = [String: Int]()
     var alarmWarning = 3
+    var audio = Audio()
     
     
     
@@ -110,12 +111,7 @@ class ParentTimer {
     
     
     func shouldStartTimer(currentTime : Int){
-        
-        //   if timerStart.contains(where: currentTime){
-        
-        
-        
-        //       }
+ 
         
     }
     
@@ -158,17 +154,7 @@ class ParentTimer {
             
         }
     }
-    
-    // Reloading data in the containerview
-    
-    //    func refeshContainerview(collectionViewSection: [String]){
-    //
-    //        for n in collectionViewSection {
-    //
-    //            collectionViewSection[n].reloadItemsAtIndexPaths(n)
-    //        }
-    //
-    //    }
+
     
     @objc func increaseTimer(){
         
@@ -177,29 +163,10 @@ class ParentTimer {
         
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
         
-        // timers update
+        updateUI()
         
-        viewController?.pourTimeLabel.text = convertSecsmmss(timeInput: timers[0].getTimePassed())
-        viewController?.pourBowlLabel.text = String(timers[0].getBowlsPassed())
         
-        viewController?.breakTimeLabel.text = convertSecsmmss(timeInput: timers[1].getTimePassed())
-        viewController?.breakBowLabel.text = String(timers[1].getBowlsPassed())
-        
-        viewController?.sampleTimeLabel.text = convertSecsmmss(timeInput: timers[2].getTimePassed())
-        viewController?.sampleBowlLabel.text = String(timers[2].getBowlsPassed())
 
-        viewController?.roundOneTimeLabel.text = convertSecsmmss(timeInput: timers[3].getTimePassed())
-        viewController?.roundOneBowlLabel.text = String(timers[3].getBowlsPassed())
-        
-        viewController?.roundTwoTimeLabel.text = convertSecsmmss(timeInput: timers[4].getTimePassed())
-        viewController?.roundTwoBowlLabel.text = String(timers[4].getBowlsPassed())
-        
-        viewController?.roundThreeTimeLabel.text = convertSecsmmss(timeInput: timers[5].getTimePassed())
-        viewController?.roundThreeBowlLabel.text = String(timers[5].getBowlsPassed())
-        
-    
-        //      Checking to initiate timer
-        
         var i = 0
         
         for timer in timers{
@@ -268,8 +235,7 @@ class ParentTimer {
         
         
         for timerCell in timers{
-            //    print(timerCell.getLabel())
-            
+
             titlesArray.append(timerCell.getLabel())
             
         }
@@ -285,8 +251,7 @@ class ParentTimer {
         
         
         for bowlCell in timers{
-            // print(String(bowlCell.getBowlsPassed()) + " Bowls passed")
-            
+    
             bowlsArray.append(String(bowlCell.getBowlsPassed()))
             
         }
@@ -302,13 +267,18 @@ class ParentTimer {
         
         
         for timersCell in timers{
-            //   print(timersCell.getTimerSetting())
             
             timersArray.append(String(timersCell.getTimePassed()))
             
         }
         
         return timersArray
+        
+    }
+    
+    func getMainTime() -> Int {
+        
+        return mainTimer
         
     }
     
@@ -354,7 +324,7 @@ class ParentTimer {
         
         if (startTime == startTimerSetting){
             
-            viewController?.mainTimerLabel.text = "Countdown"
+            viewController?.mainTimerLabel.text = "Ready"
             startTime -= 1
         }else{
             viewController?.mainTimerLabel.text = getMainTimerString(timerInput: startTime)
@@ -381,15 +351,69 @@ class ParentTimer {
     }
     
     func reset(){
-        //relate all to settings
         
         invalidateMainTimer()
         startTime = startTimerSetting
         mainTimer = 0
         initiateMainTimer = true
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
+        resetAllTimers()
         
     }
+    
+    
+    func resetAllTimers(){
+        for time in timers{
+            time.resetTimer()
+        }
+    }
+    
+    func updateUI(){
+        
+        for subview in viewController!.view.subviews as [UIView] {
+            
+            if let viewElement = subview as? UIView {
+                
+                if timers[viewElement.tag].timerSetting == alarmWarning{
+                
+                    for subsubview in viewElement.subviews as [UIView] {
+                        
+                        if let label = subsubview as? UILabel {
+                            label.font = label.font.withSize(30)
+                            switch(label.tag){
+                            case 0: label.text = timers[viewElement.tag].getLabel()
+                            case 1: label.text = convertSecsmmss(timeInput: timers[viewElement.tag].getDisplayTime(mainTimer: mainTimer))
+                            case 2: label.text = String(timers[viewElement.tag].getBowlsPassed())
+                            default: label.text = "error"
+                            }
+                        }
+                    }
+                    
+                }else{
+                    
+                    
+                    for subsubview in viewElement.subviews as [UIView] {
+                        
+                        if let label = subsubview as? UILabel {
+                           
+                            switch(label.tag){
+                            case 0: label.text = timers[viewElement.tag].getLabel()
+                            case 1: label.text = convertSecsmmss(timeInput: timers[viewElement.tag].getDisplayTime(mainTimer: mainTimer))
+                            case 2: label.text = String(timers[viewElement.tag].getBowlsPassed())
+                            default: label.text = "error"
+                            }
+                        }
+                    }
+                
+                        
+                        
+                        
+                
+            }
+        }
+        
+    }
+    
 }
 
 
@@ -402,3 +426,4 @@ class ParentTimer {
 
 
 
+}

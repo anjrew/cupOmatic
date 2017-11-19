@@ -10,13 +10,8 @@ import UIKit
 
 class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
-    
     var numberOfBowls:Int = 0
-
-    
-    
     var bowls = ["0"]
-    
     var selection: String = ""
     
     
@@ -70,11 +65,20 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var DestViewController: ViewController = segue.destination as! ViewController
+        DestViewController.timerSegue = true
+    }
+    
     @IBAction func setButton(_ sender: Any) {
         
-     UserDefaults.standard.set(numberOfBowls, forKey: "numberOfBowlsSave")
-    //    numberOfBowls = UserDefaults.standard.object(forKey:  "numberOfBowlsSave") as! Int
+        UserDefaults.standard.set(numberOfBowls, forKey: "numberOfBowlsSave")
+    //    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setButton"), object: nil)
+
+        
     }
+    
+    
     
 
     override func didReceiveMemoryWarning() {

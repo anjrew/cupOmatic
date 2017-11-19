@@ -32,7 +32,7 @@ class ParentTimer {
     var startTimer = Timer()
     var startTime = Int()
     var bowlSetting = Int ()
-    
+    var running = false
    
     
     
@@ -55,11 +55,9 @@ class ParentTimer {
             UserDefaults.standard.object(forKey: "roundThreeSettingSave") as! Int
         ]
         
-//        timerAlarams = [
-//        
-//        ]
         
         timers = [
+            TimerCell(label: "Interval", interval: interval, timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave" ) as! Int, iD: "interval"),
             TimerCell(label: "Pour", interval: interval, timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave" ) as! Int, iD: "pour"),
             TimerCell(label: "Break", interval: interval, timerSetting: timersIntervals[1], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "break"),
             TimerCell(label: "Sample", interval: interval, timerSetting: timersIntervals[2], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "roundOne"),
@@ -160,6 +158,7 @@ class ParentTimer {
         
         mainTimer += 1
         print(String(mainTimer) + " Main Timer")
+        print(getMainTimerStatus())
         
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
         
@@ -168,6 +167,8 @@ class ParentTimer {
         
 
         var i = 0
+        
+        print(viewController)
         
         for timer in timers{
             
@@ -368,26 +369,51 @@ class ParentTimer {
         }
     }
     
+    func updateProgressBars(){
+    
+    }
+    
+    func setMainTimerStatus(status: Bool){
+        
+        running = status
+        
+    }
+    
+    func getMainTimerStatus() -> Bool{
+        
+        return running
+        
+    }
+    
+    
+    
+    
     func updateUI(){
         
         for subview in viewController!.view.subviews as [UIView] {
             
             if let viewElement = subview as? UIView {
                 
-                if timers[viewElement.tag].timerSetting == alarmWarning{
-                
-                    for subsubview in viewElement.subviews as [UIView] {
-                        
-                        if let label = subsubview as? UILabel {
-                            label.font = label.font.withSize(30)
-                            switch(label.tag){
-                            case 0: label.text = timers[viewElement.tag].getLabel()
-                            case 1: label.text = convertSecsmmss(timeInput: timers[viewElement.tag].getDisplayTime(mainTimer: mainTimer))
-                            case 2: label.text = String(timers[viewElement.tag].getBowlsPassed())
-                            default: label.text = "error"
-                            }
-                        }
+                if viewElement.tag >= 0{
+                    
+                    if timers[viewElement.tag].timerSetting == alarmWarning{
+                    
+                        for subsubview in viewElement.subviews as [UIView] {
+
+                            
+                                if let label = subsubview as? UILabel {
+                                    
+                                  
+                                    label.font = label.font.withSize(30)
+                                    switch(label.tag){
+                                    case 1: label.text = convertSecsmmss(timeInput: timers[viewElement.tag].getDisplayTime(mainTimer: mainTimer))
+                                    case 2: label.text = String(timers[viewElement.tag].getBowlsPassed())
+                                    default: label.text = "error"
+                    
+                                    }
+                                }
                     }
+                
                     
                 }else{
                     
@@ -398,17 +424,13 @@ class ParentTimer {
                            
                             switch(label.tag){
                             case 0: label.text = timers[viewElement.tag].getLabel()
-                            case 1: label.text = convertSecsmmss(timeInput: timers[viewElement.tag].getDisplayTime(mainTimer: mainTimer))
+                        //    case 1: label.text = convertSecsmmss(timeInput: timers[viewElement.tag].getDisplayTime(mainTimer: mainTimer))
                             case 2: label.text = String(timers[viewElement.tag].getBowlsPassed())
                             default: label.text = "error"
                             }
                         }
                     }
-                
-                        
-                        
-                        
-                
+                }
             }
         }
         

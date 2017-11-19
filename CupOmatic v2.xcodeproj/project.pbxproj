@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E321FBCF4C80054B918 /* greenButton.png */; };
+		D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E341FBCFA6C0054B918 /* redButton.png */; };
+		D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E361FBD70920054B918 /* reButtonWithShadow.png */; };
+		D26C9E3A1FBD8BBA0054B918 /* ios-circular-progress-bar-master in Frameworks */ = {isa = PBXBuildFile; fileRef = D26C9E391FBD8BBA0054B918 /* ios-circular-progress-bar-master */; settings = {ATTRIBUTES = (Required, ); }; };
+		D26C9E3D1FC060EA0054B918 /* MKMagneticProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C9E3C1FC060EA0054B918 /* MKMagneticProgress.swift */; };
 		D288BD4C1FA877B10050BB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD4B1FA877B10050BB48 /* AppDelegate.swift */; };
 		D288BD4E1FA877B20050BB48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD4D1FA877B20050BB48 /* ViewController.swift */; };
 		D288BD511FA877B20050BB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D288BD4F1FA877B20050BB48 /* Main.storyboard */; };
@@ -52,6 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D26C9E321FBCF4C80054B918 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
+		D26C9E341FBCFA6C0054B918 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
+		D26C9E361FBD70920054B918 /* reButtonWithShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reButtonWithShadow.png; sourceTree = "<group>"; };
+		D26C9E391FBD8BBA0054B918 /* ios-circular-progress-bar-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ios-circular-progress-bar-master"; path = "../../../../../../../Desktop/ios-circular-progress-bar-master"; sourceTree = "<group>"; };
+		D26C9E3B1FBD8C7E0054B918 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D26C9E3C1FC060EA0054B918 /* MKMagneticProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKMagneticProgress.swift; path = ../../../../../../../Desktop/MKMagneticProgress.swift; sourceTree = "<group>"; };
 		D288BD481FA877B10050BB48 /* CupOmatic v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CupOmatic v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D288BD4B1FA877B10050BB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D288BD4D1FA877B20050BB48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26C9E3A1FBD8BBA0054B918 /* ios-circular-progress-bar-master in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +123,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D26C9E381FBD8BB80054B918 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D26C9E3C1FC060EA0054B918 /* MKMagneticProgress.swift */,
+				D26C9E3B1FBD8C7E0054B918 /* QuartzCore.framework */,
+				D26C9E391FBD8BBA0054B918 /* ios-circular-progress-bar-master */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D288BD3F1FA877B10050BB48 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +140,7 @@
 				D288BD5F1FA877B20050BB48 /* CupOmatic v2Tests */,
 				D288BD6A1FA877B20050BB48 /* CupOmatic v2UITests */,
 				D288BD491FA877B10050BB48 /* Products */,
+				D26C9E381FBD8BB80054B918 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +207,9 @@
 				D288BD871FA8ADCA0050BB48 /* Stop.png */,
 				D2D077171FAE24AD00812949 /* backButtonIcon.png */,
 				D288BD8A1FA8ADFA0050BB48 /* Start.png */,
+				D26C9E321FBCF4C80054B918 /* greenButton.png */,
+				D26C9E341FBCFA6C0054B918 /* redButton.png */,
+				D26C9E361FBD70920054B918 /* reButtonWithShadow.png */,
 				D288BD8C1FA8AE070050BB48 /* Reset.png */,
 			);
 			path = Icons;
@@ -307,8 +333,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */,
 				D288BD561FA877B20050BB48 /* LaunchScreen.storyboard in Resources */,
+				D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */,
 				D2D077181FAE24AE00812949 /* backButtonIcon.png in Resources */,
+				D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */,
 				D288BD881FA8ADCA0050BB48 /* Stop.png in Resources */,
 				D288BD531FA877B20050BB48 /* Assets.xcassets in Resources */,
 				D288BD511FA877B20050BB48 /* Main.storyboard in Resources */,
@@ -351,6 +380,7 @@
 				D2D077321FAF41C000812949 /* RoundThreeViewController.swift in Sources */,
 				D2D077301FAF41AC00812949 /* RoundTwoViewController.swift in Sources */,
 				D288BD911FA8C0270050BB48 /* TimerCell.swift in Sources */,
+				D26C9E3D1FC060EA0054B918 /* MKMagneticProgress.swift in Sources */,
 				D2D0772E1FAF152900812949 /* RoundViewController.swift in Sources */,
 				D29CABCE1FAF85AC008EB8EF /* AlarmSoundViewController.swift in Sources */,
 				D29CABCC1FAF7A03008EB8EF /* Audio.swift in Sources */,

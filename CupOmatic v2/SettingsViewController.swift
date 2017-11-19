@@ -14,9 +14,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var settingsTableViewOutlet: UITableView!
     var identitys = [String]()
-    var tableViewCells = ["Number of bowls","Interval","Break", "Sample","First Round","Second Round","Third Round","Alarm sound","Alarm Warning","Action Sound","Vibrate"]
+    var tableViewCells = ["Interval","Break", "Sample","First Round","Second Round","Third Round","Alarm sound","Alarm Warning","Action Sound","Vibrate"]
     var tableViewDetails = ["","","","","","","","","","",""]
-    var tableSegues = ["bowls","interval","break","sample","roundOne","roundTwo","roundThree","alarmSound","alarmWarning","actionSound"]
+    var tableSegues = ["interval","break","sample","roundOne","roundTwo","roundThree","alarmSound","alarmWarning","actionSound"]
     
 // Setting Variables
     
@@ -101,17 +101,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             //        alarmWarning = UserDefaults.standard.object(forKey: "alarmWarningSave") as! Int
 //        actionSound = UserDefaults.standard.object(forKey: "actionSoundSave") as! Int
 //
-        tableViewDetails[0] = String(bowlSetting)
-        tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
-        tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)
-        tableViewDetails[3] = convertSecsmmss(timeInput: sampleSetting)
-        tableViewDetails[4] = convertSecsmmss(timeInput: roudnOneSetting)
-        tableViewDetails[5] = convertSecsmmss(timeInput: roundTwoSetting)
-        tableViewDetails[6] = convertSecsmmss(timeInput: roundThreeSetting)
-        tableViewDetails[7] = String(alarmSound)
-        tableViewDetails[8] = "Alarm warning"
-        tableViewDetails[9] = "Action Sound"
-        tableViewDetails[10] = "Vibrate Switch"
+        tableViewDetails[0] = convertSecsmmss(timeInput: intervalSetting)
+        tableViewDetails[1] = convertSecsmmss(timeInput: breakSetting)
+        tableViewDetails[2] = convertSecsmmss(timeInput: sampleSetting)
+        tableViewDetails[3] = convertSecsmmss(timeInput: roudnOneSetting)
+        tableViewDetails[4] = convertSecsmmss(timeInput: roundTwoSetting)
+        tableViewDetails[5] = convertSecsmmss(timeInput: roundThreeSetting)
+        tableViewDetails[6] = String(alarmSound)
+        tableViewDetails[7] = "Alarm warning"
+        tableViewDetails[8] = "Action Sound"
+        tableViewDetails[9] = "Vibrate Switch"
 
         identitys = ["bowlsViewController","intervalViewController","breakViewController","sampleViewController","firstRoundViewController","secondRoundViewController","thirdRoundViewController"]
         
@@ -135,13 +134,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         roundTwoSetting = UserDefaults.standard.object(forKey: "roundTwoSettingSave") as! Int
         roundThreeSetting = UserDefaults.standard.object(forKey: "roundThreeSettingSave") as! Int
         
-        tableViewDetails[0] = String(bowlSetting)
-        tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
-        tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)
-        tableViewDetails[3] = convertSecsmmss(timeInput: sampleSetting)
-        tableViewDetails[4] = convertSecsmmss(timeInput: roudnOneSetting)
-        tableViewDetails[5] = convertSecsmmss(timeInput: roundTwoSetting)
-        tableViewDetails[6] = convertSecsmmss(timeInput: roundThreeSetting)
+
+        tableViewDetails[0] = convertSecsmmss(timeInput: intervalSetting)
+        tableViewDetails[1] = convertSecsmmss(timeInput: breakSetting)
+        tableViewDetails[2] = convertSecsmmss(timeInput: sampleSetting)
+        tableViewDetails[3] = convertSecsmmss(timeInput: roudnOneSetting)
+        tableViewDetails[4] = convertSecsmmss(timeInput: roundTwoSetting)
+        tableViewDetails[5] = convertSecsmmss(timeInput: roundThreeSetting)
         
     }
     
@@ -159,10 +158,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //        let viewController = storyboard?.instantiateViewController(withIdentifier: vcName)
-        //        self.navigationController?.pushViewController(viewController!, animated: true)
+
+        if (indexPath.row < tableSegues.count){
         performSegue(withIdentifier: tableSegues[indexPath.row], sender: self)
+        }
     }
     
     func getAlarmwarning() -> Int {

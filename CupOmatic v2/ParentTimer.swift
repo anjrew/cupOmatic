@@ -23,7 +23,7 @@ class ParentTimer {
     var alarmSound = [String: Int]()
     var alarmWarning = 3
     var audio = Audio()
-    
+    var intervalTimer = IntervalTimer(timeSetting: UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int, bowlSetting: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int)
     
     
     //Start Timer
@@ -33,7 +33,7 @@ class ParentTimer {
     var startTime = Int()
     var bowlSetting = Int ()
     var running = false
-   
+    
     
     
     init(viewController : ViewController){
@@ -44,7 +44,7 @@ class ParentTimer {
         self.bowl = UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int
         self.startTimerSetting = 4
         reset()
-        
+       
         
         timersIntervals = [
             0,
@@ -57,7 +57,6 @@ class ParentTimer {
         
         
         timers = [
-            TimerCell(label: "Interval", interval: interval, timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave" ) as! Int, iD: "interval"),
             TimerCell(label: "Pour", interval: interval, timerSetting: 0, bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave" ) as! Int, iD: "pour"),
             TimerCell(label: "Break", interval: interval, timerSetting: timersIntervals[1], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "break"),
             TimerCell(label: "Sample", interval: interval, timerSetting: timersIntervals[2], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "roundOne"),
@@ -69,8 +68,7 @@ class ParentTimer {
         timers[0].activate()
         
         alarmSound = UserDefaults.standard.object(forKey: "alarmSoundSave") as! [String : Int]
-        
-        print("HERE")
+    
     }
     
     // Get Settings
@@ -157,22 +155,35 @@ class ParentTimer {
     @objc func increaseTimer(){
         
         mainTimer += 1
-        print(String(mainTimer) + " Main Timer")
-        print(getMainTimerStatus())
         
+        viewController?.updateProgressViews()
+        
+        print(String(mainTimer) + " Main Timer")
+  
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
         
-        updateUI()
+        // arrangeing viewcontroller toolbar depending on parent timer status
         
+        if running == true{
+            
+            viewController?.navigationController?.setToolbarHidden(true, animated: true)
+            
+        }else{
+            
+            viewController?.navigationController?.setToolbarHidden(false, animated: true)
+            
+        }
         
 
         var i = 0
         
-        print(viewController)
-        
         for timer in timers{
             
+            
             if (timers[i].getTimerSetting()) > mainTimer {
+                
+             //   intervalTimer.timeSetting = timers[i].getTimerSetting()
+             //   intervalTimer.bowlSetting = timers[i].getBowlCount()
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
                 if (timers[i].getTimerSetting() - mainTimer == alarmWarning){
@@ -182,21 +193,26 @@ class ParentTimer {
             } else if (timers[i].getTimerSetting() == mainTimer){
                 
                 timers[i].activate()
-                timers[i].bowlsPassed -= 1
+                intervalTimer.timer.invalidate()
+                intervalTimer.reset()
+                intervalTimer.startTimer()
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
                 
             } else {
                 
+              //  if (timers[i].bowlsPassed == timers[i].bowlCount){
+                    
+             //       intervalTimer.timer.invalidate()
+                    
+             //   }
                 if(timers[i].getTimePassed() == alarmWarning){AudioServicesPlaySystemSound(SystemSoundID(alarmSound["Sound"]!)) }
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
                 
             }
             
             timer.decreaseTimer()
-            
-            
-            
+        
             i += 1
             
         }
@@ -210,6 +226,12 @@ class ParentTimer {
         
     }
     
+    func getMainIntervalPercentage() -> CGFloat{
+        print("Interval time = \(intervalTimer.time) - Bowl Count = \(intervalTimer.bowlAmount)")
+        
+        return CGFloat(Float(intervalTimer.timeSetting - intervalTimer.time + 1) / Float(intervalTimer.timeSetting))
+    }
+    
     
     func startStartTimer(){
         
@@ -217,6 +239,7 @@ class ParentTimer {
         
         startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decreaseTimer), userInfo: nil, repeats: true)
         
+        running = true
         
     }
     
@@ -224,8 +247,9 @@ class ParentTimer {
         
         timer.invalidate()
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(increaseTimer), userInfo: nil, repeats: true)
+        intervalTimer.startTimer()
         
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(increaseTimer), userInfo: nil, repeats: true)
         
     }
     
@@ -327,7 +351,9 @@ class ParentTimer {
             
             viewController?.mainTimerLabel.text = "Ready"
             startTime -= 1
+            
         }else{
+            
             viewController?.mainTimerLabel.text = getMainTimerString(timerInput: startTime)
             print(startTime)
             startTime -= 1
@@ -359,6 +385,8 @@ class ParentTimer {
         initiateMainTimer = true
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
         resetAllTimers()
+        intervalTimer.invalidateIntervalTimer()
+        running = false
         
     }
     
@@ -388,64 +416,4 @@ class ParentTimer {
     
     
     
-    func updateUI(){
-        
-        for subview in viewController!.view.subviews as [UIView] {
-            
-            if let viewElement = subview as? UIView {
-                
-                if viewElement.tag >= 0{
-                    
-                    if timers[viewElement.tag].timerSetting == alarmWarning{
-                    
-                        for subsubview in viewElement.subviews as [UIView] {
-
-                            
-                                if let label = subsubview as? UILabel {
-                                    
-                                  
-                                    label.font = label.font.withSize(30)
-                                    switch(label.tag){
-                                    case 1: label.text = convertSecsmmss(timeInput: timers[viewElement.tag].getDisplayTime(mainTimer: mainTimer))
-                                    case 2: label.text = String(timers[viewElement.tag].getBowlsPassed())
-                                    default: label.text = "error"
-                    
-                                    }
-                                }
-                    }
-                
-                    
-                }else{
-                    
-                    
-                    for subsubview in viewElement.subviews as [UIView] {
-                        
-                        if let label = subsubview as? UILabel {
-                           
-                            switch(label.tag){
-                            case 0: label.text = timers[viewElement.tag].getLabel()
-                        //    case 1: label.text = convertSecsmmss(timeInput: timers[viewElement.tag].getDisplayTime(mainTimer: mainTimer))
-                            case 2: label.text = String(timers[viewElement.tag].getBowlsPassed())
-                            default: label.text = "error"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-    }
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-}
+} 

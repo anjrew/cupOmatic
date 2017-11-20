@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22103D31FC21591009C5143 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22103D21FC21591009C5143 /* IntervalTimer.swift */; };
 		D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E321FBCF4C80054B918 /* greenButton.png */; };
 		D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E341FBCFA6C0054B918 /* redButton.png */; };
 		D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E361FBD70920054B918 /* reButtonWithShadow.png */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D22103D21FC21591009C5143 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 		D26C9E321FBCF4C80054B918 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
 		D26C9E341FBCFA6C0054B918 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
 		D26C9E361FBD70920054B918 /* reButtonWithShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reButtonWithShadow.png; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				D288BD4B1FA877B10050BB48 /* AppDelegate.swift */,
 				D288BD4D1FA877B20050BB48 /* ViewController.swift */,
 				D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */,
+				D22103D21FC21591009C5143 /* IntervalTimer.swift */,
 				D288BD901FA8C0270050BB48 /* TimerCell.swift */,
 				D29CABCB1FAF7A03008EB8EF /* Audio.swift */,
 				D29CABCD1FAF85AC008EB8EF /* AlarmSoundViewController.swift */,
@@ -375,6 +378,7 @@
 				D2D077221FAE436400812949 /* breakViewController.swift in Sources */,
 				D288BD4C1FA877B10050BB48 /* AppDelegate.swift in Sources */,
 				D2D077241FAE436B00812949 /* sampleViewController.swift in Sources */,
+				D22103D31FC21591009C5143 /* IntervalTimer.swift in Sources */,
 				D288BD8F1FA8BC040050BB48 /* ParentTimer.swift in Sources */,
 				D2D0771A1FAE2C2B00812949 /* SettingsViewController.swift in Sources */,
 				D2D077321FAF41C000812949 /* RoundThreeViewController.swift in Sources */,

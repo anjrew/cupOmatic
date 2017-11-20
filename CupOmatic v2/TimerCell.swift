@@ -33,7 +33,10 @@ class TimerCell{
     }
     
     func activate(){
+        
+        bowlsPassed += 1
         self.active = true
+        
     }
     
     func decreaseTimer(){
@@ -59,6 +62,7 @@ class TimerCell{
     func resetTimer(){
         timePassed = interval
         bowlsPassed = 0
+        self.active = false
     }
 
   
@@ -86,9 +90,28 @@ class TimerCell{
         return self.iD
     }
     
+   
+    
     func getTimeUntil(mainTimerTime:Int) -> Int{
         return mainTimerTime - timePassed
     }
+    
+    func getPercentage()-> CGFloat{
+//        print(timePassed)
+//        let percentage = CGFloat( Float(Float(interval - timePassed) / Float(interval)))
+//        print(percentage)
+//        return percentage
+//
+        return CGFloat(Float(bowlsPassed) / Float(bowlCount))
+        
+    }
+    
+    func getBowlsPassedString(numberOfBowls: Int) -> String {
+        
+        return String(getBowlsPassed())
+    
+    }
+    
     
     func getDisplayTime(mainTimer: Int) -> Int {
         if mainTimer <= timerSetting {

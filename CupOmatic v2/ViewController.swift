@@ -18,21 +18,32 @@ class ViewController: UIViewController{
     var timerSegue = false
     var audio: Audio?
     
+    
     @IBOutlet var mainTimerLabel: UILabel!
     
+//   toolbar items
+    
+    @IBOutlet var bottomToolBar: UINavigationBar!
+    @IBAction func settingsButton(_ sender: Any) {
+    }
+    
+    @IBAction func infoButton(_ sender: Any) {
+    }
     @IBAction func getReadyStopButton(_ sender: Any) {
+        
         
       
         
         if parentTimer?.getMainTimerStatus() == false {
             performSegue(withIdentifier: "numberOfBowls", sender: self)
         } else {
-            
+            bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 44, width: view.frame.size.width, height: 375)
             parentTimer?.startTimer.invalidate()
             parentTimer?.invalidateMainTimer()
             parentTimer?.reset()
             parentTimer?.setMainTimerStatus(status: false)
             changeButton()
+            
             
         }
     }
@@ -56,12 +67,12 @@ class ViewController: UIViewController{
 
     @objc func start(){
         
+        
+        
         if parentTimer?.initiateMainTimer == true {
-            
             parentTimer?.startStartTimer()
             parentTimer?.initiateMainTimer = false
             parentTimer?.setMainTimerStatus(status: true)
-            print("YOYOYO")
             
         }else{
             
@@ -78,13 +89,27 @@ class ViewController: UIViewController{
     @IBOutlet weak var pourProgress: MKMagneticProgress!
     @IBOutlet weak var breakProgress: MKMagneticProgress!
     @IBOutlet weak var sampleProgress: MKMagneticProgress!
-    
-    func updateProgressViews(tag:Int, progress: Float){
-        
-        intervalProgress.setProgress(progress: CGFloat(Int(parentTimer!.timers[0].interval)))
-        
-        
-        
+ 
+    func updateProgressViews(){
+       print(parentTimer?.intervalTimer.queryActive())
+        //intervalProgress
+        if parentTimer?.intervalTimer.active == false {
+         intervalProgress.percentLabelFormat = ""
+         intervalProgress.setProgress(progress: 0.0, animated: true)
+        }else{
+        intervalProgress.percentLabelFormat = String(parentTimer!.intervalTimer.time)
+        intervalProgress.setProgress(progress: parentTimer!.getMainIntervalPercentage(), animated: true)
+        }
+
+        pourProgress.percentLabelFormat = String(parentTimer!.timers[0].getBowlsPassed())
+        pourProgress.setProgress(progress: parentTimer!.timers[0].getPercentage(), animated: true)
+
+        breakProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
+        breakProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
+
+        sampleProgress.percentLabelFormat = String(parentTimer!.timers[2].getBowlsPassed())
+        sampleProgress.setProgress(progress: parentTimer!.timers[2].getPercentage(), animated: true)
+
     }
     
     
@@ -92,36 +117,38 @@ class ViewController: UIViewController{
     @IBOutlet weak var navigationBar: UINavigationItem!
     
     func setupGoStopButton(){
-        getReadystop.layer.cornerRadius = 8.0
-        getReadystop.layer.shadowOffset = CGSize(width: 5, height: 5)
-        getReadystop.layer.shadowRadius = 5;
+        getReadystop.layer.cornerRadius = 30.0
+        getReadystop.layer.shadowOffset = CGSize(width: 2, height: 2)
+        getReadystop.layer.shadowRadius = 2;
         getReadystop.layer.shadowOpacity = 0.5;
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-          print("chea")
-        
+       
         if parentTimer == nil{
+            
+           // self.navigationController?.setToolbarHidden(false, animated: false)
             parentTimer = ParentTimer(viewController : self)
 
-         //   NotificationCenter.default.addObserver(self, selector: #selector(start), name: NSNotification.Name(rawValue: "setButton"), object: nil)
         }
         
         if timerSegue == true {
+            
+            bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
+
             start()
         }
         
         setupGoStopButton()
-        collectionViewHeader = (parentTimer?.getTitlesArray())!
-        collectionViewBowlId = (parentTimer?.getBowlsArray())!
-        collectionViewTimer = (parentTimer?.getTimersArray())!
         mainTimerLabel.text = parentTimer?.getMainTimerString(timerInput: (parentTimer?.mainTimer)! )
         intervalProgress.font = intervalProgress.font.withSize(25.0)
         
-        
-      
+       
+      // self.navigationBar?.setHidesBackButton(true, animated: true)
+
+ 
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -134,6 +161,7 @@ class ViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         
         self.navigationController?.isNavigationBarHidden = true
+        
         changeButton()
 
     }

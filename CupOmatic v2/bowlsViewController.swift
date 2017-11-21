@@ -68,13 +68,13 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var DestViewController: ViewController = segue.destination as! ViewController
         DestViewController.timerSegue = true
-     //   DestViewController.hidesBottomBarWhenPushed = false
+     
     }
     
     @IBAction func setButton(_ sender: Any) {
         
         UserDefaults.standard.set(numberOfBowls, forKey: "numberOfBowlsSave")
-    //    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setButton"), object: nil)
+    
 
         
     }

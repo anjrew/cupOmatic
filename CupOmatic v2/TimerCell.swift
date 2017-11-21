@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TimerCell{
 
     private var label = String()
+    
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     
     var timerSetting: Int
     var bowlCount: Int
@@ -19,6 +22,8 @@ class TimerCell{
     var timePassed : Int
     var bowlsPassed : Int
     var iD = String()
+    var player: AVAudioPlayer?
+   // var audioPath : NSURL
         
     init(label: String, interval: Int, timerSetting: Int, bowlCount:Int, iD: String){
        
@@ -30,6 +35,7 @@ class TimerCell{
         self.timePassed = interval
         self.bowlsPassed = 0
         self.iD = iD
+        //self.audioPath = audioPath
     }
     
     func activate(){
@@ -129,7 +135,28 @@ class TimerCell{
         
         }
         
-      }
+    }
+    
+    func playSound(){
+        
+        print("Try Audio")
+        guard let url = Bundle.main.url(forResource: label, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
     
 }
 

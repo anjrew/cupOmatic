@@ -21,7 +21,7 @@ class ParentTimer {
     var mainTimer = Int()
     var viewController : ViewController?
     var alarmSound = [String: Int]()
-    var alarmWarning = 3
+    var alarmWarning = 1
     var audio = Audio()
     var intervalTimer = IntervalTimer(timeSetting: UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int, bowlSetting: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int)
     
@@ -182,12 +182,9 @@ class ParentTimer {
             
             if (timers[i].getTimerSetting()) > mainTimer {
                 
-             //   intervalTimer.timeSetting = timers[i].getTimerSetting()
-             //   intervalTimer.bowlSetting = timers[i].getBowlCount()
-                
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
                 if (timers[i].getTimerSetting() - mainTimer == alarmWarning){
-                    AudioServicesPlaySystemSound(SystemSoundID(alarmSound["Sound"]!))
+                    timer.playSound()
                 }
                 
             } else if (timers[i].getTimerSetting() == mainTimer){
@@ -200,14 +197,12 @@ class ParentTimer {
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
                 
             } else {
-                
-              //  if (timers[i].bowlsPassed == timers[i].bowlCount){
-                    
-             //       intervalTimer.timer.invalidate()
-                    
-             //   }
-                if(timers[i].getTimePassed() == alarmWarning){AudioServicesPlaySystemSound(SystemSoundID(alarmSound["Sound"]!)) }
+           
+                if(timers[i].getTimePassed() == alarmWarning){
+                    AudioServicesPlaySystemSound(SystemSoundID(1256))
+                }
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
+                
                 
             }
             
@@ -357,13 +352,15 @@ class ParentTimer {
             viewController?.mainTimerLabel.text = getMainTimerString(timerInput: startTime)
             print(startTime)
             startTime -= 1
+           
+            if (startTime >= 0){AudioServicesPlaySystemSound(SystemSoundID(1072))}
             
         
         
             if (startTime < 0){
                 
                 viewController?.mainTimerLabel.text = "GO!"
-                AudioServicesPlaySystemSound(SystemSoundID(alarmSound["Sound"]!))
+                timers[0].playSound()
                 
             }
         

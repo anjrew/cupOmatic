@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController{
     
     var collectionViewHeader = [String]()
     var collectionViewBowlId = [String]()
     var collectionViewTimer = [String]()
+   
  
     var parentTimer : ParentTimer?
     var timerSegue = false
@@ -129,7 +131,7 @@ class ViewController: UIViewController{
        
         if parentTimer == nil{
             
-           // self.navigationController?.setToolbarHidden(false, animated: false)
+        
             parentTimer = ParentTimer(viewController : self)
 
         }
@@ -143,13 +145,8 @@ class ViewController: UIViewController{
         
         setupGoStopButton()
         mainTimerLabel.text = parentTimer?.getMainTimerString(timerInput: (parentTimer?.mainTimer)! )
-        intervalProgress.font = intervalProgress.font.withSize(25.0)
+        intervalProgress.font = intervalProgress.font.withSize(50.0)
         
-       
-      // self.navigationBar?.setHidesBackButton(true, animated: true)
-
- 
-
         // Do any additional setup after loading the view, typically from a nib.
     }
 

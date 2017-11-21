@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D22103D31FC21591009C5143 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22103D21FC21591009C5143 /* IntervalTimer.swift */; };
+		D22103D81FC37E8D009C5143 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22103D61FC37E8D009C5143 /* SwitchTableViewCell.swift */; };
+		D22103D91FC37E8D009C5143 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D22103D71FC37E8D009C5143 /* SwitchTableViewCell.xib */; };
+		D22103ED1FC4A1B8009C5143 /* Sample.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103E71FC4A1B7009C5143 /* Sample.wav */; };
+		D22103EE1FC4A1B8009C5143 /* Round 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103E81FC4A1B7009C5143 /* Round 1.wav */; };
+		D22103EF1FC4A1B8009C5143 /* Pour.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103E91FC4A1B7009C5143 /* Pour.wav */; };
+		D22103F01FC4A1B8009C5143 /* Break.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103EA1FC4A1B7009C5143 /* Break.wav */; };
+		D22103F11FC4A1B8009C5143 /* Round 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103EB1FC4A1B7009C5143 /* Round 3.wav */; };
+		D22103F21FC4A1B8009C5143 /* Round 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103EC1FC4A1B8009C5143 /* Round 2.wav */; };
+		D22103F41FC4AFD5009C5143 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22103F31FC4AFC8009C5143 /* AVFoundation.framework */; };
 		D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E321FBCF4C80054B918 /* greenButton.png */; };
 		D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E341FBCFA6C0054B918 /* redButton.png */; };
 		D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E361FBD70920054B918 /* reButtonWithShadow.png */; };
@@ -59,6 +68,16 @@
 
 /* Begin PBXFileReference section */
 		D22103D21FC21591009C5143 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
+		D22103D61FC37E8D009C5143 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		D22103D71FC37E8D009C5143 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		D22103E71FC4A1B7009C5143 /* Sample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sample.wav; sourceTree = "<group>"; };
+		D22103E81FC4A1B7009C5143 /* Round 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Round 1.wav"; sourceTree = "<group>"; };
+		D22103E91FC4A1B7009C5143 /* Pour.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pour.wav; sourceTree = "<group>"; };
+		D22103EA1FC4A1B7009C5143 /* Break.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Break.wav; sourceTree = "<group>"; };
+		D22103EB1FC4A1B7009C5143 /* Round 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Round 3.wav"; sourceTree = "<group>"; };
+		D22103EC1FC4A1B8009C5143 /* Round 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Round 2.wav"; sourceTree = "<group>"; };
+		D22103F31FC4AFC8009C5143 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D22103F51FC4AFDD009C5143 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D26C9E321FBCF4C80054B918 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
 		D26C9E341FBCFA6C0054B918 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
 		D26C9E361FBD70920054B918 /* reButtonWithShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reButtonWithShadow.png; sourceTree = "<group>"; };
@@ -104,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22103F41FC4AFD5009C5143 /* AVFoundation.framework in Frameworks */,
 				D26C9E3A1FBD8BBA0054B918 /* ios-circular-progress-bar-master in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,9 +145,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D22103DA1FC4A0FF009C5143 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				D22103EA1FC4A1B7009C5143 /* Break.wav */,
+				D22103E91FC4A1B7009C5143 /* Pour.wav */,
+				D22103E81FC4A1B7009C5143 /* Round 1.wav */,
+				D22103EC1FC4A1B8009C5143 /* Round 2.wav */,
+				D22103EB1FC4A1B7009C5143 /* Round 3.wav */,
+				D22103E71FC4A1B7009C5143 /* Sample.wav */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		D26C9E381FBD8BB80054B918 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D22103F51FC4AFDD009C5143 /* AudioToolbox.framework */,
+				D22103F31FC4AFC8009C5143 /* AVFoundation.framework */,
 				D26C9E3C1FC060EA0054B918 /* MKMagneticProgress.swift */,
 				D26C9E3B1FBD8C7E0054B918 /* QuartzCore.framework */,
 				D26C9E391FBD8BBA0054B918 /* ios-circular-progress-bar-master */,
@@ -138,6 +173,8 @@
 		D288BD3F1FA877B10050BB48 = {
 			isa = PBXGroup;
 			children = (
+				D22103D61FC37E8D009C5143 /* SwitchTableViewCell.swift */,
+				D22103D71FC37E8D009C5143 /* SwitchTableViewCell.xib */,
 				D288BD4A1FA877B10050BB48 /* CupOmatic v2 */,
 				D288BD5F1FA877B20050BB48 /* CupOmatic v2Tests */,
 				D288BD6A1FA877B20050BB48 /* CupOmatic v2UITests */,
@@ -160,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				D2A769A51FAB031D00B2756D /* CupOmatic v2.entitlements */,
+				D22103DA1FC4A0FF009C5143 /* Audio */,
 				D288BD891FA8ADD60050BB48 /* Icons */,
 				D288BD4B1FA877B10050BB48 /* AppDelegate.swift */,
 				D288BD4D1FA877B20050BB48 /* ViewController.swift */,
@@ -336,14 +374,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22103F21FC4A1B8009C5143 /* Round 2.wav in Resources */,
 				D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */,
 				D288BD561FA877B20050BB48 /* LaunchScreen.storyboard in Resources */,
+				D22103F11FC4A1B8009C5143 /* Round 3.wav in Resources */,
 				D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */,
 				D2D077181FAE24AE00812949 /* backButtonIcon.png in Resources */,
+				D22103ED1FC4A1B8009C5143 /* Sample.wav in Resources */,
+				D22103EE1FC4A1B8009C5143 /* Round 1.wav in Resources */,
+				D22103EF1FC4A1B8009C5143 /* Pour.wav in Resources */,
 				D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */,
+				D22103D91FC37E8D009C5143 /* SwitchTableViewCell.xib in Resources */,
 				D288BD881FA8ADCA0050BB48 /* Stop.png in Resources */,
 				D288BD531FA877B20050BB48 /* Assets.xcassets in Resources */,
 				D288BD511FA877B20050BB48 /* Main.storyboard in Resources */,
+				D22103F01FC4A1B8009C5143 /* Break.wav in Resources */,
 				D288BD8B1FA8ADFA0050BB48 /* Start.png in Resources */,
 				D288BD8D1FA8AE070050BB48 /* Reset.png in Resources */,
 			);
@@ -375,6 +420,7 @@
 				D2D0771E1FAE435100812949 /* bowlsViewController.swift in Sources */,
 				D288BD4E1FA877B20050BB48 /* ViewController.swift in Sources */,
 				D2D077201FAE435B00812949 /* intervalViewController.swift in Sources */,
+				D22103D81FC37E8D009C5143 /* SwitchTableViewCell.swift in Sources */,
 				D2D077221FAE436400812949 /* breakViewController.swift in Sources */,
 				D288BD4C1FA877B10050BB48 /* AppDelegate.swift in Sources */,
 				D2D077241FAE436B00812949 /* sampleViewController.swift in Sources */,

@@ -536,8 +536,9 @@
                                     <segue destination="Wo6-g6-XQV" kind="show" id="QTd-EF-sKW"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-1L-DiP">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-1L-DiP">
                                 <rect key="frame" x="16" y="114" width="343" height="314"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zW1-rG-HDP" id="QXp-zr-cs9"/>
                                 </connections>
@@ -549,7 +550,6 @@
                             <constraint firstItem="itg-5l-0Yn" firstAttribute="leading" secondItem="iQU-Zd-oEh" secondAttribute="leading" id="41t-yK-fSY"/>
                             <constraint firstItem="POX-x9-ZVZ" firstAttribute="centerX" secondItem="NqH-Oy-BJT" secondAttribute="centerX" id="KWg-qg-UQH"/>
                             <constraint firstItem="itg-5l-0Yn" firstAttribute="trailing" secondItem="iQU-Zd-oEh" secondAttribute="trailing" id="SY6-nA-TUp"/>
-                            <constraint firstItem="RGs-1L-DiP" firstAttribute="centerX" secondItem="NqH-Oy-BJT" secondAttribute="centerX" id="iaE-Be-ORm"/>
                             <constraint firstItem="itg-5l-0Yn" firstAttribute="top" secondItem="iQU-Zd-oEh" secondAttribute="top" constant="50" id="m5X-1s-91o"/>
                             <constraint firstItem="iQU-Zd-oEh" firstAttribute="bottom" secondItem="POX-x9-ZVZ" secondAttribute="bottom" constant="100" id="wVe-2H-Rj3"/>
                         </constraints>
@@ -635,7 +635,7 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V67-9e-LnD" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="16" y="462" width="100" height="130"/>
+                                <rect key="frame" x="16" y="493" width="100" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -656,7 +656,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJf-RA-F9U" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="259" y="462" width="100" height="130"/>
+                                <rect key="frame" x="259" y="493" width="100" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.0f%"/>
@@ -669,23 +669,6 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="progressShapeColor">
                                         <color key="value" red="0.80205556835833336" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-uz-KxY" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="137" y="462" width="100" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.f%"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Break"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundShapeColor">
-                                        <color key="value" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="progressShapeColor">
-                                        <color key="value" red="0.23130935968137253" green="0.69381191278594778" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -710,7 +693,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-Uv-ztQ" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="112" y="274" width="150" height="169"/>
+                                <rect key="frame" x="81" y="272" width="213" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Interval"/>
@@ -741,6 +724,23 @@
                                     <action selector="getReadyStopButton:" destination="7rI-60-MoE" eventType="touchUpInside" id="lXf-6h-zlR"/>
                                 </connections>
                             </button>
+                            <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-uz-KxY" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                                <rect key="frame" x="137" y="493" width="100" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.f%"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Break"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundShapeColor">
+                                        <color key="value" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressShapeColor">
+                                        <color key="value" red="0.23130935968137253" green="0.69381191278594778" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="5co-4T-yTk"/>
@@ -787,7 +787,6 @@
         <image name="Start.png" width="115" height="116"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0wm-su-Cc1"/>
         <segue reference="eut-8D-baN"/>
         <segue reference="gL3-Oa-54D"/>
     </inferredMetricsTieBreakers>

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "532987212.786505"
+            timestampString = "533292310.697838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "532987212.786888"
+            timestampString = "533292310.699684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "532987212.787186"
+            timestampString = "533292310.701011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "532987212.78735"
+            timestampString = "533292310.702178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -70,15 +70,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "532987212.787511"
+            timestampString = "533292310.704047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "startTimer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -86,31 +86,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "532987212.787642"
+            timestampString = "533292310.705457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "decreaseTimer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "532987212.787772"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "init(timeSetting:bowlSetting:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ParentTimer.swift"
-            timestampString = "532987212.787958"
+            timestampString = "533292310.706291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
@@ -138,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ParentTimer.swift"
-            timestampString = "532987212.790338"
+            timestampString = "533292310.706486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "increaseTimer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ParentTimer.swift"
-            timestampString = "532987212.7918"
+            timestampString = "533292310.706663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "getMainIntervalPercentage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -166,15 +150,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "532987212.79285"
+            timestampString = "533292310.70683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "IntervalTimer"
             landmarkType = "3">
             <Actions>
@@ -187,34 +171,97 @@
             </Actions>
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "CupOmatic_v2.IntervalTimer.bowlSetting.getter : Swift.Int"
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/IntervalTimer.swift"
-                  timestampString = "532824203.197967"
+                  timestampString = "533066413.415474"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "68">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "CupOmatic_v2.IntervalTimer.bowlSetting.setter : Swift.Int"
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/IntervalTimer.swift"
-                  timestampString = "532824203.201467"
+                  timestampString = "533066413.417232"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupOmatic v2/ParentTimer.swift"
+            timestampString = "533292310.707606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "ParentTimer"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupOmatic_v2.ParentTimer.intervalTimer.getter : CupOmatic_v2.IntervalTimer"
+                  moduleName = "CupOmatic v2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/ParentTimer.swift"
+                  timestampString = "533066413.421327"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupOmatic_v2.ParentTimer.intervalTimer.setter : CupOmatic_v2.IntervalTimer"
+                  moduleName = "CupOmatic v2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/ParentTimer.swift"
+                  timestampString = "533066413.422761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupOmatic_v2.ParentTimer.init(viewController: CupOmatic_v2.ViewController) -&gt; CupOmatic_v2.ParentTimer"
+                  moduleName = "CupOmatic v2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/ParentTimer.swift"
+                  timestampString = "533066413.424193"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "688">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -225,59 +272,107 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CupOmatic v2/ParentTimer.swift"
-            timestampString = "532987212.792971"
+            filePath = "CupOmatic v2/IntervalTimer.swift"
+            timestampString = "533292310.707774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "ParentTimer"
-            landmarkType = "3">
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "init(timeSetting:bowlSetting:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CupOmatic_v2.ParentTimer.intervalTimer.getter : CupOmatic_v2.IntervalTimer"
+                  symbolName = "CupOmatic_v2.IntervalTimer.__allocating_init(timeSetting: Swift.Int, bowlSetting: Swift.Int) -&gt; CupOmatic_v2.IntervalTimer"
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/ParentTimer.swift"
-                  timestampString = "532824245.36052"
+                  urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/IntervalTimer.swift"
+                  timestampString = "533066640.398299"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "76">
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CupOmatic_v2.ParentTimer.intervalTimer.setter : CupOmatic_v2.IntervalTimer"
+                  symbolName = "CupOmatic_v2.IntervalTimer.init(timeSetting: Swift.Int, bowlSetting: Swift.Int) -&gt; CupOmatic_v2.IntervalTimer"
+                  moduleName = "CupOmatic v2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/IntervalTimer.swift"
+                  timestampString = "533066640.401"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupOmatic v2/ParentTimer.swift"
+            timestampString = "533292310.708158"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "ParentTimer"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupOmatic_v2.ParentTimer.audio.getter : CupOmatic_v2.Audio"
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/ParentTimer.swift"
-                  timestampString = "532824245.365154"
+                  timestampString = "533066436.840357"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupOmatic_v2.ParentTimer.audio.setter : CupOmatic_v2.Audio"
+                  moduleName = "CupOmatic v2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/ParentTimer.swift"
+                  timestampString = "533066436.842782"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
                   offsetFromSymbolStart = "112">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "CupOmatic_v2.ParentTimer.init(viewController: CupOmatic_v2.ViewController) -&gt; CupOmatic_v2.ParentTimer"
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/ParentTimer.swift"
-                  timestampString = "532824245.368029"
+                  timestampString = "533066436.845993"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "688">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "612">
                </Location>
             </Locations>
          </BreakpointContent>

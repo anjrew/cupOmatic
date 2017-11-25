@@ -93,14 +93,15 @@ class ViewController: UIViewController{
     @IBOutlet weak var sampleProgress: MKMagneticProgress!
  
     func updateProgressViews(){
-       print(parentTimer?.intervalTimer.queryActive())
+
         //intervalProgress
+        
         if parentTimer?.intervalTimer.active == false {
          intervalProgress.percentLabelFormat = ""
-         intervalProgress.setProgress(progress: 0.0, animated: true)
+         intervalProgress.setProgress(progress: 0.0, animated: false)
         }else{
         intervalProgress.percentLabelFormat = String(parentTimer!.intervalTimer.time)
-        intervalProgress.setProgress(progress: parentTimer!.getMainIntervalPercentage(), animated: true)
+            intervalProgress.setProgress(progress: (parentTimer?.intervalTimer.getIntervalPercentage())!, animated: false)
         }
 
         pourProgress.percentLabelFormat = String(parentTimer!.timers[0].getBowlsPassed())
@@ -113,6 +114,27 @@ class ViewController: UIViewController{
         sampleProgress.setProgress(progress: parentTimer!.timers[2].getPercentage(), animated: true)
 
     }
+    
+    
+    func initialProgressView(){
+        
+        //intervalProgress
+        
+     
+        intervalProgress.percentLabelFormat = ""
+        intervalProgress.setProgress(progress: 0.0, animated: false)
+
+        pourProgress.percentLabelFormat = String(parentTimer!.timers[0].getBowlsPassed() - 1)
+        pourProgress.setProgress(progress: 0, animated: true)
+        
+        breakProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
+        breakProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
+        
+        sampleProgress.percentLabelFormat = String(parentTimer!.timers[2].getBowlsPassed())
+        sampleProgress.setProgress(progress: parentTimer!.timers[2].getPercentage(), animated: true)
+        
+    }
+    
     
     
     
@@ -146,6 +168,8 @@ class ViewController: UIViewController{
         setupGoStopButton()
         mainTimerLabel.text = parentTimer?.getMainTimerString(timerInput: (parentTimer?.mainTimer)! )
         intervalProgress.font = intervalProgress.font.withSize(50.0)
+        
+        initialProgressView()
         
         // Do any additional setup after loading the view, typically from a nib.
     }

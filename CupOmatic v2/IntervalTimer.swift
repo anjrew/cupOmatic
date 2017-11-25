@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class IntervalTimer {
 
@@ -17,33 +18,40 @@ class IntervalTimer {
     var timer = Timer()
     var bowlAmount: Int
     var time: Int
+    var second: Float
     var active: Bool
     
     @objc func decreaseTimer(){
-       
+        
         if bowlAmount > 0 {
             
-            time -= 1
+            second -= 1
             
-            if time == 0{
+            
+            if second.truncatingRemainder(dividingBy: 1) == 0{
                 
-                time = timeSetting
-                bowlAmount -= 1
-                
+                    time -= 1
+            
+                    if time == 0{
+                        
+                        time = timeSetting
+                        bowlAmount -= 1
+                        second = Float(timeSetting * 1)
+                    }
             }
-            
-                
-        }else if (bowlAmount == 0) {
-                
-       invalidateIntervalTimer()
-            time = 0
-                
-            }else{
-            
-                bowlAmount -= 1
-        }
 
+        }else if (bowlAmount == 0) {
+    
+            invalidateIntervalTimer()
+            time = 0
+            reset()
+                    
+        }else{
+
+            bowlAmount -= 1
+        }
     }
+    
     
     func startTimer(){
 
@@ -58,6 +66,7 @@ class IntervalTimer {
             self.time = timeSetting
             self.bowlAmount = bowlSetting
             self.active = true
+            self.second = Float(timeSetting * 1)
         }
     
     func invalidateIntervalTimer(){
@@ -81,5 +90,21 @@ class IntervalTimer {
     
     }
     
+    func getseconds() -> Float{
+        
+        return second
+        
+    }
+    
+    func getIntervalPercentage() -> CGFloat {
+        
+        return CGFloat((Float(timeSetting * 1) - getseconds() ) / Float(timeSetting * 1))
+        
+    }
+    
+    func setBowlAmount(){
+        
+        
+    }
 }
 

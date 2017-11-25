@@ -150,7 +150,10 @@ class ParentTimer {
             
         }
     }
-
+    
+    
+    
+// Main Timer
     
     @objc func increaseTimer(){
         
@@ -158,9 +161,14 @@ class ParentTimer {
         
         viewController?.updateProgressViews()
         
+        
+        print(getMainIntervalPercentage())
+        
         print(String(mainTimer) + " Main Timer")
   
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
+        
+        
         
         // arrangeing viewcontroller toolbar depending on parent timer status
         
@@ -183,16 +191,18 @@ class ParentTimer {
             if (timers[i].getTimerSetting()) > mainTimer {
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
+                
                 if (timers[i].getTimerSetting() - mainTimer == alarmWarning){
                     timer.playSound()
                 }
                 
             } else if (timers[i].getTimerSetting() == mainTimer){
                 
-                timers[i].activate()
                 intervalTimer.timer.invalidate()
                 intervalTimer.reset()
                 intervalTimer.startTimer()
+                timers[i].activate()
+             
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
                 
@@ -201,6 +211,7 @@ class ParentTimer {
                 if(timers[i].getTimePassed() == alarmWarning){
                     AudioServicesPlaySystemSound(SystemSoundID(1256))
                 }
+                
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
                 
                 
@@ -211,10 +222,10 @@ class ParentTimer {
             i += 1
             
         }
-        
-        viewController?.collectionViewBowlId = (getBowlsArray())
-        viewController?.collectionViewTimer = (getTimersArray())
-        
+//        
+//        viewController?.collectionViewBowlId = (getBowlsArray())
+//        viewController?.collectionViewTimer = (getTimersArray())
+//        
         
         
         
@@ -224,7 +235,7 @@ class ParentTimer {
     func getMainIntervalPercentage() -> CGFloat{
         print("Interval time = \(intervalTimer.time) - Bowl Count = \(intervalTimer.bowlAmount)")
         
-        return CGFloat(Float(intervalTimer.timeSetting - intervalTimer.time + 1) / Float(intervalTimer.timeSetting))
+        return CGFloat((Float(intervalTimer.timeSetting * 1) - intervalTimer.getseconds() ) / Float(intervalTimer.timeSetting * 1))
     }
     
     

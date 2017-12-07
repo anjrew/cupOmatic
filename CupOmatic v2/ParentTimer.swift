@@ -11,7 +11,7 @@ import AVFoundation
 import AudioToolbox
 
 class ParentTimer {
-    
+    var adancedMode = false
     var interval = Int()
     var bowl = Int()
     var timerAlarms = Int()
@@ -37,13 +37,15 @@ class ParentTimer {
     
     
     init(viewController : ViewController){
-       
+        self.adancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
         self.viewController = viewController
         isKeyPresentInUserDefaults()
         self.interval = UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int
         self.bowl = UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int
         self.startTimerSetting = 4
         reset()
+        
+        intervalTimer.setParentTimer(parentTimer: self)
        
         
         timersIntervals = [
@@ -116,6 +118,8 @@ class ParentTimer {
         
         if (UserDefaults.standard.object(forKey: "isInitiated") == nil){
             
+            UserDefaults.standard.set(false, forKey: "advancedMode")
+            
             UserDefaults.standard.set(12, forKey: "numberOfBowlsSave")
             
             UserDefaults.standard.set(5, forKey: "intervalSettingSave")
@@ -147,7 +151,6 @@ class ParentTimer {
             UserDefaults.standard.set(4, forKey: "startTimerSetting")
             
             UserDefaults.standard.set(true, forKey: "isInitiated")
-            
         }
     }
     
@@ -192,8 +195,12 @@ class ParentTimer {
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
                 
-                if (timers[i].getTimerSetting() - mainTimer == alarmWarning){
+                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
                     timer.playSound()
+                }
+                
+                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
+                    audio.playGetReady()
                 }
                 
             } else if (timers[i].getTimerSetting() == mainTimer){
@@ -234,8 +241,9 @@ class ParentTimer {
     
     func getMainIntervalPercentage() -> CGFloat{
         print("Interval time = \(intervalTimer.time) - Bowl Count = \(intervalTimer.bowlAmount)")
-        
-        return CGFloat((Float(intervalTimer.timeSetting * 1) - intervalTimer.getseconds() ) / Float(intervalTimer.timeSetting * 1))
+        return intervalTimer.getIntervalPercentage()
+       // return CGFloat((Float(intervalTimer.timeSetting * 1) - intervalTimer.getseconds() ) / Float(intervalTimer.timeSetting * 1))
+        //TODO CHECK
     }
     
     

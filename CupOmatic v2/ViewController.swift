@@ -10,11 +10,10 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController{
-    
-    var collectionViewHeader = [String]()
-    var collectionViewBowlId = [String]()
-    var collectionViewTimer = [String]()
    
+    
+    var advancedMode = false
+    
  
     var parentTimer : ParentTimer?
     var timerSegue = false
@@ -97,13 +96,15 @@ class ViewController: UIViewController{
         //intervalProgress
         
         if parentTimer?.intervalTimer.active == false {
-         intervalProgress.percentLabelFormat = ""
-         intervalProgress.setProgress(progress: 0.0, animated: false)
+            intervalProgress.percentLabelFormat = ""
+            
         }else{
-        intervalProgress.percentLabelFormat = String(parentTimer!.intervalTimer.time)
-            intervalProgress.setProgress(progress: (parentTimer?.intervalTimer.getIntervalPercentage())!, animated: false)
+            intervalProgress.percentLabelFormat = parentTimer!.intervalTimer.getTimeLabel()
+           
         }
-
+        
+        updateIntervalViews()
+        
         pourProgress.percentLabelFormat = String(parentTimer!.timers[0].getBowlsPassed())
         pourProgress.setProgress(progress: parentTimer!.timers[0].getPercentage(), animated: true)
 
@@ -113,6 +114,20 @@ class ViewController: UIViewController{
         sampleProgress.percentLabelFormat = String(parentTimer!.timers[2].getBowlsPassed())
         sampleProgress.setProgress(progress: parentTimer!.timers[2].getPercentage(), animated: true)
 
+    }
+    
+    func updateIntervalViews(){
+        
+        
+        if parentTimer?.intervalTimer.active == false {
+        //    intervalProgress.percentLabelFormat = ""
+            intervalProgress.setProgress(progress: 0.0, animated: false)
+        }else{
+       //     intervalProgress.percentLabelFormat = parentTimer!.intervalTimer.getTimeLabel()
+            intervalProgress.setProgress(progress: (parentTimer?.intervalTimer.getIntervalPercentage())!, animated: false)
+        }
+        
+      
     }
     
     
@@ -150,7 +165,9 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        advancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
+        print("Advanced made = \(advancedMode)")
+        
         if parentTimer == nil{
             
         

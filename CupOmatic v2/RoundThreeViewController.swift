@@ -12,15 +12,10 @@ class RoundThreeViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     var dataBase = [[String]]()
     var minutes = ["0"]
-    var minutesLabel = ["min"]
-    var seconds = ["0"]
-    var secondsLabel = ["sec"]
     var mins = 0
-    var secs = 0
     var roundThreeTimeSeconds = 0
     var selection: String = ""
     var minutesResult = 0
-    var secondsResult = 0
     var switchStatus = true
     
     @IBOutlet var roundThreePickerView: UIPickerView!
@@ -51,16 +46,14 @@ class RoundThreeViewController: UIViewController, UIPickerViewDataSource, UIPick
             
             i += 1
             minutes.append(String(i))
-            seconds.append(String(i))
+        
         }
     }
     
     func updatePickerView(){
         
         dataBase.append(minutes)
-        dataBase.append(minutesLabel)
-        dataBase.append(seconds)
-        dataBase.append(secondsLabel)
+
     }
     
     
@@ -86,25 +79,19 @@ class RoundThreeViewController: UIViewController, UIPickerViewDataSource, UIPick
             minutesResult = Int(dataBase[component][row])!
             print(minutesResult)
             
-        case 2:
-            secondsResult = Int(dataBase[component][row])!
-            print(secondsResult)
-            
         default:break
             
         }
-        roundThreeTimeSeconds = (minutesResult * 60) + secondsResult
+        roundThreeTimeSeconds = minutesResult * 60
         UserDefaults.standard.set(minutesResult, forKey: "roundThreeMinutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "roundThreeSecondsResultSave")
         UserDefaults.standard.set(roundThreeTimeSeconds, forKey: "roundThreeSettingSave")
     }
     
     @IBAction func setButton(_ sender: Any) {
         
-        roundThreeTimeSeconds = (minutesResult * 60) + secondsResult
+        roundThreeTimeSeconds = minutesResult * 60
         UserDefaults.standard.set(roundThreeTimeSeconds, forKey: "roundThreeSettingSave")
         UserDefaults.standard.set(minutesResult, forKey: "roundThreeMinutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "roundThreeSecondsResultSave")
         print(roundThreeTimeSeconds)
         
     }
@@ -117,11 +104,9 @@ class RoundThreeViewController: UIViewController, UIPickerViewDataSource, UIPick
         updatePickerView()
         
         minutesResult = UserDefaults.standard.object(forKey: "roundThreeMinutesResultSave") as! Int
-        secondsResult = UserDefaults.standard.object( forKey: "roundThreeSecondsResultSave") as! Int
         roundThreeTimeSeconds = UserDefaults.standard.object(forKey: "roundThreeSettingSave") as! Int
-        
         roundThreePickerView.selectRow(minutesResult, inComponent: 0, animated: true)
-        roundThreePickerView.selectRow(secondsResult, inComponent: 2, animated: true)
+        
         
         // Do any additional setup after loading the view.
     }

@@ -27,17 +27,13 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     var audioCodes = Audio().getListOfCodes()
     
     var timeDataBase = [[String]]()
-    var minutes = ["0"]
-    var minutesLabel = ["min"]
-    var seconds = ["0"]
-    var secondsLabel = ["sec"]
+    var minutes = ["1"]
     var mins = 0
-    var secs = 0
     var breakTimeSeconds = 0
     
     func breakTime(mins: Int, secs: Int) -> Int {
         
-        let time = (mins * 60) + secs
+        let time = (mins * 60)
         
         return time
         
@@ -51,12 +47,11 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     func count() {
         
-        var i = 0
+        var i = 1
         while (i < 59) {
             
             i += 1
             minutes.append(String(i))
-            seconds.append(String(i))
             
         }
     }
@@ -64,9 +59,8 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     func updatePickerView(){
         
         timeDataBase.append(minutes)
-        timeDataBase.append(minutesLabel)
-        timeDataBase.append(seconds)
-        timeDataBase.append(secondsLabel)
+
+  
     }
     
     
@@ -101,7 +95,6 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         }
         breakTimeSeconds = (minutesResult * 60) + secondsResult
         UserDefaults.standard.set(minutesResult, forKey: "breakMinutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "breakSecondsResultSave")
         UserDefaults.standard.set(breakTimeSeconds, forKey: "breakSettingSave")
     }
     
@@ -110,7 +103,6 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         breakTimeSeconds = (minutesResult * 60) + secondsResult
         UserDefaults.standard.set(breakTimeSeconds, forKey: "breakSettingSave")
         UserDefaults.standard.set(minutesResult, forKey: "breakMinutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "breakSecondsResultSave")
         print(breakTimeSeconds)
         
         
@@ -122,7 +114,6 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
            self.navigationItem.title = "Break settings"
         
         minutesResult = UserDefaults.standard.object(forKey: "breakMinutesResultSave") as! Int
-        secondsResult = UserDefaults.standard.object( forKey: "breakSecondsResultSave") as! Int
         breakTimeSeconds = UserDefaults.standard.object(forKey: "breakSettingSave") as! Int
         
         count()
@@ -132,7 +123,6 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
        
         
         breakPickerView.selectRow(minutesResult, inComponent: 0, animated: true)
-        breakPickerView.selectRow(secondsResult, inComponent: 2, animated: true)
        
         
         // Do any additional setup after loading the view.

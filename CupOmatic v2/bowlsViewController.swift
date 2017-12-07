@@ -11,13 +11,23 @@ import UIKit
 class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
     var numberOfBowls:Int = 0
-    var bowls = ["0"]
+    var bowls = ["1"]
     var selection: String = ""
+    
+    @IBOutlet var startButton: UIButton!
+    
+    func setupStartButton(){
+        startButton.layer.cornerRadius = 65.0
+        startButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        startButton.layer.shadowRadius = 2;
+        startButton.layer.shadowOpacity = 0.5;
+        
+    }
     
     
     func count() {
         
-        var i = 0
+        var i = 1
         while (i < 100) {
             
             i += 1
@@ -61,6 +71,8 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         bowlsPickerview.delegate = self
         bowlsPickerview.selectRow(numberOfBowls, inComponent: 0, animated: true)
         print(numberOfBowls)
+        
+        setupStartButton()
 
         // Do any additional setup after loading the view.
     }

@@ -29,17 +29,13 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBOutlet var samplePickerView: UIPickerView!
     var dataBase = [[String]]()
-    var minutes = ["0"]
-    var minutesLabel = ["min"]
-    var seconds = ["0"]
-    var secondsLabel = ["sec"]
-    var mins = 0
-    var secs = 0
+    var minutes = ["1"]
+    var mins = 1
     var sampleTimeSeconds = 0
     
     func sampleTime(mins: Int, secs: Int) -> Int {
         
-        let time = (mins * 60) + secs
+        let time = mins * 60
         
         return time
         
@@ -53,22 +49,20 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func count() {
         
-        var i = 0
+        var i = 1
         while (i < 59) {
             
             i += 1
             minutes.append(String(i))
-            seconds.append(String(i))
-            
+
         }
     }
     
     func updatePickerView(){
         
         dataBase.append(minutes)
-        dataBase.append(minutesLabel)
-        dataBase.append(seconds)
-        dataBase.append(secondsLabel)
+     
+    
     }
     
     
@@ -93,17 +87,13 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         case 0:
             minutesResult = Int(dataBase[component][row])!
             print(minutesResult)
-            
-        case 2:
-            secondsResult = Int(dataBase[component][row])!
-            print(secondsResult)
-            
+        
         default:break
             
         }
-        sampleTimeSeconds = (minutesResult * 60) + secondsResult
+        sampleTimeSeconds = minutesResult * 60
         UserDefaults.standard.set(minutesResult, forKey: "sampleMinutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "sampleSecondsResultSave")
+        
         UserDefaults.standard.set(sampleTimeSeconds, forKey: "sampleSettingSave")
 
         
@@ -111,10 +101,10 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBAction func setButton(_ sender: Any) {
         
-        sampleTimeSeconds = (minutesResult * 60) + secondsResult
+        sampleTimeSeconds = minutesResult * 60
         UserDefaults.standard.set(sampleTimeSeconds, forKey: "sampleSettingSave")
         UserDefaults.standard.set(minutesResult, forKey: "sampleMinutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "sampleSecondsResultSave")
+    
         print(sampleTimeSeconds)
     }
     
@@ -128,7 +118,6 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
         
         minutesResult = UserDefaults.standard.object(forKey: "sampleMinutesResultSave") as! Int
-        secondsResult = UserDefaults.standard.object( forKey: "sampleSecondsResultSave") as! Int
         sampleTimeSeconds = UserDefaults.standard.object(forKey: "sampleSettingSave") as! Int
         
         count()
@@ -138,8 +127,8 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
         
             
-            samplePickerView.selectRow(minutesResult, inComponent: 0, animated: true)
-            samplePickerView.selectRow(secondsResult, inComponent: 2, animated: true)
+        samplePickerView.selectRow(minutesResult, inComponent: 0, animated: true)
+        
         
     }
     

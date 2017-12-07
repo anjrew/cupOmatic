@@ -17,6 +17,7 @@
 		D22103F11FC4A1B8009C5143 /* Round 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103EB1FC4A1B7009C5143 /* Round 3.wav */; };
 		D22103F21FC4A1B8009C5143 /* Round 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103EC1FC4A1B8009C5143 /* Round 2.wav */; };
 		D22103F41FC4AFD5009C5143 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22103F31FC4AFC8009C5143 /* AVFoundation.framework */; };
+		D23F194F1FD5C7270063BF58 /* Get ready final.wav in Resources */ = {isa = PBXBuildFile; fileRef = D23F194E1FD5C7270063BF58 /* Get ready final.wav */; };
 		D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E321FBCF4C80054B918 /* greenButton.png */; };
 		D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E341FBCFA6C0054B918 /* redButton.png */; };
 		D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E361FBD70920054B918 /* reButtonWithShadow.png */; };
@@ -78,6 +79,7 @@
 		D22103EC1FC4A1B8009C5143 /* Round 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Round 2.wav"; sourceTree = "<group>"; };
 		D22103F31FC4AFC8009C5143 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D22103F51FC4AFDD009C5143 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D23F194E1FD5C7270063BF58 /* Get ready final.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Get ready final.wav"; path = "../../../../../../../../../Downloads/Get ready final.wav"; sourceTree = "<group>"; };
 		D26C9E321FBCF4C80054B918 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
 		D26C9E341FBCFA6C0054B918 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
 		D26C9E361FBD70920054B918 /* reButtonWithShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reButtonWithShadow.png; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		D22103DA1FC4A0FF009C5143 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				D23F194E1FD5C7270063BF58 /* Get ready final.wav */,
 				D22103EA1FC4A1B7009C5143 /* Break.wav */,
 				D22103E91FC4A1B7009C5143 /* Pour.wav */,
 				D22103E81FC4A1B7009C5143 /* Round 1.wav */,
@@ -376,6 +379,7 @@
 			files = (
 				D22103F21FC4A1B8009C5143 /* Round 2.wav in Resources */,
 				D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */,
+				D23F194F1FD5C7270063BF58 /* Get ready final.wav in Resources */,
 				D288BD561FA877B20050BB48 /* LaunchScreen.storyboard in Resources */,
 				D22103F11FC4A1B8009C5143 /* Round 3.wav in Resources */,
 				D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */,

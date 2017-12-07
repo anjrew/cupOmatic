@@ -23,7 +23,6 @@ class TimerCell{
     var bowlsPassed : Int
     var iD = String()
     var player: AVAudioPlayer?
-   // var audioPath : NSURL
         
     init(label: String, interval: Int, timerSetting: Int, bowlCount:Int, iD: String){
        
@@ -103,11 +102,7 @@ class TimerCell{
     }
     
     func getPercentage()-> CGFloat{
-//        print(timePassed)
-//        let percentage = CGFloat( Float(Float(interval - timePassed) / Float(interval)))
-//        print(percentage)
-//        return percentage
-//
+
         return CGFloat(Float(bowlsPassed) / Float(bowlCount))
         
     }

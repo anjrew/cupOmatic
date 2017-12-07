@@ -12,15 +12,10 @@ class RoundOneViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     var dataBase = [[String]]()
     var minutes = ["0"]
-    var minutesLabel = ["min"]
-    var seconds = ["0"]
-    var secondsLabel = ["sec"]
     var mins = 0
-    var secs = 0
     var roundOneTimeSeconds = 0
     var selection: String = ""
     var minutesResult = 0
-    var secondsResult = 0
     var switchStatus = true
     
     @IBOutlet var roundOnePickerView: UIPickerView!
@@ -40,12 +35,6 @@ class RoundOneViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     }
     
-    
-    
-    
-    
-    
-    
     func count() {
         
         var i = 0
@@ -53,16 +42,14 @@ class RoundOneViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             i += 1
             minutes.append(String(i))
-            seconds.append(String(i))
+        
         }
     }
     
     func updatePickerView(){
         
         dataBase.append(minutes)
-        dataBase.append(minutesLabel)
-        dataBase.append(seconds)
-        dataBase.append(secondsLabel)
+
     }
     
     
@@ -88,25 +75,20 @@ class RoundOneViewController: UIViewController, UIPickerViewDataSource, UIPicker
             minutesResult = Int(dataBase[component][row])!
             print(minutesResult)
             
-        case 2:
-            secondsResult = Int(dataBase[component][row])!
-            print(secondsResult)
-            
         default:break
             
         }
-        roundOneTimeSeconds = (minutesResult * 60) + secondsResult
+        
+        roundOneTimeSeconds = minutesResult * 60
         UserDefaults.standard.set(minutesResult, forKey: "roundOneMinutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "roundOneSecondsResultSave")
         UserDefaults.standard.set(roundOneTimeSeconds, forKey: "roundOneSettingSave")
     }
 
     @IBAction func setButton(_ sender: Any) {
         
-        roundOneTimeSeconds = (minutesResult * 60) + secondsResult
+        roundOneTimeSeconds = minutesResult * 60
         UserDefaults.standard.set(roundOneTimeSeconds, forKey: "roundOneSettingSave")
         UserDefaults.standard.set(minutesResult, forKey: "roundOneMinutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "roundOneSecondsResultSave")
         print(roundOneTimeSeconds)
         
     }
@@ -119,12 +101,11 @@ class RoundOneViewController: UIViewController, UIPickerViewDataSource, UIPicker
         updatePickerView()
         
         minutesResult = UserDefaults.standard.object(forKey: "roundOneMinutesResultSave") as! Int
-        secondsResult = UserDefaults.standard.object( forKey: "roundOneSecondsResultSave") as! Int
         roundOneTimeSeconds = UserDefaults.standard.object(forKey: "roundOneSettingSave") as! Int
         
 
         roundOnePickerView.selectRow(minutesResult, inComponent: 0, animated: true)
-        roundOnePickerView.selectRow(secondsResult, inComponent: 2, animated: true)
+        
         // Do any additional setup after loading the view.
     }
 

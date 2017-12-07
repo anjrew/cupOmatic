@@ -10,13 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     var parentTimer : ParentTimer?
     
     @IBOutlet var settingsTableViewOutlet: UITableView!
     var identitys = [String]()
-    var tableViewCells = ["Interval","Break", "Sample","First Round","Second Round","Third Round","Alarm sound","Alarm Warning","Action Sound","Vibrate"]
+    var tableViewCells = ["Advanced Mode","Interval","Break", "Sample","First Round","Second Round","Third Round","Alarm sound","Vibrate"]
     var tableViewDetails = ["","","","","","","","","","",""]
-    var tableSegues = ["interval","break","sample","roundOne","roundTwo","roundThree","alarmSound","alarmWarning","actionSound"]
+    var tableSegues = ["advancedMode","interval","break","sample","roundOne","roundTwo","roundThree","alarmSound"]
     
 // Setting Variables
     
@@ -32,6 +33,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     var alarmWarning = 3
     var actionSound = Int()
     var vibrate = true
+    var advancedMode = false
     
     func reloadSettingsTableView(){
     
@@ -73,19 +75,18 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
    
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.navigationItem.title = "Settings"
+       super.viewDidLoad()
 
+       self.navigationItem.title = "Settings"
+        let attrs = [
+            NSAttributedStringKey.foregroundColor: UIColor.black,
+            NSAttributedStringKey.font: UIFont(name: "Arial", size: 30)
+        ]
         
-
-//        tableViewDetails.append(String(describing: parentTimer?.getbowlSetting()))
-//        tableViewDetails.append(String(parentTimer!.convertSecsmmss(timeInput: parentTimer!.getIntervalSetting())))
-//        tableViewDetails.append(String(parentTimer!.convertSecsmmss(timeInput: parentTimer!.getBreakSetting())))
-//        tableViewDetails.append(String(parentTimer!.convertSecsmmss(timeInput: parentTimer!.getSampleSetting())))
-//        tableViewDetails.append(String(parentTimer!.convertSecsmmss(timeInput: parentTimer!.getFirstRoundSetting())))
-//        tableViewDetails.append(String(parentTimer!.convertSecsmmss(timeInput: parentTimer!.getSecondRoundSetting())))
-//        tableViewDetails.append(String(parentTimer!.convertSecsmmss(timeInput: parentTimer!.getThirdRoundSetting())))
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        advancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
+        print("Advanced made = \(advancedMode)")
+        
         
         bowlSetting = UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int
         intervalSetting = UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int
@@ -97,22 +98,18 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         alarmSoundDic = UserDefaults.standard.object(forKey: "alarmSoundSave") as! [String : Int]
         alarmSound = alarmSoundDic["Sound"]!
-        
-            //        alarmWarning = UserDefaults.standard.object(forKey: "alarmWarningSave") as! Int
-//        actionSound = UserDefaults.standard.object(forKey: "actionSoundSave") as! Int
-//
-        tableViewDetails[0] = convertSecsmmss(timeInput: intervalSetting)
-        tableViewDetails[1] = convertSecsmmss(timeInput: breakSetting)
-        tableViewDetails[2] = convertSecsmmss(timeInput: sampleSetting)
-        tableViewDetails[3] = convertSecsmmss(timeInput: roudnOneSetting)
-        tableViewDetails[4] = convertSecsmmss(timeInput: roundTwoSetting)
-        tableViewDetails[5] = convertSecsmmss(timeInput: roundThreeSetting)
-        tableViewDetails[6] = String(alarmSound)
-        tableViewDetails[7] = "Alarm warning"
-        tableViewDetails[8] = "Action Sound"
-        tableViewDetails[9] = "Vibrate Switch"
 
-        identitys = ["bowlsViewController","intervalViewController","breakViewController","sampleViewController","firstRoundViewController","secondRoundViewController","thirdRoundViewController"]
+        tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
+        tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)
+        tableViewDetails[3] = convertSecsmmss(timeInput: sampleSetting)
+        tableViewDetails[4] = convertSecsmmss(timeInput: roudnOneSetting)
+        tableViewDetails[5] = convertSecsmmss(timeInput: roundTwoSetting)
+        tableViewDetails[6] = convertSecsmmss(timeInput: roundThreeSetting)
+        tableViewDetails[7] = String(alarmSound)
+        tableViewDetails[8] = "Vibrate Switch"
+
+        identitys = ["bowlsViewController","intervalViewController","breakViewController","sampleViewController",
+                     "firstRoundViewController","secondRoundViewController","thirdRoundViewController"]
         
         // Do any additional setup after loading the view.
     }
@@ -134,32 +131,63 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         roundTwoSetting = UserDefaults.standard.object(forKey: "roundTwoSettingSave") as! Int
         roundThreeSetting = UserDefaults.standard.object(forKey: "roundThreeSettingSave") as! Int
         
-
-        tableViewDetails[0] = convertSecsmmss(timeInput: intervalSetting)
-        tableViewDetails[1] = convertSecsmmss(timeInput: breakSetting)
-        tableViewDetails[2] = convertSecsmmss(timeInput: sampleSetting)
-        tableViewDetails[3] = convertSecsmmss(timeInput: roudnOneSetting)
-        tableViewDetails[4] = convertSecsmmss(timeInput: roundTwoSetting)
-        tableViewDetails[5] = convertSecsmmss(timeInput: roundThreeSetting)
+//        
+//        advancedModeSwitch.addTarget(self, action: #selector(ViewController()), for: .valueChanged)
+//        advancedModeSwitch.setOn(true, animated: false)
+//        self.view.addSubview(advancedModeSwitch)
+        
+       
+        tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
+        tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)
+        tableViewDetails[3] = convertSecsmmss(timeInput: sampleSetting)
+        tableViewDetails[4] = convertSecsmmss(timeInput: roudnOneSetting)
+        tableViewDetails[5] = convertSecsmmss(timeInput: roundTwoSetting)
+        tableViewDetails[6] = convertSecsmmss(timeInput: roundThreeSetting)
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
-        cell.backgroundColor = self.view.backgroundColor
-        cell.textLabel?.text = tableViewCells[indexPath.row]
-        cell.detailTextLabel?.text = tableViewDetails[indexPath.row]
-        return cell
+        let advancedSwitch = UISwitch()
+        advancedSwitch.tag = 1
+      //  advancedSwitch.addTarget(self, action: #selector(advancedSwitchTriggered), for: .valueChanged)
+        
+        let vibrateSwitch = UISwitch()
+        vibrateSwitch.tag = 2
+      //  vibrateSwitch.addTarget(self, action: #selector(vibrateSwitchTriggered), for: .valueChanged)
+
+        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let switchCell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath)
+
+ 
+        if indexPath.row == 0 {
+                switchCell.textLabel!.text = "Adanced Mode"
+                switchCell.accessoryView = advancedSwitch
+                return switchCell
+            
+        }else if indexPath.row == 8 {
+            switchCell.textLabel!.text = "Vibrate"
+            switchCell.accessoryView = vibrateSwitch
+            return switchCell
+            
+            
+        } else {
+            
+            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
+            cell.backgroundColor = self.view.backgroundColor
+            cell.textLabel?.text = tableViewCells[indexPath.row]
+            cell.detailTextLabel?.text = tableViewDetails[indexPath.row]
+            return cell
+            
+        }
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return tableViewCells.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        if (indexPath.row < tableSegues.count){
+        if (indexPath.row < tableSegues.count && indexPath.row != 0){
         performSegue(withIdentifier: tableSegues[indexPath.row], sender: self)
         }
     }
@@ -167,6 +195,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func getAlarmwarning() -> Int {
         return alarmWarning
     }
+    
+//    @objc func advancedSwitchTriggered(sender: UISwitch) {
+//        sender.on ? advancedSwitch[sender.tag] = 1 : advancedSwitch[sender.tag] = 0
+//    }
+//
+//    @objc func vibrateSwitchTriggered(sender: UISwitch) {
+//        sender.on ? vibrateSwitch[sender.tag] = 2 : vibrateSwitch[sender.tag] = 0
+//    }
 
     /*
     // MARK: - Navigation

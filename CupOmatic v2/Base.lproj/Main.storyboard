@@ -60,8 +60,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="cnn-7a-kQu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="switchCell" id="fmZ-8R-bXW">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fmZ-8R-bXW" id="aLB-9o-hX1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" focusStyle="custom" id="cnn-7a-kQu">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cnn-7a-kQu" id="Rbe-kH-9Jf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -180,13 +188,15 @@
                                     <outlet property="dataSource" destination="Wqm-zK-hXO" id="z5J-Qa-P7p"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-CQ-fXi">
-                                <rect key="frame" x="138" y="467" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-CQ-fXi">
+                                <rect key="frame" x="119" y="461" width="137" height="137"/>
+                                <color key="backgroundColor" red="0.0" green="0.83317057289999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="1xP-iA-uNS"/>
-                                    <constraint firstAttribute="width" constant="100" id="Rbe-sP-uIC"/>
+                                    <constraint firstAttribute="height" constant="130" id="1xP-iA-uNS"/>
+                                    <constraint firstAttribute="width" constant="130" id="Rbe-sP-uIC"/>
                                 </constraints>
-                                <state key="normal" title="Set" image="Start.png"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="40"/>
+                                <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="setButton:" destination="Wqm-zK-hXO" eventType="touchUpInside" id="NVp-7S-0DL"/>
                                     <segue destination="7rI-60-MoE" kind="show" identifier="bowlToMain" id="eut-8D-baN"/>
@@ -207,6 +217,7 @@
                     </view>
                     <connections>
                         <outlet property="bowlsPickerview" destination="ceZ-Ez-xjD" id="uWb-7b-k38"/>
+                        <outlet property="startButton" destination="Hpn-CQ-fXi" id="FKv-XO-tTc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yp-jA-KsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,13 +253,20 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qyj-yH-3WC">
-                                <rect key="frame" x="0.0" y="116" width="375" height="310"/>
+                                <rect key="frame" x="0.0" y="178" width="375" height="310"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vUx-kn-346" id="rMg-aX-hft"/>
                                     <outlet property="delegate" destination="vUx-kn-346" id="aLm-lb-gp4"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voq-od-7oy">
+                                <rect key="frame" x="261" y="323" width="40" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -274,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cq8-k5-zzG">
-                                <rect key="frame" x="0.0" y="111" width="375" height="319"/>
+                                <rect key="frame" x="0.0" y="174" width="375" height="319"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2mZ-OX-8I0" id="T1R-Rl-gf8"/>
@@ -301,6 +319,13 @@
                                     <segue destination="Wo6-g6-XQV" kind="show" id="JWa-NK-aIu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKU-1M-FEG">
+                                <rect key="frame" x="257" y="315" width="35" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -333,7 +358,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ds7-7t-6gV">
-                                <rect key="frame" x="0.0" y="121" width="375" height="316"/>
+                                <rect key="frame" x="0.0" y="175" width="375" height="316"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vq8-96-rSd" id="wKZ-cE-QH3"/>
@@ -353,6 +378,13 @@
                                     <segue destination="Wo6-g6-XQV" kind="show" id="dGC-6e-4yL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZt-xi-XJg">
+                                <rect key="frame" x="259" y="316" width="33" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -384,14 +416,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mbc-I7-gkw">
-                                <rect key="frame" x="0.0" y="125" width="375" height="316"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="oSI-7B-UAm" id="DV0-Hv-pbK"/>
-                                    <outlet property="delegate" destination="oSI-7B-UAm" id="QqA-7U-aDf"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddb-bH-wdc">
                                 <rect key="frame" x="137" y="527" width="100" height="40"/>
                                 <constraints>
@@ -405,6 +429,14 @@
                                     <segue destination="Wo6-g6-XQV" kind="show" id="CUS-af-QzL"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mbc-I7-gkw">
+                                <rect key="frame" x="0.0" y="175" width="375" height="316"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oSI-7B-UAm" id="DV0-Hv-pbK"/>
+                                    <outlet property="delegate" destination="oSI-7B-UAm" id="QqA-7U-aDf"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -436,10 +468,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iqo-iH-25I">
-                                <rect key="frame" x="0.0" y="127" width="375" height="310"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6Z-9h-m7U">
                                 <rect key="frame" x="137" y="527" width="100" height="40"/>
                                 <constraints>
@@ -452,6 +480,10 @@
                                     <segue destination="Wo6-g6-XQV" kind="show" id="RA2-2M-JCu"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iqo-iH-25I">
+                                <rect key="frame" x="0.0" y="178" width="375" height="310"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -480,10 +512,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Wo-z4-iof">
-                                <rect key="frame" x="0.0" y="128" width="375" height="323"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pby-pF-ugi">
                                 <rect key="frame" x="137" y="527" width="100" height="40"/>
                                 <constraints>
@@ -496,6 +524,10 @@
                                     <segue destination="Wo6-g6-XQV" kind="show" id="muS-zO-bbp"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Wo-z4-iof">
+                                <rect key="frame" x="0.0" y="172" width="375" height="323"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -537,12 +569,19 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-1L-DiP">
-                                <rect key="frame" x="16" y="114" width="343" height="314"/>
+                                <rect key="frame" x="16" y="176" width="343" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zW1-rG-HDP" id="QXp-zr-cs9"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRq-Pl-MkE">
+                                <rect key="frame" x="254" y="316" width="41" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -591,8 +630,14 @@
                                     <segue destination="Wo6-g6-XQV" kind="show" id="dzC-7d-pmy"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFs-Tp-v44">
-                                <rect key="frame" x="0.0" y="175" width="374" height="133"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3c-Xl-GnM">
+                                <rect key="frame" x="262.5" y="321" width="32" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFs-Tp-v44">
+                                <rect key="frame" x="27" y="225.5" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="lkc-Si-G5k" id="YCo-cV-NSg"/>
                                 </connections>
@@ -603,10 +648,12 @@
                             <constraint firstItem="rfM-rh-E0p" firstAttribute="centerX" secondItem="IK6-dx-irV" secondAttribute="centerX" id="4ni-Hf-172"/>
                             <constraint firstItem="x4H-S0-nJj" firstAttribute="bottom" secondItem="rfM-rh-E0p" secondAttribute="bottom" constant="100" id="6qC-2A-uqK"/>
                             <constraint firstItem="r8h-WO-QGN" firstAttribute="leading" secondItem="x4H-S0-nJj" secondAttribute="leading" id="DFS-LN-mfF"/>
+                            <constraint firstItem="R3c-Xl-GnM" firstAttribute="centerX" secondItem="IK6-dx-irV" secondAttribute="centerX" constant="91" id="HzJ-Mu-miP"/>
                             <constraint firstItem="x4H-S0-nJj" firstAttribute="trailing" secondItem="r8h-WO-QGN" secondAttribute="trailing" id="JzW-R1-KyV"/>
-                            <constraint firstItem="YFs-Tp-v44" firstAttribute="top" secondItem="r8h-WO-QGN" secondAttribute="bottom" constant="50" id="Rot-1d-xKH"/>
+                            <constraint firstItem="R3c-Xl-GnM" firstAttribute="centerY" secondItem="IK6-dx-irV" secondAttribute="centerY" id="S5b-Rg-2Nr"/>
                             <constraint firstItem="r8h-WO-QGN" firstAttribute="top" secondItem="x4H-S0-nJj" secondAttribute="top" constant="50" id="Swc-sR-DHy"/>
                             <constraint firstItem="YFs-Tp-v44" firstAttribute="centerX" secondItem="IK6-dx-irV" secondAttribute="centerX" id="hp4-mi-lDu"/>
+                            <constraint firstItem="YFs-Tp-v44" firstAttribute="centerY" secondItem="IK6-dx-irV" secondAttribute="centerY" id="wJj-5Y-Ao6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x4H-S0-nJj"/>
                     </view>
@@ -616,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFB-NI-FnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2281" y="134"/>
+            <point key="canvasLocation" x="2280.8000000000002" y="133.5832083958021"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s4K-qO-swq">
@@ -784,10 +831,9 @@
     <resources>
         <image name="Help_Icon-App-29x29" width="29" height="29"/>
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
-        <image name="Start.png" width="115" height="116"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eut-8D-baN"/>
+        <segue reference="hhP-3Z-Nsb"/>
         <segue reference="gL3-Oa-54D"/>
     </inferredMetricsTieBreakers>
 </document>

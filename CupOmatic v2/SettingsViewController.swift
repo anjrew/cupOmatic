@@ -10,6 +10,10 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let attrs = [
+        NSAttributedStringKey.foregroundColor: UIColor.black,
+        NSAttributedStringKey.font: UIFont(name: "Arial", size: 30)
+    ]
     
     var parentTimer : ParentTimer?
     
@@ -34,6 +38,37 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     var actionSound = Int()
     var vibrate = true
     var advancedMode = false
+    
+    let advancedSwitch = UISwitch()
+    @objc func advancedSwitchSwitchStateDidChange(_ sender:UISwitch!){
+    
+        if (sender.isOn == true){
+            print("UISwitch state is now ON")
+            advancedMode = true
+            UserDefaults.standard.set(advancedMode, forKey: "advancedMode")
+        }else{
+            print("UISwitch state is now Off")
+            advancedMode = false
+            UserDefaults.standard.set(advancedMode, forKey: "advancedMode")
+
+        }
+    }
+    
+    
+    let vibrateSwitch = UISwitch()
+    @objc func vibrateSwitchSwitchStateDidChange(_ sender:UISwitch!)
+    {
+        if (sender.isOn == true){
+            print("UISwitch state is now ON")
+            vibrate = true
+            UserDefaults.standard.set(vibrate, forKey: "vibrate")
+        }else{
+            print("UISwitch state is now Off")
+            vibrate = false
+            UserDefaults.standard.set(vibrate, forKey: "vibrate")
+    
+        }
+    }
     
     func reloadSettingsTableView(){
     
@@ -78,12 +113,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
        super.viewDidLoad()
 
        self.navigationItem.title = "Settings"
-        let attrs = [
-            NSAttributedStringKey.foregroundColor: UIColor.black,
-            NSAttributedStringKey.font: UIFont(name: "Arial", size: 30)
-        ]
         
-        UINavigationBar.appearance().titleTextAttributes = attrs
+       //Switch assinments
+        advancedSwitch.tag = 1
+        advancedSwitch.addTarget(self, action: #selector(advancedSwitchSwitchStateDidChange), for: .valueChanged)
+        
+        vibrateSwitch.tag = 2
+        vibrateSwitch.addTarget(self, action: #selector(vibrateSwitchSwitchStateDidChange), for: .valueChanged)
+        
+        
+        
+//        UINavigationBar.appearance().titleTextAttributes = attrs
         advancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
         print("Advanced made = \(advancedMode)")
         
@@ -147,13 +187,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let advancedSwitch = UISwitch()
-        advancedSwitch.tag = 1
-      //  advancedSwitch.addTarget(self, action: #selector(advancedSwitchTriggered), for: .valueChanged)
-        
-        let vibrateSwitch = UISwitch()
-        vibrateSwitch.tag = 2
-      //  vibrateSwitch.addTarget(self, action: #selector(vibrateSwitchTriggered), for: .valueChanged)
+ 
+      
 
         var cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let switchCell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath)
@@ -191,6 +226,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         performSegue(withIdentifier: tableSegues[indexPath.row], sender: self)
         }
     }
+    
     
     func getAlarmwarning() -> Int {
         return alarmWarning

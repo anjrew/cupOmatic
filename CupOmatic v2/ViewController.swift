@@ -11,10 +11,14 @@ import AVFoundation
 
 class ViewController: UIViewController{
    
+    let attrs = [
+        NSAttributedStringKey.foregroundColor: UIColor.black,
+        NSAttributedStringKey.font: UIFont(name: "Arial", size: 20)
+    ]
     
     var advancedMode = false
+    var vibrate = false
     
- 
     var parentTimer : ParentTimer?
     var timerSegue = false
     var audio: Audio?
@@ -32,9 +36,6 @@ class ViewController: UIViewController{
     }
     @IBAction func getReadyStopButton(_ sender: Any) {
         
-        
-      
-        
         if parentTimer?.getMainTimerStatus() == false {
             performSegue(withIdentifier: "numberOfBowls", sender: self)
         } else {
@@ -44,8 +45,6 @@ class ViewController: UIViewController{
             parentTimer?.reset()
             parentTimer?.setMainTimerStatus(status: false)
             changeButton()
-            
-            
         }
     }
     @IBOutlet weak var getReadystop: UIButton!
@@ -67,9 +66,7 @@ class ViewController: UIViewController{
   
 
     @objc func start(){
-        
-        
-        
+                
         if parentTimer?.initiateMainTimer == true {
             parentTimer?.startStartTimer()
             parentTimer?.initiateMainTimer = false
@@ -95,11 +92,11 @@ class ViewController: UIViewController{
 
         //intervalProgress
         
-        if parentTimer?.intervalTimer.active == false {
+        if parentTimer?.intervalTimer?.active == false {
             intervalProgress.percentLabelFormat = ""
             
         }else{
-            intervalProgress.percentLabelFormat = parentTimer!.intervalTimer.getTimeLabel()
+            intervalProgress.percentLabelFormat = (parentTimer!.intervalTimer?.getTimeLabel())!
            
         }
         
@@ -119,12 +116,12 @@ class ViewController: UIViewController{
     func updateIntervalViews(){
         
         
-        if parentTimer?.intervalTimer.active == false {
+        if parentTimer?.intervalTimer?.active == false {
         //    intervalProgress.percentLabelFormat = ""
             intervalProgress.setProgress(progress: 0.0, animated: false)
         }else{
        //     intervalProgress.percentLabelFormat = parentTimer!.intervalTimer.getTimeLabel()
-            intervalProgress.setProgress(progress: (parentTimer?.intervalTimer.getIntervalPercentage())!, animated: false)
+            intervalProgress.setProgress(progress: (parentTimer?.intervalTimer?.getIntervalPercentage())!, animated: false)
         }
         
       
@@ -133,9 +130,6 @@ class ViewController: UIViewController{
     
     func initialProgressView(){
         
-        //intervalProgress
-        
-     
         intervalProgress.percentLabelFormat = ""
         intervalProgress.setProgress(progress: 0.0, animated: false)
 
@@ -164,21 +158,20 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+//        UINavigationBar.appearance().titleTextAttributes = attrs
+        print("Timer Segue status = \(timerSegue)")
         advancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
-        print("Advanced made = \(advancedMode)")
+        vibrate = (UserDefaults.standard.object(forKey: "vibrate") != nil)
+        print("Advanced mode = \(advancedMode)")
+        print("Vibrate mode = \(vibrate)")
         
         if parentTimer == nil{
-            
-        
             parentTimer = ParentTimer(viewController : self)
-
         }
         
         if timerSegue == true {
-            
             bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
-
             start()
         }
         

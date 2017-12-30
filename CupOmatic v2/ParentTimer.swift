@@ -23,7 +23,7 @@ class ParentTimer {
     var alarmSound = [String: Int]()
     var alarmWarning = 1
     var audio = Audio()
-    var intervalTimer = IntervalTimer(timeSetting: UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int, bowlSetting: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int)
+    var intervalTimer: IntervalTimer?
     
     
     //Start Timer
@@ -43,9 +43,10 @@ class ParentTimer {
         self.interval = UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int
         self.bowl = UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int
         self.startTimerSetting = 4
+        self.intervalTimer = IntervalTimer(timeSetting: UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int, bowlSetting: (UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int))
         reset()
         
-        intervalTimer.setParentTimer(parentTimer: self)
+        intervalTimer?.setParentTimer(parentTimer: self)
        
         
         timersIntervals = [
@@ -205,9 +206,9 @@ class ParentTimer {
                 
             } else if (timers[i].getTimerSetting() == mainTimer){
                 
-                intervalTimer.timer.invalidate()
-                intervalTimer.reset()
-                intervalTimer.startTimer()
+                intervalTimer?.timer.invalidate()
+                intervalTimer?.reset()
+                intervalTimer?.startTimer()
                 timers[i].activate()
              
                 
@@ -240,8 +241,8 @@ class ParentTimer {
     }
     
     func getMainIntervalPercentage() -> CGFloat{
-        print("Interval time = \(intervalTimer.time) - Bowl Count = \(intervalTimer.bowlAmount)")
-        return intervalTimer.getIntervalPercentage()
+        print("Interval time = \(String(describing: intervalTimer?.time)) - Bowl Count = \(String(describing: intervalTimer?.bowlAmount))")
+        return intervalTimer!.getIntervalPercentage()
        // return CGFloat((Float(intervalTimer.timeSetting * 1) - intervalTimer.getseconds() ) / Float(intervalTimer.timeSetting * 1))
         //TODO CHECK
     }
@@ -261,7 +262,7 @@ class ParentTimer {
         
         timer.invalidate()
         
-        intervalTimer.startTimer()
+        intervalTimer?.startTimer()
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(increaseTimer), userInfo: nil, repeats: true)
         
@@ -401,7 +402,7 @@ class ParentTimer {
         initiateMainTimer = true
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
         resetAllTimers()
-        intervalTimer.invalidateIntervalTimer()
+        intervalTimer?.invalidateIntervalTimer()
         running = false
         
     }

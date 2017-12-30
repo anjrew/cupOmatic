@@ -69,7 +69,7 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         count()
         bowlsPickerview.dataSource = self
         bowlsPickerview.delegate = self
-        bowlsPickerview.selectRow(numberOfBowls, inComponent: 0, animated: true)
+        bowlsPickerview.selectRow(numberOfBowls-1, inComponent: 0, animated: true)
         print(numberOfBowls)
         
         setupStartButton()
@@ -78,8 +78,9 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var DestViewController: ViewController = segue.destination as! ViewController
+        let DestViewController: ViewController = segue.destination as! ViewController
         DestViewController.timerSegue = true
+//        DestViewController.bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
      
     }
     
@@ -101,7 +102,7 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         
     }
 

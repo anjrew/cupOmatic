@@ -127,7 +127,7 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         
     }
    

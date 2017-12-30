@@ -17,12 +17,12 @@
 		D22103F11FC4A1B8009C5143 /* Round 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103EB1FC4A1B7009C5143 /* Round 3.wav */; };
 		D22103F21FC4A1B8009C5143 /* Round 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D22103EC1FC4A1B8009C5143 /* Round 2.wav */; };
 		D22103F41FC4AFD5009C5143 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22103F31FC4AFC8009C5143 /* AVFoundation.framework */; };
+		D234925A1FEEE80500298627 /* MKMagneticProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23492591FEEE80400298627 /* MKMagneticProgress.swift */; };
 		D23F194F1FD5C7270063BF58 /* Get ready final.wav in Resources */ = {isa = PBXBuildFile; fileRef = D23F194E1FD5C7270063BF58 /* Get ready final.wav */; };
 		D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E321FBCF4C80054B918 /* greenButton.png */; };
 		D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E341FBCFA6C0054B918 /* redButton.png */; };
 		D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E361FBD70920054B918 /* reButtonWithShadow.png */; };
 		D26C9E3A1FBD8BBA0054B918 /* ios-circular-progress-bar-master in Frameworks */ = {isa = PBXBuildFile; fileRef = D26C9E391FBD8BBA0054B918 /* ios-circular-progress-bar-master */; settings = {ATTRIBUTES = (Required, ); }; };
-		D26C9E3D1FC060EA0054B918 /* MKMagneticProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C9E3C1FC060EA0054B918 /* MKMagneticProgress.swift */; };
 		D288BD4C1FA877B10050BB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD4B1FA877B10050BB48 /* AppDelegate.swift */; };
 		D288BD4E1FA877B20050BB48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD4D1FA877B20050BB48 /* ViewController.swift */; };
 		D288BD511FA877B20050BB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D288BD4F1FA877B20050BB48 /* Main.storyboard */; };
@@ -79,13 +79,13 @@
 		D22103EC1FC4A1B8009C5143 /* Round 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Round 2.wav"; sourceTree = "<group>"; };
 		D22103F31FC4AFC8009C5143 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D22103F51FC4AFDD009C5143 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D23492591FEEE80400298627 /* MKMagneticProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MKMagneticProgress.swift; path = "/Users/earyzhe/Dropbox/dev/iOS apps/Cup0matic/CupOmatic_v2/CupOmatic v2.3 (Github)/cupOmatic/MKMagneticProgress.swift"; sourceTree = "<absolute>"; };
 		D23F194E1FD5C7270063BF58 /* Get ready final.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Get ready final.wav"; path = "../../../../../../../../../Downloads/Get ready final.wav"; sourceTree = "<group>"; };
 		D26C9E321FBCF4C80054B918 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
 		D26C9E341FBCFA6C0054B918 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
 		D26C9E361FBD70920054B918 /* reButtonWithShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reButtonWithShadow.png; sourceTree = "<group>"; };
 		D26C9E391FBD8BBA0054B918 /* ios-circular-progress-bar-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ios-circular-progress-bar-master"; path = "../../../../../../../Desktop/ios-circular-progress-bar-master"; sourceTree = "<group>"; };
 		D26C9E3B1FBD8C7E0054B918 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D26C9E3C1FC060EA0054B918 /* MKMagneticProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKMagneticProgress.swift; path = ../../../../../../../Desktop/MKMagneticProgress.swift; sourceTree = "<group>"; };
 		D288BD481FA877B10050BB48 /* CupOmatic v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CupOmatic v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D288BD4B1FA877B10050BB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D288BD4D1FA877B20050BB48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +166,6 @@
 			children = (
 				D22103F51FC4AFDD009C5143 /* AudioToolbox.framework */,
 				D22103F31FC4AFC8009C5143 /* AVFoundation.framework */,
-				D26C9E3C1FC060EA0054B918 /* MKMagneticProgress.swift */,
 				D26C9E3B1FBD8C7E0054B918 /* QuartzCore.framework */,
 				D26C9E391FBD8BBA0054B918 /* ios-circular-progress-bar-master */,
 			);
@@ -177,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				D22103D61FC37E8D009C5143 /* SwitchTableViewCell.swift */,
+				D23492591FEEE80400298627 /* MKMagneticProgress.swift */,
 				D22103D71FC37E8D009C5143 /* SwitchTableViewCell.xib */,
 				D288BD4A1FA877B10050BB48 /* CupOmatic v2 */,
 				D288BD5F1FA877B20050BB48 /* CupOmatic v2Tests */,
@@ -434,8 +434,8 @@
 				D2D077321FAF41C000812949 /* RoundThreeViewController.swift in Sources */,
 				D2D077301FAF41AC00812949 /* RoundTwoViewController.swift in Sources */,
 				D288BD911FA8C0270050BB48 /* TimerCell.swift in Sources */,
-				D26C9E3D1FC060EA0054B918 /* MKMagneticProgress.swift in Sources */,
 				D2D0772E1FAF152900812949 /* RoundViewController.swift in Sources */,
+				D234925A1FEEE80500298627 /* MKMagneticProgress.swift in Sources */,
 				D29CABCE1FAF85AC008EB8EF /* AlarmSoundViewController.swift in Sources */,
 				D29CABCC1FAF7A03008EB8EF /* Audio.swift in Sources */,
 			);

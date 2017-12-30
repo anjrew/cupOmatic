@@ -45,11 +45,6 @@ class AlarmSoundViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
     }
     
-   
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

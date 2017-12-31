@@ -161,8 +161,8 @@ class ViewController: UIViewController{
        
 //        UINavigationBar.appearance().titleTextAttributes = attrs
         print("Timer Segue status = \(timerSegue)")
-        advancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
-        vibrate = (UserDefaults.standard.object(forKey: "vibrate") != nil)
+        advancedMode = UserDefaults.standard.object(forKey: "advancedMode")! as! Bool
+        vibrate = UserDefaults.standard.object(forKey: "vibrate") as! Bool
         print("Advanced mode = \(advancedMode)")
         print("Vibrate mode = \(vibrate)")
         

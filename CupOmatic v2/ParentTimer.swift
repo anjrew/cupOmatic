@@ -11,7 +11,8 @@ import AVFoundation
 import AudioToolbox
 
 class ParentTimer {
-    var adancedMode = false
+    var advancedMode = false
+    var vibrate = false
     var interval = Int()
     var bowl = Int()
     var timerAlarms = Int()
@@ -37,7 +38,8 @@ class ParentTimer {
     
     
     init(viewController : ViewController){
-        self.adancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
+        self.advancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
+        self.vibrate = (UserDefaults.standard.object(forKey: "vibrate") != nil)
         self.viewController = viewController
         isKeyPresentInUserDefaults()
         self.interval = UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int
@@ -120,6 +122,7 @@ class ParentTimer {
         if (UserDefaults.standard.object(forKey: "isInitiated") == nil){
             
             UserDefaults.standard.set(false, forKey: "advancedMode")
+            UserDefaults.standard.set(false, forKey: "vibrate")
             
             UserDefaults.standard.set(12, forKey: "numberOfBowlsSave")
             
@@ -210,6 +213,7 @@ class ParentTimer {
                 intervalTimer?.reset()
                 intervalTimer?.startTimer()
                 timers[i].activate()
+                AudioServicesPlaySystemSound(SystemSoundID(1256))
              
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))

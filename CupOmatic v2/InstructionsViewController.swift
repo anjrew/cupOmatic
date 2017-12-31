@@ -13,7 +13,7 @@ class InstructionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Instructions"
+      //  self.navigationItem.title = "Instructions"
 
 
         // Do any additional setup after loading the view.

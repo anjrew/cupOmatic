@@ -16,7 +16,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     ]
     
     var parentTimer : ParentTimer?
+    @IBOutlet var saveChangesButton: UIButton!
     
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var settingsTableViewOutlet: UITableView!
     var identitys = [String]()
     var tableViewCells = ["Advanced Mode","Interval","Break", "Sample","First Round","Second Round","Third Round","Alarm sound","Vibrate"]
@@ -45,13 +47,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         if (sender.isOn == true){
             print("UISwitch state is now ON")
             advancedMode = true
-            UserDefaults.standard.set(advancedMode, forKey: "advancedMode")
+            UserDefaults.standard.set(true, forKey: "advancedMode")
+            self.tableView.reloadData()
+            print("Advanced mode = \(advancedMode)")
+           
         }else{
             print("UISwitch state is now Off")
             advancedMode = false
-            UserDefaults.standard.set(advancedMode, forKey: "advancedMode")
-
-        }
+            UserDefaults.standard.set(false, forKey: "advancedMode")
+            self.tableView.reloadData()
+            print("Advanced mode = \(advancedMode)")
+            }
     }
     
     
@@ -61,11 +67,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         if (sender.isOn == true){
             print("UISwitch state is now ON")
             vibrate = true
-            UserDefaults.standard.set(vibrate, forKey: "vibrate")
+            UserDefaults.standard.set(true, forKey: "vibrate")
+            self.tableView.reloadData()
+            print("Vibrate mode = \(vibrate)")
+            
         }else{
             print("UISwitch state is now Off")
             vibrate = false
-            UserDefaults.standard.set(vibrate, forKey: "vibrate")
+            UserDefaults.standard.set(false, forKey: "vibrate")
+            self.tableView.reloadData()
+            print("Vibrate mode = \(vibrate)")
     
         }
     }
@@ -114,18 +125,18 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
        self.navigationItem.title = "Settings"
         
-       //Switch assinments
+       //Switch assignments
         advancedSwitch.tag = 1
         advancedSwitch.addTarget(self, action: #selector(advancedSwitchSwitchStateDidChange), for: .valueChanged)
         
         vibrateSwitch.tag = 2
         vibrateSwitch.addTarget(self, action: #selector(vibrateSwitchSwitchStateDidChange), for: .valueChanged)
         
-        
-        
-//        UINavigationBar.appearance().titleTextAttributes = attrs
-        advancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
-        print("Advanced made = \(advancedMode)")
+
+        vibrate = UserDefaults.standard.object(forKey: "vibrate") as! Bool
+        advancedMode = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
+        print("Advanced mode = \(advancedMode)")
+        print("vibrate mode = \(vibrate)")
         
         
         bowlSetting = UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int
@@ -163,27 +174,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         
         self.navigationController?.isNavigationBarHidden = false
-        bowlSetting = UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int
-        intervalSetting = UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int
-        breakSetting = UserDefaults.standard.object(forKey: "breakSettingSave") as! Int
-        sampleSetting = UserDefaults.standard.object(forKey: "sampleSettingSave") as! Int
-        roudnOneSetting = UserDefaults.standard.object(forKey: "roundOneSettingSave") as! Int
-        roundTwoSetting = UserDefaults.standard.object(forKey: "roundTwoSettingSave") as! Int
-        roundThreeSetting = UserDefaults.standard.object(forKey: "roundThreeSettingSave") as! Int
         
-//        
-//        advancedModeSwitch.addTarget(self, action: #selector(ViewController()), for: .valueChanged)
-//        advancedModeSwitch.setOn(true, animated: false)
-//        self.view.addSubview(advancedModeSwitch)
-        
-       
-        tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
-        tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)
-        tableViewDetails[3] = convertSecsmmss(timeInput: sampleSetting)
-        tableViewDetails[4] = convertSecsmmss(timeInput: roudnOneSetting)
-        tableViewDetails[5] = convertSecsmmss(timeInput: roundTwoSetting)
-        tableViewDetails[6] = convertSecsmmss(timeInput: roundThreeSetting)
-        
+        self.advancedSwitch.isOn = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
+        self.vibrateSwitch.isOn = UserDefaults.standard.object(forKey: "vibrate") as! Bool
+    
+        saveChangesButton.layer.cornerRadius = 20.0
+        saveChangesButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        saveChangesButton.layer.shadowRadius = 2;
+        saveChangesButton.layer.shadowOpacity = 0.5;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -207,12 +205,27 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
         } else {
             
-            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
-            cell.backgroundColor = self.view.backgroundColor
-            cell.textLabel?.text = tableViewCells[indexPath.row]
-            cell.detailTextLabel?.text = tableViewDetails[indexPath.row]
-            return cell
-            
+            if advancedMode == true{
+                cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
+                cell.backgroundColor = self.view.backgroundColor
+                cell.textLabel?.text = tableViewCells[indexPath.row]
+                cell.detailTextLabel?.text = tableViewDetails[indexPath.row]
+                return cell
+            }else{
+                if (indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 5 || indexPath.row == 6){
+                    cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
+                    cell.backgroundColor = self.view.backgroundColor
+                    cell.textLabel?.text = tableViewCells[indexPath.row]
+                    cell.detailTextLabel?.text = "Disabled"
+                    return cell
+                }else{
+                    cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
+                    cell.backgroundColor = self.view.backgroundColor
+                    cell.textLabel?.text = tableViewCells[indexPath.row]
+                    cell.detailTextLabel?.text = tableViewDetails[indexPath.row]
+                    return cell
+                }
+            }
         }
     }
     
@@ -232,13 +245,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return alarmWarning
     }
     
-//    @objc func advancedSwitchTriggered(sender: UISwitch) {
-//        sender.on ? advancedSwitch[sender.tag] = 1 : advancedSwitch[sender.tag] = 0
-//    }
-//
-//    @objc func vibrateSwitchTriggered(sender: UISwitch) {
-//        sender.on ? vibrateSwitch[sender.tag] = 2 : vibrateSwitch[sender.tag] = 0
-//    }
 
     /*
     // MARK: - Navigation

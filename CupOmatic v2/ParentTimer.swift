@@ -26,7 +26,6 @@ class ParentTimer {
     var audio = Audio()
     var intervalTimer: IntervalTimer?
     
-    
     //Start Timer
     var initiateMainTimer = true
     var startTimerSetting = 4
@@ -35,11 +34,9 @@ class ParentTimer {
     var bowlSetting = Int ()
     var running = false
     
-    
-    
     init(viewController : ViewController){
-        self.advancedMode = (UserDefaults.standard.object(forKey: "advancedMode") != nil)
-        self.vibrate = (UserDefaults.standard.object(forKey: "vibrate") != nil)
+        self.advancedMode = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
+        self.vibrate = UserDefaults.standard.object(forKey: "vibrate") as! Bool
         self.viewController = viewController
         isKeyPresentInUserDefaults()
         self.interval = UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int
@@ -49,7 +46,7 @@ class ParentTimer {
         reset()
         
         intervalTimer?.setParentTimer(parentTimer: self)
-       
+        
         
         timersIntervals = [
             0,
@@ -73,7 +70,7 @@ class ParentTimer {
         timers[0].activate()
         
         alarmSound = UserDefaults.standard.object(forKey: "alarmSoundSave") as! [String : Int]
-    
+        
     }
     
     // Get Settings
@@ -112,7 +109,7 @@ class ParentTimer {
     
     
     func shouldStartTimer(currentTime : Int){
- 
+        
         
     }
     
@@ -160,7 +157,7 @@ class ParentTimer {
     
     
     
-// Main Timer
+    // Main Timer
     
     @objc func increaseTimer(){
         
@@ -172,7 +169,7 @@ class ParentTimer {
         print(getMainIntervalPercentage())
         
         print(String(mainTimer) + " Main Timer")
-  
+        
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
         
         
@@ -189,11 +186,10 @@ class ParentTimer {
             
         }
         
-
+        
         var i = 0
         
         for timer in timers{
-            
             
             if (timers[i].getTimerSetting()) > mainTimer {
                 
@@ -214,14 +210,16 @@ class ParentTimer {
                 intervalTimer?.startTimer()
                 timers[i].activate()
                 AudioServicesPlaySystemSound(SystemSoundID(1256))
-             
+                vibrateProcess()
+                
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
                 
             } else {
-           
+                
                 if(timers[i].getTimePassed() == alarmWarning){
                     AudioServicesPlaySystemSound(SystemSoundID(1256))
+                    vibrateProcess()
                 }
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
@@ -230,25 +228,16 @@ class ParentTimer {
             }
             
             timer.decreaseTimer()
-        
-            i += 1
             
+            i += 1
         }
-//        
-//        viewController?.collectionViewBowlId = (getBowlsArray())
-//        viewController?.collectionViewTimer = (getTimersArray())
-//        
-        
-        
-        
         
     }
     
     func getMainIntervalPercentage() -> CGFloat{
         print("Interval time = \(String(describing: intervalTimer?.time)) - Bowl Count = \(String(describing: intervalTimer?.bowlAmount))")
         return intervalTimer!.getIntervalPercentage()
-       // return CGFloat((Float(intervalTimer.timeSetting * 1) - intervalTimer.getseconds() ) / Float(intervalTimer.timeSetting * 1))
-        //TODO CHECK
+        
     }
     
     
@@ -279,7 +268,7 @@ class ParentTimer {
         
         
         for timerCell in timers{
-
+            
             titlesArray.append(timerCell.getLabel())
             
         }
@@ -295,7 +284,7 @@ class ParentTimer {
         
         
         for bowlCell in timers{
-    
+            
             bowlsArray.append(String(bowlCell.getBowlsPassed()))
             
         }
@@ -359,7 +348,7 @@ class ParentTimer {
     func getMainTimerString(timerInput: Int) -> String{
         return convertSecsmmss(timeInput: timerInput)
     }
-   
+    
     func invalidateMainTimer(){
         timer.invalidate()
     }
@@ -376,21 +365,23 @@ class ParentTimer {
             viewController?.mainTimerLabel.text = getMainTimerString(timerInput: startTime)
             print(startTime)
             startTime -= 1
-           
+            
             if (startTime >= 0){AudioServicesPlaySystemSound(SystemSoundID(1072))}
             
-        
-        
+            
+            
             if (startTime < 0){
                 
                 viewController?.mainTimerLabel.text = "GO!"
                 timers[0].playSound()
+                vibrateProcess()
+                
                 
             }
-        
+            
             if (startTime == -1){
                 
-             
+                
                 startTimer.invalidate()
                 startMainTimer()
                 
@@ -419,7 +410,7 @@ class ParentTimer {
     }
     
     func updateProgressBars(){
-    
+        
     }
     
     func setMainTimerStatus(status: Bool){
@@ -432,6 +423,14 @@ class ParentTimer {
         
         return running
         
+    }
+    
+    func vibrateProcess(){
+        
+        if vibrate == true{
+            
+            AudioServicesPlaySystemSound(SystemSoundID(1020))
+        }
     }
     
     

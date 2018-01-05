@@ -17,7 +17,9 @@ class ViewController: UIViewController{
     ]
     
     var advancedMode = false
+   
     var vibrate = false
+
     
     var parentTimer : ParentTimer?
     var timerSegue = false
@@ -45,6 +47,7 @@ class ViewController: UIViewController{
             parentTimer?.reset()
             parentTimer?.setMainTimerStatus(status: false)
             changeButton()
+          
         }
     }
     @IBOutlet weak var getReadystop: UIButton!
@@ -55,6 +58,7 @@ class ViewController: UIViewController{
             
         self.getReadystop.setTitle("Stop", for: UIControlState.normal)
         self.getReadystop.backgroundColor = UIColor(red: 200.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+      
             
         } else {
         
@@ -87,6 +91,16 @@ class ViewController: UIViewController{
     @IBOutlet weak var pourProgress: MKMagneticProgress!
     @IBOutlet weak var breakProgress: MKMagneticProgress!
     @IBOutlet weak var sampleProgress: MKMagneticProgress!
+    
+    func advancedModeUpdate(){
+        if advancedMode == false{
+//            let rightConstraint = breakProgress.trailingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -15)
+//            let breakProgressConstraits: [NSLayoutConstraint] = [rightConstraint]
+//            NSLayoutConstraint.activate(breakProgressConstraits)
+            sampleProgress.isHidden = true
+        }
+    }
+    
  
     func updateProgressViews(){
 
@@ -104,6 +118,7 @@ class ViewController: UIViewController{
         
         pourProgress.percentLabelFormat = String(parentTimer!.timers[0].getBowlsPassed())
         pourProgress.setProgress(progress: parentTimer!.timers[0].getPercentage(), animated: true)
+        
 
         breakProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
         breakProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
@@ -159,9 +174,10 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
        
-//        UINavigationBar.appearance().titleTextAttributes = attrs
+        parentTimer?.isKeyPresentInUserDefaults()
+ //       UINavigationBar.appearance().titleTextAttributes = attrs
         print("Timer Segue status = \(timerSegue)")
-        advancedMode = UserDefaults.standard.object(forKey: "advancedMode")! as! Bool
+        advancedMode = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
         vibrate = UserDefaults.standard.object(forKey: "vibrate") as! Bool
         print("Advanced mode = \(advancedMode)")
         print("Vibrate mode = \(vibrate)")
@@ -171,8 +187,11 @@ class ViewController: UIViewController{
         }
         
         if timerSegue == true {
+          //  bottomToolBar.removeConstraints(bottomToolBar.constraints)
             bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
             start()
+        }else{
+            bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 44, width: view.frame.size.width, height: 375)
         }
         
         setupGoStopButton()
@@ -180,6 +199,8 @@ class ViewController: UIViewController{
         intervalProgress.font = intervalProgress.font.withSize(50.0)
         
         initialProgressView()
+        
+        advancedModeUpdate()
         
         // Do any additional setup after loading the view, typically from a nib.
     }

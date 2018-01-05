@@ -301,8 +301,11 @@
                         <constraints>
                             <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="7Z5-gT-d6y"/>
                             <constraint firstItem="1wt-dF-m1B" firstAttribute="trailing" secondItem="v5Z-XJ-ZUQ" secondAttribute="trailing" id="NEH-tg-KzB"/>
+                            <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="leading" secondItem="1wt-dF-m1B" secondAttribute="leading" id="RKs-Wg-pSn"/>
                             <constraint firstItem="Hpn-CQ-fXi" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="VF8-h7-VyI"/>
+                            <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" secondItem="1wt-dF-m1B" secondAttribute="top" constant="50" id="Vne-5l-M7X"/>
                             <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="leading" secondItem="1wt-dF-m1B" secondAttribute="leading" id="VuK-wu-fxz"/>
+                            <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="trailing" secondItem="1wt-dF-m1B" secondAttribute="trailing" id="mag-Ar-cLu"/>
                             <constraint firstItem="ceZ-Ez-xjD" firstAttribute="top" secondItem="v5Z-XJ-ZUQ" secondAttribute="bottom" constant="50" id="sF4-uh-sgi"/>
                             <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" secondItem="1wt-dF-m1B" secondAttribute="top" constant="50" id="xVb-8o-KVJ"/>
                             <constraint firstItem="1wt-dF-m1B" firstAttribute="bottom" secondItem="Hpn-CQ-fXi" secondAttribute="bottom" constant="100" id="ywa-eO-xNB"/>
@@ -326,9 +329,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round one" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aO-1y-HWv">
-                                <rect key="frame" x="0.0" y="72" width="375" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round one" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aO-1y-HWv">
+                                <rect key="frame" x="0.0" y="70" width="375" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -368,6 +370,9 @@
                             <constraint firstItem="voq-od-7oy" firstAttribute="centerX" secondItem="cQD-8r-ccm" secondAttribute="centerX" constant="50" id="TaO-so-N7s"/>
                             <constraint firstItem="Qyj-yH-3WC" firstAttribute="centerY" secondItem="cQD-8r-ccm" secondAttribute="centerY" id="Xz9-eF-xJQ"/>
                             <constraint firstItem="7vq-aa-zYb" firstAttribute="bottom" secondItem="n1M-lj-rmG" secondAttribute="bottom" constant="100" id="bNx-qG-cVF"/>
+                            <constraint firstItem="6aO-1y-HWv" firstAttribute="trailing" secondItem="7vq-aa-zYb" secondAttribute="trailing" id="fEM-st-6Bg"/>
+                            <constraint firstItem="6aO-1y-HWv" firstAttribute="top" secondItem="7vq-aa-zYb" secondAttribute="top" constant="50" id="uaK-Uh-bxP"/>
+                            <constraint firstItem="6aO-1y-HWv" firstAttribute="leading" secondItem="7vq-aa-zYb" secondAttribute="leading" id="xEM-pd-4Gc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7vq-aa-zYb"/>
                     </view>
@@ -394,9 +399,8 @@
                                     <outlet property="delegate" destination="2mZ-OX-8I0" id="lFq-TC-1H8"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round Two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oY-mr-FLg">
-                                <rect key="frame" x="0.0" y="69" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oY-mr-FLg">
+                                <rect key="frame" x="0.0" y="70" width="375" height="44"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -426,6 +430,9 @@
                             <constraint firstItem="Cq8-k5-zzG" firstAttribute="centerX" secondItem="ATz-yr-M9v" secondAttribute="centerX" id="DwI-G1-bV8"/>
                             <constraint firstItem="cTw-II-XDp" firstAttribute="bottom" secondItem="cVS-1u-IsD" secondAttribute="bottom" constant="100" id="G6m-a8-itv"/>
                             <constraint firstItem="cVS-1u-IsD" firstAttribute="centerX" secondItem="ATz-yr-M9v" secondAttribute="centerX" id="HTP-gg-mwi"/>
+                            <constraint firstItem="5oY-mr-FLg" firstAttribute="leading" secondItem="cTw-II-XDp" secondAttribute="leading" id="IMs-hT-9Xj"/>
+                            <constraint firstItem="5oY-mr-FLg" firstAttribute="top" secondItem="cTw-II-XDp" secondAttribute="top" constant="50" id="SBD-5P-SMK"/>
+                            <constraint firstItem="5oY-mr-FLg" firstAttribute="trailing" secondItem="cTw-II-XDp" secondAttribute="trailing" id="ZWz-1d-Iv6"/>
                             <constraint firstItem="Cq8-k5-zzG" firstAttribute="centerY" secondItem="ATz-yr-M9v" secondAttribute="centerY" id="dXe-Sf-7VU"/>
                             <constraint firstItem="cKU-1M-FEG" firstAttribute="centerX" secondItem="ATz-yr-M9v" secondAttribute="centerX" constant="50" id="pGd-Kg-niE"/>
                             <constraint firstItem="cKU-1M-FEG" firstAttribute="centerY" secondItem="ATz-yr-M9v" secondAttribute="centerY" id="soT-Go-tM9"/>
@@ -474,9 +481,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round Three" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sma-6v-pYi">
-                                <rect key="frame" x="0.0" y="74" width="375" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Three" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sma-6v-pYi">
+                                <rect key="frame" x="0.0" y="70" width="375" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -484,12 +490,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sma-6v-pYi" firstAttribute="trailing" secondItem="Nbb-lx-kaI" secondAttribute="trailing" id="7U2-tl-YS0"/>
+                            <constraint firstItem="sma-6v-pYi" firstAttribute="leading" secondItem="Nbb-lx-kaI" secondAttribute="leading" id="Gvr-dd-Cjv"/>
                             <constraint firstItem="sZt-xi-XJg" firstAttribute="centerX" secondItem="bF5-jk-c9w" secondAttribute="centerX" constant="50" id="HPt-6t-3AM"/>
                             <constraint firstItem="Nbb-lx-kaI" firstAttribute="bottom" secondItem="GAm-br-91J" secondAttribute="bottom" constant="100" id="Kou-1P-NdI"/>
                             <constraint firstItem="GAm-br-91J" firstAttribute="centerX" secondItem="bF5-jk-c9w" secondAttribute="centerX" id="aYj-Sv-4eN"/>
                             <constraint firstItem="ds7-7t-6gV" firstAttribute="centerX" secondItem="bF5-jk-c9w" secondAttribute="centerX" id="cgU-Vu-CEP"/>
                             <constraint firstItem="sZt-xi-XJg" firstAttribute="centerY" secondItem="bF5-jk-c9w" secondAttribute="centerY" id="eLd-MO-0bp"/>
                             <constraint firstItem="ds7-7t-6gV" firstAttribute="centerY" secondItem="bF5-jk-c9w" secondAttribute="centerY" id="mo2-d6-Jpz"/>
+                            <constraint firstItem="sma-6v-pYi" firstAttribute="top" secondItem="Nbb-lx-kaI" secondAttribute="top" constant="50" id="wsJ-B0-h3t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nbb-lx-kaI"/>
                     </view>
@@ -499,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgE-BW-GFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3682.4000000000001" y="801.94902548725645"/>
+            <point key="canvasLocation" x="3682" y="813"/>
         </scene>
         <!--Alarm Sound View Controller-->
         <scene sceneID="Ema-jW-Xbu">

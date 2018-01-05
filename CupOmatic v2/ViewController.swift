@@ -159,6 +159,46 @@ class ViewController: UIViewController{
         
     }
     
+    func isKeyPresentInUserDefaults(){
+        
+        if (UserDefaults.standard.object(forKey: "isInitiated") == nil){
+            
+            UserDefaults.standard.set(false, forKey: "advancedMode")
+            UserDefaults.standard.set(false, forKey: "vibrate")
+            
+            UserDefaults.standard.set(12, forKey: "numberOfBowlsSave")
+            
+            UserDefaults.standard.set(5, forKey: "intervalSettingSave")
+            UserDefaults.standard.set(0, forKey: "minutesResultSave")
+            UserDefaults.standard.set(20, forKey: "secondsResultSave")
+            
+            UserDefaults.standard.set(60, forKey: "breakSettingSave")
+            UserDefaults.standard.set(240, forKey: "breakMinutesResultSave")
+            UserDefaults.standard.set(0, forKey: "breakSecondsResultSave")
+            
+            UserDefaults.standard.set(120, forKey: "sampleSettingSave")
+            UserDefaults.standard.set(10, forKey: "sampleMinutesResultSave")
+            UserDefaults.standard.set(0, forKey: "sampleSecondsResultSave")
+            
+            UserDefaults.standard.set(180, forKey: "roundOneSettingSave")
+            UserDefaults.standard.set(13, forKey: "roundOneMinutesResultSave")
+            UserDefaults.standard.set(0, forKey: "roundOneSecondsResultSave")
+            
+            UserDefaults.standard.set(200, forKey: "roundTwoSettingSave")
+            UserDefaults.standard.set(18, forKey: "roundTwoMinutesResultSave")
+            UserDefaults.standard.set(0, forKey: "roundTwoSecondsResultSave")
+            
+            UserDefaults.standard.set(300, forKey: "roundThreeSettingSave")
+            UserDefaults.standard.set(22, forKey: "roundThreeMinutesResultSave")
+            UserDefaults.standard.set(0, forKey: "roundThreeSecondsResultSave")
+            
+            UserDefaults.standard.set(["Index": 20, "Sound": 1336], forKey: "alarmSoundSave")
+            
+            UserDefaults.standard.set(4, forKey: "startTimerSetting")
+            
+            UserDefaults.standard.set(true, forKey: "isInitiated")
+        }
+    }
     
     
     
@@ -175,6 +215,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
        
         parentTimer?.isKeyPresentInUserDefaults()
+        isKeyPresentInUserDefaults()
  //       UINavigationBar.appearance().titleTextAttributes = attrs
         print("Timer Segue status = \(timerSegue)")
         advancedMode = UserDefaults.standard.object(forKey: "advancedMode") as! Bool

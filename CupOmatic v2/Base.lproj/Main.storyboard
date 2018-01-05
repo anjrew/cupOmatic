@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,119 +16,172 @@
         </array>
     </customFonts>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="dDr-ZE-Kcg">
+            <objects>
+                <viewController id="PAi-2U-yEN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YU4-Ll-jGZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uIh-ev-WlG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbr-oI-F2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10" y="-743"/>
+        </scene>
         <!--Instructions View Controller-->
         <scene sceneID="9w7-9L-tpz">
             <objects>
                 <viewController id="Tbj-pY-gZp" customClass="InstructionsViewController" customModule="CupOmatic_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yhl-7u-Mke">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FF8-mR-5Xw">
-                                <rect key="frame" x="16" y="156" width="343" height="61"/>
-                                <string key="text">Is the large timer at the top which shows the time since the start of the session.
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="id4-CB-Ga8">
+                                <rect key="frame" x="0.0" y="10" width="375" height="990"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFq-m5-Trm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="992"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc8-JQ-74v">
+                                                <rect key="frame" x="80" y="50" width="215" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d58-q9-QUu">
+                                                <rect key="frame" x="30" y="148" width="315" height="28"/>
+                                                <string key="text">Main Timer
 </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-5W-iAf">
-                                <rect key="frame" x="17" y="330" width="146" height="28"/>
-                                <string key="text">Bowl Indicators
+                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FF8-mR-5Xw">
+                                                <rect key="frame" x="30" y="186" width="315" height="61"/>
+                                                <string key="text">Is the large timer at the top which shows the time since the start of the session.
 </string>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugb-VH-6yM">
-                                <rect key="frame" x="16" y="475.5" width="148" height="28"/>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvs-Tw-gDF">
-                                <rect key="frame" x="17" y="366" width="343" height="101.5"/>
-                                <string key="text">These are the small circular progress views at the bottom of the screen. They indicate how many bowls the specific action should have already been performed on at that given moment.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-kt-I6x">
-                                <rect key="frame" x="16" y="261" width="343" height="61"/>
-                                <string key="text">Shows the interval time between each action for each bowl.
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-AR-PFc">
+                                                <rect key="frame" x="30" y="297" width="315" height="28"/>
+                                                <string key="text">Interval Timer
 </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-AR-PFc">
-                                <rect key="frame" x="17" y="225" width="131.5" height="28"/>
-                                <string key="text">Interval Timer
+                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-kt-I6x">
+                                                <rect key="frame" x="30" y="335" width="315" height="61"/>
+                                                <string key="text">Shows the interval time between each action for each bowl.
 </string>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d58-q9-QUu">
-                                <rect key="frame" x="16" y="120" width="105" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-5W-iAf">
+                                                <rect key="frame" x="30" y="446" width="315" height="28"/>
+                                                <string key="text">Bowl Indicators
+</string>
+                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugb-VH-6yM">
+                                                <rect key="frame" x="30" y="636" width="315" height="27"/>
+                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adds sample collection, and tasting rounds to the session" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-IW-gUf">
+                                                <rect key="frame" x="30" y="674" width="315" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="W4q-vt-jCa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvs-Tw-gDF">
+                                                <rect key="frame" x="30" y="484" width="315" height="102"/>
+                                                <string key="text">These are the small circular progress views at the bottom of the screen. They indicate how many bowls the specific action should have already been performed on at that given moment.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="tNP-AR-PFc" firstAttribute="top" secondItem="FF8-mR-5Xw" secondAttribute="bottom" constant="50" id="0U1-X0-iex"/>
+                                            <constraint firstItem="d58-q9-QUu" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="3Di-pf-mE2"/>
+                                            <constraint firstItem="ugb-VH-6yM" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="6Q6-7z-xU0"/>
+                                            <constraint firstItem="tNP-AR-PFc" firstAttribute="trailing" secondItem="BU3-kt-I6x" secondAttribute="trailing" id="771-NK-7CW"/>
+                                            <constraint firstItem="BU3-kt-I6x" firstAttribute="top" secondItem="tNP-AR-PFc" secondAttribute="bottom" constant="10" id="7SQ-1C-2Hq"/>
+                                            <constraint firstItem="d58-q9-QUu" firstAttribute="leading" secondItem="FF8-mR-5Xw" secondAttribute="leading" id="AsT-L1-p9O"/>
+                                            <constraint firstItem="d58-q9-QUu" firstAttribute="top" secondItem="Gc8-JQ-74v" secondAttribute="bottom" constant="50" id="D8U-Zc-uGT"/>
+                                            <constraint firstItem="ZK0-IW-gUf" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="Erp-Iu-HBa"/>
+                                            <constraint firstItem="FF8-mR-5Xw" firstAttribute="top" secondItem="d58-q9-QUu" secondAttribute="bottom" constant="10" id="HvV-hu-MVH"/>
+                                            <constraint firstItem="C1d-5W-iAf" firstAttribute="top" secondItem="BU3-kt-I6x" secondAttribute="bottom" constant="50" id="KVz-P0-ESy"/>
+                                            <constraint firstItem="C1d-5W-iAf" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="SCs-cw-las"/>
+                                            <constraint firstItem="ugb-VH-6yM" firstAttribute="top" secondItem="Wvs-Tw-gDF" secondAttribute="bottom" constant="50" id="Ta1-BY-bcZ"/>
+                                            <constraint firstItem="ugb-VH-6yM" firstAttribute="leading" secondItem="ZK0-IW-gUf" secondAttribute="leading" id="TuO-XY-1OV"/>
+                                            <constraint firstItem="tNP-AR-PFc" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="Upb-W3-JQs"/>
+                                            <constraint firstItem="C1d-5W-iAf" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="VSk-2J-BGa"/>
+                                            <constraint firstItem="ugb-VH-6yM" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="Wn9-t0-9xG"/>
+                                            <constraint firstItem="Wvs-Tw-gDF" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="csV-CR-3EX"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wvs-Tw-gDF" secondAttribute="trailing" constant="30" id="eUl-QX-GuR"/>
+                                            <constraint firstAttribute="trailing" secondItem="FF8-mR-5Xw" secondAttribute="trailing" constant="30" id="gKt-22-Hxm"/>
+                                            <constraint firstItem="Gc8-JQ-74v" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="h5R-rr-jLt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wvs-Tw-gDF" secondAttribute="trailing" constant="30" id="ixE-gP-pSb"/>
+                                            <constraint firstAttribute="height" constant="992" id="jAd-i9-HsV"/>
+                                            <constraint firstItem="FF8-mR-5Xw" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="jPd-VR-5lg"/>
+                                            <constraint firstAttribute="trailing" secondItem="d58-q9-QUu" secondAttribute="trailing" constant="30" id="ljr-yP-1Ba"/>
+                                            <constraint firstAttribute="trailing" secondItem="C1d-5W-iAf" secondAttribute="trailing" constant="30" id="pF4-9y-KFa"/>
+                                            <constraint firstItem="Wvs-Tw-gDF" firstAttribute="top" secondItem="C1d-5W-iAf" secondAttribute="bottom" constant="10" id="pdP-q8-7v2"/>
+                                            <constraint firstItem="Gc8-JQ-74v" firstAttribute="top" secondItem="VFq-m5-Trm" secondAttribute="top" constant="50" id="pep-jP-8SQ"/>
+                                            <constraint firstItem="Wvs-Tw-gDF" firstAttribute="top" secondItem="C1d-5W-iAf" secondAttribute="bottom" constant="10" id="tTh-JH-d62"/>
+                                            <constraint firstItem="BU3-kt-I6x" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="uVI-zj-qHY"/>
+                                            <constraint firstAttribute="trailing" secondItem="ugb-VH-6yM" secondAttribute="trailing" constant="30" id="ut2-2O-lJl"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZK0-IW-gUf" secondAttribute="trailing" constant="30" id="vmg-dY-mfd"/>
+                                            <constraint firstItem="ZK0-IW-gUf" firstAttribute="top" secondItem="ugb-VH-6yM" secondAttribute="bottom" constant="10" id="wgG-U0-cZK"/>
+                                            <constraint firstAttribute="trailing" secondItem="BU3-kt-I6x" secondAttribute="trailing" constant="30" id="yGk-mm-YPP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="B2W-x3-3sW"/>
-                                    <constraint firstAttribute="width" constant="105" id="Kqg-d3-wje"/>
+                                    <constraint firstItem="VFq-m5-Trm" firstAttribute="leading" secondItem="id4-CB-Ga8" secondAttribute="leading" id="Gl5-pg-L72"/>
+                                    <constraint firstItem="VFq-m5-Trm" firstAttribute="centerX" secondItem="id4-CB-Ga8" secondAttribute="centerX" id="K4a-Dz-YFb"/>
+                                    <constraint firstItem="VFq-m5-Trm" firstAttribute="leading" secondItem="id4-CB-Ga8" secondAttribute="leading" constant="30" id="N92-vf-nnw"/>
+                                    <constraint firstAttribute="trailing" secondItem="VFq-m5-Trm" secondAttribute="trailing" id="QqD-Xk-1WG"/>
+                                    <constraint firstItem="VFq-m5-Trm" firstAttribute="bottom" secondItem="id4-CB-Ga8" secondAttribute="bottomMargin" id="Vhj-CI-Hyt"/>
+                                    <constraint firstItem="VFq-m5-Trm" firstAttribute="top" secondItem="id4-CB-Ga8" secondAttribute="top" id="yrO-Ss-eTw"/>
                                 </constraints>
-                                <string key="text">Main Timer
-</string>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adds sample collection, and tasting rounds to the session" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-IW-gUf">
-                                <rect key="frame" x="16" y="512" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc8-JQ-74v">
-                                <rect key="frame" x="15" y="50" width="345" height="48"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WBv-62-xez" firstAttribute="trailing" secondItem="FF8-mR-5Xw" secondAttribute="trailing" constant="16" id="3xI-uf-uYp"/>
-                            <constraint firstItem="ZK0-IW-gUf" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="16" id="AAf-uI-eEM"/>
-                            <constraint firstItem="BU3-kt-I6x" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="16" id="APE-9D-d26"/>
-                            <constraint firstItem="FF8-mR-5Xw" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="16" id="CSJ-mX-HAa"/>
-                            <constraint firstItem="FF8-mR-5Xw" firstAttribute="top" secondItem="d58-q9-QUu" secondAttribute="bottom" constant="8" id="CXg-sj-u6q"/>
-                            <constraint firstItem="Wvs-Tw-gDF" firstAttribute="top" secondItem="C1d-5W-iAf" secondAttribute="bottom" constant="8" id="Jha-Kc-jxo"/>
-                            <constraint firstItem="Gc8-JQ-74v" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="15" id="Mdx-Kx-QfQ"/>
-                            <constraint firstItem="WBv-62-xez" firstAttribute="trailing" secondItem="Gc8-JQ-74v" secondAttribute="trailing" constant="15" id="NH6-Mc-yyU"/>
-                            <constraint firstItem="WBv-62-xez" firstAttribute="trailing" secondItem="BU3-kt-I6x" secondAttribute="trailing" constant="16" id="NTj-4z-MAV"/>
-                            <constraint firstItem="WBv-62-xez" firstAttribute="trailing" secondItem="Wvs-Tw-gDF" secondAttribute="trailing" constant="15" id="PPJ-81-2R4"/>
-                            <constraint firstItem="BU3-kt-I6x" firstAttribute="top" secondItem="tNP-AR-PFc" secondAttribute="bottom" constant="8" id="Puj-GU-0j0"/>
-                            <constraint firstItem="BU3-kt-I6x" firstAttribute="centerX" secondItem="Yhl-7u-Mke" secondAttribute="centerX" id="TTX-Ju-eh5"/>
-                            <constraint firstItem="ugb-VH-6yM" firstAttribute="top" secondItem="Wvs-Tw-gDF" secondAttribute="bottom" constant="8" id="Z1F-bz-gyH"/>
-                            <constraint firstItem="tNP-AR-PFc" firstAttribute="top" secondItem="FF8-mR-5Xw" secondAttribute="bottom" constant="8" id="bYy-Ay-iXv"/>
-                            <constraint firstItem="ZK0-IW-gUf" firstAttribute="top" secondItem="ugb-VH-6yM" secondAttribute="bottom" constant="8" id="eiW-TF-1j2"/>
-                            <constraint firstItem="WBv-62-xez" firstAttribute="trailing" secondItem="ZK0-IW-gUf" secondAttribute="trailing" constant="16" id="gJK-lz-uS4"/>
-                            <constraint firstItem="C1d-5W-iAf" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="17" id="gKG-fK-ZUr"/>
-                            <constraint firstItem="ugb-VH-6yM" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="16" id="gVh-Ha-Ep1"/>
-                            <constraint firstItem="WBv-62-xez" firstAttribute="trailing" secondItem="FF8-mR-5Xw" secondAttribute="trailing" constant="16" id="kf6-U1-BPo"/>
-                            <constraint firstItem="ugb-VH-6yM" firstAttribute="top" secondItem="Wvs-Tw-gDF" secondAttribute="bottom" constant="8" id="kus-NP-ElP"/>
-                            <constraint firstItem="tNP-AR-PFc" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="17" id="nUJ-dD-7AV"/>
-                            <constraint firstItem="Wvs-Tw-gDF" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="17" id="plP-rr-uS1"/>
-                            <constraint firstItem="d58-q9-QUu" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" constant="16" id="rHX-WR-afm"/>
-                            <constraint firstItem="d58-q9-QUu" firstAttribute="top" secondItem="WBv-62-xez" secondAttribute="top" constant="100" id="w4e-LU-jJK"/>
-                            <constraint firstItem="C1d-5W-iAf" firstAttribute="top" secondItem="BU3-kt-I6x" secondAttribute="bottom" constant="8" id="x7m-zP-Z74"/>
-                            <constraint firstItem="Gc8-JQ-74v" firstAttribute="top" secondItem="WBv-62-xez" secondAttribute="top" constant="30" id="zbk-Yf-S7Y"/>
+                            <constraint firstItem="id4-CB-Ga8" firstAttribute="width" secondItem="Yhl-7u-Mke" secondAttribute="width" id="Aoh-El-i0o"/>
+                            <constraint firstItem="id4-CB-Ga8" firstAttribute="top" secondItem="Yhl-7u-Mke" secondAttribute="top" constant="10" id="NQK-jl-PjB"/>
+                            <constraint firstItem="id4-CB-Ga8" firstAttribute="leading" secondItem="WBv-62-xez" secondAttribute="leading" id="XGg-HR-kOo"/>
+                            <constraint firstItem="id4-CB-Ga8" firstAttribute="trailing" secondItem="WBv-62-xez" secondAttribute="trailing" id="b5H-RQ-qSP"/>
+                            <constraint firstItem="id4-CB-Ga8" firstAttribute="centerX" secondItem="WBv-62-xez" secondAttribute="centerX" id="egv-T9-awO"/>
+                            <constraint firstAttribute="bottom" secondItem="id4-CB-Ga8" secondAttribute="bottom" id="uJr-4P-6rw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WBv-62-xez"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="scrollView" destination="id4-CB-Ga8" id="YHd-Kr-egd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEX-VD-crx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.20000000000005" y="-551.87406296851577"/>
+            <point key="canvasLocation" x="1392.8" y="-968.81559220389818"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="JK3-hC-3zm">
@@ -137,9 +191,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="78M-zP-T3y">
-                                <rect key="frame" x="0.0" y="20" width="375" height="571"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="78M-zP-T3y">
+                                <rect key="frame" x="0.0" y="20" width="375" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="switchCell" id="fmZ-8R-bXW">
@@ -182,8 +235,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Zft-BF-QXA" firstAttribute="bottom" secondItem="78M-zP-T3y" secondAttribute="bottom" constant="75" id="BG2-7Q-3Ih"/>
+                            <constraint firstItem="78M-zP-T3y" firstAttribute="leading" secondItem="Zft-BF-QXA" secondAttribute="leading" id="CPu-p4-xLW"/>
+                            <constraint firstItem="78M-zP-T3y" firstAttribute="trailing" secondItem="Zft-BF-QXA" secondAttribute="trailing" id="JjE-m2-0gZ"/>
                             <constraint firstItem="Zft-BF-QXA" firstAttribute="bottom" secondItem="2lM-8g-Ig9" secondAttribute="bottom" constant="30" id="VgX-zN-5Uu"/>
                             <constraint firstItem="2lM-8g-Ig9" firstAttribute="centerX" secondItem="95T-IL-VF6" secondAttribute="centerX" id="q2T-1Y-bUP"/>
+                            <constraint firstItem="78M-zP-T3y" firstAttribute="top" secondItem="Zft-BF-QXA" secondAttribute="top" id="zKC-Fj-sEO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zft-BF-QXA"/>
                     </view>
@@ -798,13 +855,10 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V67-9e-LnD" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V67-9e-LnD" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
                                 <rect key="frame" x="20" y="487" width="100" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="Om2-m9-LgC"/>
-                                    <constraint firstAttribute="width" constant="100" id="Xti-ei-CYd"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.f%"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Pour"/>
@@ -842,38 +896,37 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-Uv-ztQ" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-3V-o9W">
                                 <rect key="frame" x="81" y="274" width="213" height="213"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="213" id="3a8-AC-rhG"/>
-                                    <constraint firstAttribute="width" constant="213" id="qFF-nL-ayc"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Interval"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundShapeColor">
-                                        <color key="value" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="progressShapeColor">
-                                        <color key="value" red="0.1803921568627451" green="0.25098039215686274" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="20 s"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-uz-KxY" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="137.5" y="487" width="100" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="QuT-gj-maZ"/>
-                                    <constraint firstAttribute="height" constant="130" id="vAn-tQ-62i"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-Uv-ztQ" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="213"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Interval"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundShapeColor">
+                                                <color key="value" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="progressShapeColor">
+                                                <color key="value" red="0.1803921568627451" green="0.25098039215686274" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="20 s"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-uz-KxY" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                                <rect key="frame" x="138" y="487" width="100" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.f%"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Break"/>
@@ -889,7 +942,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-21-o7y">
-                                <rect key="frame" x="75.5" y="180" width="224" height="64"/>
+                                <rect key="frame" x="76" y="180" width="224" height="64"/>
                                 <color key="backgroundColor" red="0.0" green="0.83317057291666663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="D5J-9d-mfN"/>
@@ -903,12 +956,9 @@
                                     <action selector="getReadyStopButton:" destination="7rI-60-MoE" eventType="touchUpInside" id="lXf-6h-zlR"/>
                                 </connections>
                             </button>
-                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJf-RA-F9U" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="255" y="487" width="100" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="1hy-mk-ary"/>
-                                    <constraint firstAttribute="width" constant="100" id="3I3-7R-ueg"/>
-                                </constraints>
+                            <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJf-RA-F9U" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                                <rect key="frame" x="255" y="487" width="100" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.0f%"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Sample"/>
@@ -926,20 +976,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="top" secondItem="JP8-21-o7y" secondAttribute="bottom" constant="30" id="5YN-dU-sHd"/>
-                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="9hD-rV-qRa"/>
-                            <constraint firstItem="V67-9e-LnD" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" constant="20" id="JxO-Id-DkM"/>
-                            <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="iJf-RA-F9U" secondAttribute="trailing" constant="20" id="QgH-uT-44X"/>
-                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" id="RZ9-br-xtT"/>
+                            <constraint firstItem="JP8-21-o7y" firstAttribute="top" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="30" id="11O-Xh-GyT"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" constant="10" id="T6Y-fI-9fI"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="trailing" secondItem="5co-4T-yTk" secondAttribute="trailing" id="WlJ-HW-RYX"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" id="ZnT-aY-e88"/>
-                            <constraint firstItem="iJf-RA-F9U" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" id="cLH-bP-hYY"/>
-                            <constraint firstItem="JP8-21-o7y" firstAttribute="top" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="30" id="czy-xI-Lnv"/>
                             <constraint firstItem="JP8-21-o7y" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="dLA-xm-5Ql"/>
-                            <constraint firstItem="bXo-uz-KxY" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="fec-eA-F9J"/>
-                            <constraint firstItem="bXo-uz-KxY" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" id="hAL-iO-bVl"/>
-                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" id="qLH-TW-ENs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5co-4T-yTk"/>
                     </view>
@@ -984,8 +1025,7 @@
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="12t-qh-FcY"/>
         <segue reference="hhP-3Z-Nsb"/>
-        <segue reference="JWa-NK-aIu"/>
+        <segue reference="gL3-Oa-54D"/>
     </inferredMetricsTieBreakers>
 </document>

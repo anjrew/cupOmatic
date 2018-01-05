@@ -10,8 +10,13 @@ import UIKit
 
 class InstructionsViewController: UIViewController {
 
+    @IBOutlet var scrollView: UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.contentSize.height = 1000
         
       //  self.navigationItem.title = "Instructions"
 

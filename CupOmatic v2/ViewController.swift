@@ -97,7 +97,7 @@ class ViewController: UIViewController{
 //            let rightConstraint = breakProgress.trailingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -15)
 //            let breakProgressConstraits: [NSLayoutConstraint] = [rightConstraint]
 //            NSLayoutConstraint.activate(breakProgressConstraits)
-            sampleProgress.isHidden = true
+            breakProgress.isHidden = true
         }
     }
     
@@ -122,10 +122,20 @@ class ViewController: UIViewController{
 
         breakProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
         breakProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
+        
+        if advancedMode == true {
 
-        sampleProgress.percentLabelFormat = String(parentTimer!.timers[2].getBowlsPassed())
-        sampleProgress.setProgress(progress: parentTimer!.timers[2].getPercentage(), animated: true)
-
+            sampleProgress.percentLabelFormat = String(parentTimer!.timers[2].getBowlsPassed())
+            sampleProgress.setProgress(progress: parentTimer!.timers[2].getPercentage(), animated: true)
+            
+        }else{
+            
+            sampleProgress.title = "Break"
+            sampleProgress.titleLabel.text = "Break" 
+            sampleProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
+            sampleProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
+            
+        }
     }
     
     func updateIntervalViews(){

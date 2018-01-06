@@ -34,7 +34,7 @@ class TimerCell{
         self.timePassed = interval
         self.bowlsPassed = 0
         self.iD = iD
-        //self.audioPath = audioPath
+      
     }
     
     func activate(){

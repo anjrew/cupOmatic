@@ -67,7 +67,7 @@ class ParentTimer {
             TimerCell(label: "Round 3", interval: interval, timerSetting: timersIntervals[5], bowlCount: UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int, iD: "roundFour")
         ]
         
-        timers[0].activate()
+        
         
         alarmSound = UserDefaults.standard.object(forKey: "alarmSoundSave") as! [String : Int]
         
@@ -102,11 +102,6 @@ class ParentTimer {
     func getThirdRoundSetting() -> Int {
         return timers[5].timerSetting
     }
-    
-    
-    
-    
-    
     
     func shouldStartTimer(currentTime : Int){
         
@@ -375,7 +370,7 @@ class ParentTimer {
                 viewController?.mainTimerLabel.text = "GO!"
                 timers[0].playSound()
                 vibrateProcess()
-                
+                timers[0].activate()
                 
             }
             

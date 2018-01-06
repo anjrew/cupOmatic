@@ -131,7 +131,7 @@ class ViewController: UIViewController{
         }else{
             
             sampleProgress.title = "Break"
-            sampleProgress.titleLabel.text = "Break" 
+            sampleProgress.titleLabel.text = "Break"
             sampleProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
             sampleProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
             
@@ -224,6 +224,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
        
+      
         parentTimer?.isKeyPresentInUserDefaults()
         isKeyPresentInUserDefaults()
  //       UINavigationBar.appearance().titleTextAttributes = attrs
@@ -263,6 +264,7 @@ class ViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         
+        updateProgressViews()
         self.navigationController?.isNavigationBarHidden = true
         
         changeButton()

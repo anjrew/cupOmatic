@@ -21,9 +21,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var tableView: UITableView!
     @IBOutlet var settingsTableViewOutlet: UITableView!
     var identitys = [String]()
-    var tableViewCells = ["Advanced Mode","Interval","Break", "Sample","First Round","Second Round","Third Round","Alarm sound","Vibrate"]
+    var tableViewCells = ["Advanced Mode","Interval","Break", "Sample","First Round","Second Round","Third Round","Vibrate"]
     var tableViewDetails = ["","","","","","","","","","",""]
-    var tableSegues = ["advancedMode","interval","break","sample","roundOne","roundTwo","roundThree","alarmSound"]
+    var tableSegues = ["advancedMode","interval","break","sample","roundOne","roundTwo","roundThree","vibrate"]
     
 // Setting Variables
     
@@ -156,8 +156,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableViewDetails[4] = convertSecsmmss(timeInput: roudnOneSetting)
         tableViewDetails[5] = convertSecsmmss(timeInput: roundTwoSetting)
         tableViewDetails[6] = convertSecsmmss(timeInput: roundThreeSetting)
-        tableViewDetails[7] = String(alarmSound)
-        tableViewDetails[8] = "Vibrate Switch"
+       
+        
 
         identitys = ["bowlsViewController","intervalViewController","breakViewController","sampleViewController",
                      "firstRoundViewController","secondRoundViewController","thirdRoundViewController"]
@@ -197,7 +197,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 switchCell.accessoryView = advancedSwitch
                 return switchCell
             
-        }else if indexPath.row == 8 {
+        }else if indexPath.row == 7 {
             switchCell.textLabel!.text = "Vibrate"
             switchCell.accessoryView = vibrateSwitch
             return switchCell
@@ -235,7 +235,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row < tableSegues.count && indexPath.row != 0){
+        if (indexPath.row < tableSegues.count - 1 && indexPath.row != 0){
         performSegue(withIdentifier: tableSegues[indexPath.row], sender: self)
         }
     }

@@ -118,10 +118,13 @@ class ViewController: UIViewController{
         
         pourProgress.percentLabelFormat = String(parentTimer!.timers[0].getBowlsPassed())
         pourProgress.setProgress(progress: parentTimer!.timers[0].getPercentage(), animated: true)
-        
+        pourProgress.titleLabel.sizeToFit()
 
         breakProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
         breakProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
+        breakProgress.titleLabel.adjustsFontSizeToFitWidth = true
+        
+      
         
         if advancedMode == true {
 

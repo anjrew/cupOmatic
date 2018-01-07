@@ -983,7 +983,7 @@
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="top" relation="lessThanOrEqual" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="8qB-h1-0hi"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="bXo-uz-KxY" secondAttribute="bottom" constant="50" id="94j-ui-WQa"/>
                             <constraint firstItem="Feh-Uv-ztQ" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="CFc-lM-ffl"/>
-                            <constraint firstItem="iJf-RA-F9U" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" constant="467" id="GJa-Sq-P0J"/>
+                            <constraint firstItem="iJf-RA-F9U" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="GJa-Sq-P0J"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="iJf-RA-F9U" secondAttribute="bottom" constant="50" id="N4e-k7-rRr"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" constant="10" id="T6Y-fI-9fI"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="iJf-RA-F9U" secondAttribute="trailing" constant="20" id="WJH-av-ls0"/>
@@ -993,10 +993,10 @@
                             <constraint firstItem="JP8-21-o7y" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="dLA-xm-5Ql"/>
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" constant="8" id="fmv-0B-W5H"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="V67-9e-LnD" secondAttribute="bottom" constant="50" id="h7W-NS-lvd"/>
-                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" priority="750" constant="8" id="l6e-8E-sdm"/>
+                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" constant="8" id="l6e-8E-sdm"/>
                             <constraint firstItem="V67-9e-LnD" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" constant="20" id="lRp-hu-bMs"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="Feh-Uv-ztQ" secondAttribute="trailing" priority="750" constant="81" id="mKg-7J-HhV"/>
-                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" constant="467" id="rCt-ov-k8Y"/>
+                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="rCt-ov-k8Y"/>
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="sZS-V9-7E1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5co-4T-yTk"/>

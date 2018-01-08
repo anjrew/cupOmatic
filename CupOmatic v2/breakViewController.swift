@@ -19,9 +19,6 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     
-    
-    
-    
     @IBOutlet var breakPickerView: UIPickerView!
     
     var audioCodes = Audio().getListOfCodes()
@@ -60,12 +57,10 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         
         timeDataBase.append(minutes)
 
-  
     }
     
     
-    
-    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return timeDataBase.count    }
     
@@ -122,7 +117,7 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         breakPickerView.delegate = self
        
         
-        breakPickerView.selectRow(minutesResult, inComponent: 0, animated: true)
+        breakPickerView.selectRow(minutesResult - 1, inComponent: 0, animated: true)
        
         
         // Do any additional setup after loading the view.

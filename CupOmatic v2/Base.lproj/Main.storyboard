@@ -99,11 +99,27 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CG-NK-Vmr">
+                                                <rect key="frame" x="115" y="771.5" width="145" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="For more information, posative or negative feedback, email me @ earyzhe@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1L-Cg-5uu">
+                                                <rect key="frame" x="30" y="829" width="315" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="ubK-Oz-lTI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="tNP-AR-PFc" firstAttribute="top" secondItem="FF8-mR-5Xw" secondAttribute="bottom" constant="50" id="0U1-X0-iex"/>
                                             <constraint firstItem="d58-q9-QUu" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="3Di-pf-mE2"/>
+                                            <constraint firstItem="C1L-Cg-5uu" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="3wC-y2-npN"/>
                                             <constraint firstItem="ugb-VH-6yM" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="6Q6-7z-xU0"/>
                                             <constraint firstItem="tNP-AR-PFc" firstAttribute="trailing" secondItem="BU3-kt-I6x" secondAttribute="trailing" id="771-NK-7CW"/>
                                             <constraint firstItem="BU3-kt-I6x" firstAttribute="top" secondItem="tNP-AR-PFc" secondAttribute="bottom" constant="10" id="7SQ-1C-2Hq"/>
@@ -112,6 +128,8 @@
                                             <constraint firstItem="ZK0-IW-gUf" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="Erp-Iu-HBa"/>
                                             <constraint firstItem="FF8-mR-5Xw" firstAttribute="top" secondItem="d58-q9-QUu" secondAttribute="bottom" constant="10" id="HvV-hu-MVH"/>
                                             <constraint firstItem="C1d-5W-iAf" firstAttribute="top" secondItem="BU3-kt-I6x" secondAttribute="bottom" constant="50" id="KVz-P0-ESy"/>
+                                            <constraint firstItem="C1L-Cg-5uu" firstAttribute="top" secondItem="6CG-NK-Vmr" secondAttribute="bottom" constant="10" id="N21-gn-jI8"/>
+                                            <constraint firstItem="6CG-NK-Vmr" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="QJP-Mw-BK7"/>
                                             <constraint firstItem="C1d-5W-iAf" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="SCs-cw-las"/>
                                             <constraint firstItem="ugb-VH-6yM" firstAttribute="top" secondItem="Wvs-Tw-gDF" secondAttribute="bottom" constant="50" id="Ta1-BY-bcZ"/>
                                             <constraint firstItem="ugb-VH-6yM" firstAttribute="leading" secondItem="ZK0-IW-gUf" secondAttribute="leading" id="TuO-XY-1OV"/>
@@ -126,9 +144,11 @@
                                             <constraint firstAttribute="height" constant="992" id="jAd-i9-HsV"/>
                                             <constraint firstItem="FF8-mR-5Xw" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="jPd-VR-5lg"/>
                                             <constraint firstAttribute="trailing" secondItem="d58-q9-QUu" secondAttribute="trailing" constant="30" id="ljr-yP-1Ba"/>
+                                            <constraint firstAttribute="trailing" secondItem="C1L-Cg-5uu" secondAttribute="trailing" constant="30" id="nLQ-LE-CB9"/>
                                             <constraint firstAttribute="trailing" secondItem="C1d-5W-iAf" secondAttribute="trailing" constant="30" id="pF4-9y-KFa"/>
                                             <constraint firstItem="Wvs-Tw-gDF" firstAttribute="top" secondItem="C1d-5W-iAf" secondAttribute="bottom" constant="10" id="pdP-q8-7v2"/>
                                             <constraint firstItem="Gc8-JQ-74v" firstAttribute="top" secondItem="VFq-m5-Trm" secondAttribute="top" constant="50" id="pep-jP-8SQ"/>
+                                            <constraint firstItem="6CG-NK-Vmr" firstAttribute="top" secondItem="ZK0-IW-gUf" secondAttribute="bottom" constant="50" id="rWw-qt-Ugx"/>
                                             <constraint firstItem="Wvs-Tw-gDF" firstAttribute="top" secondItem="C1d-5W-iAf" secondAttribute="bottom" constant="10" id="tTh-JH-d62"/>
                                             <constraint firstItem="BU3-kt-I6x" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="uVI-zj-qHY"/>
                                             <constraint firstAttribute="trailing" secondItem="ugb-VH-6yM" secondAttribute="trailing" constant="30" id="ut2-2O-lJl"/>
@@ -211,7 +231,7 @@
                                     <constraint firstAttribute="width" constant="250" id="b7i-EW-Nox"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <state key="normal" title="Save Changes">
+                                <state key="normal" title="Back to timer">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1042,8 +1062,7 @@
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0wm-su-Cc1"/>
-        <segue reference="eut-8D-baN"/>
+        <segue reference="hhP-3Z-Nsb"/>
         <segue reference="gL3-Oa-54D"/>
     </inferredMetricsTieBreakers>
 </document>

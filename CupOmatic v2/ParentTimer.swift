@@ -186,6 +186,48 @@ class ParentTimer {
         
         for timer in timers{
             
+            if advancedMode == false{
+                
+                if i < 2 {
+                    
+                    if (timers[i].getTimerSetting()) > mainTimer {
+                        
+                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
+                        
+                        if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
+                            timer.playSound()
+                        }
+                        
+                        if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
+                            audio.playGetReady()
+                        }
+                        
+                    } else if (timers[i].getTimerSetting() == mainTimer){
+                        
+                        intervalTimer?.timer.invalidate()
+                        intervalTimer?.reset()
+                        intervalTimer?.startTimer()
+                        timers[i].activate()
+                        AudioServicesPlaySystemSound(SystemSoundID(1256))
+                        vibrateProcess()
+                        
+                        
+                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
+                        
+                    } else {
+                        
+                        if(timers[i].getTimePassed() == alarmWarning){
+                            AudioServicesPlaySystemSound(SystemSoundID(1256))
+                            vibrateProcess()
+                        }
+                        
+                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
+                    }
+                    
+                }
+                
+            }else{
+            
             if (timers[i].getTimerSetting()) > mainTimer {
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
@@ -218,7 +260,7 @@ class ParentTimer {
                 }
                 
                 print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
-                
+                }
                 
             }
             

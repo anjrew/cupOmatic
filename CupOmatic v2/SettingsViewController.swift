@@ -173,7 +173,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         
         self.advancedSwitch.isOn = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
         self.vibrateSwitch.isOn = UserDefaults.standard.object(forKey: "vibrate") as! Bool
@@ -235,8 +235,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row < tableSegues.count - 1 && indexPath.row != 0){
-        performSegue(withIdentifier: tableSegues[indexPath.row], sender: self)
+        if advancedMode == false{
+            if (indexPath.row < tableSegues.count - 1 && indexPath.row != 0 && indexPath.row != 3 && indexPath.row != 4 && indexPath.row != 5 && indexPath.row != 6){
+                performSegue(withIdentifier: tableSegues[indexPath.row], sender: self)
+            }
+        }else{
+            if (indexPath.row < tableSegues.count - 1 && indexPath.row != 0){
+            performSegue(withIdentifier: tableSegues[indexPath.row], sender: self)
+            }
         }
     }
     

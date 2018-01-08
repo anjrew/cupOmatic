@@ -127,7 +127,7 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
         
             
-        samplePickerView.selectRow(minutesResult, inComponent: 0, animated: true)
+        samplePickerView.selectRow(minutesResult - 1, inComponent: 0, animated: true)
         
         
     }

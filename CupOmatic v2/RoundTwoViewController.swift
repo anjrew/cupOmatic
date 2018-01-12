@@ -77,8 +77,6 @@ class RoundTwoViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
         }
         roundTwoTimeSeconds = minutesResult * 60
-        UserDefaults.standard.set(minutesResult, forKey: "roundTwoMinutesResultSave")
-        UserDefaults.standard.set(roundTwoTimeSeconds, forKey: "roundTwoSettingSave")
     }
     
     @IBAction func setButton(_ sender: Any) {

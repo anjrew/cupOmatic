@@ -118,12 +118,12 @@ class ParentTimer {
             
             UserDefaults.standard.set(12, forKey: "numberOfBowlsSave")
             
-            UserDefaults.standard.set(5, forKey: "intervalSettingSave")
+            UserDefaults.standard.set(20, forKey: "intervalSettingSave")
             UserDefaults.standard.set(0, forKey: "minutesResultSave")
             UserDefaults.standard.set(20, forKey: "secondsResultSave")
             
             UserDefaults.standard.set(60, forKey: "breakSettingSave")
-            UserDefaults.standard.set(240, forKey: "breakMinutesResultSave")
+            UserDefaults.standard.set(4, forKey: "breakMinutesResultSave")
             UserDefaults.standard.set(0, forKey: "breakSecondsResultSave")
             
             UserDefaults.standard.set(120, forKey: "sampleSettingSave")

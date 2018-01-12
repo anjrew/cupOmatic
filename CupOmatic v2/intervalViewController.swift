@@ -77,14 +77,13 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
            
         }
         intervalTime = (minutesResult * 60) + secondsResult
-        UserDefaults.standard.set(intervalTime, forKey: "intervalSettingSave")
-        UserDefaults.standard.set(minutesResult, forKey: "minutesResultSave")
-        UserDefaults.standard.set(secondsResult, forKey: "secondsResultSave")
     }
     
     @IBAction func setButton(_ sender: Any) {
         intervalTime = (minutesResult * 60) + secondsResult
         UserDefaults.standard.set(intervalTime, forKey: "intervalSettingSave")
+        UserDefaults.standard.set(minutesResult, forKey: "minutesResultSave")
+        UserDefaults.standard.set(secondsResult, forKey: "secondsResultSave")
         print(intervalTime)
         //settingsViewController.reloadSettingsTableView()
 

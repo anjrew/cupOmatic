@@ -117,13 +117,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return timeString
     }
     
-    
    
 
     override func viewDidLoad() {
        super.viewDidLoad()
 
-       self.navigationItem.title = "Settings"
+        self.navigationItem.title = "Settings"
+      
         
        //Switch assignments
         advancedSwitch.tag = 1
@@ -182,6 +182,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         saveChangesButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         saveChangesButton.layer.shadowRadius = 2;
         saveChangesButton.layer.shadowOpacity = 0.5;
+        
+      
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

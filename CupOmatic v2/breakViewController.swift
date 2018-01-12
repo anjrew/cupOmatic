@@ -89,8 +89,6 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             
         }
         breakTimeSeconds = (minutesResult * 60) + secondsResult
-        UserDefaults.standard.set(minutesResult, forKey: "breakMinutesResultSave")
-        UserDefaults.standard.set(breakTimeSeconds, forKey: "breakSettingSave")
     }
     
     @IBAction func setButton(_ sender: Any) {

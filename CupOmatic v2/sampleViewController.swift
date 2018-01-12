@@ -92,11 +92,6 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             
         }
         sampleTimeSeconds = minutesResult * 60
-        UserDefaults.standard.set(minutesResult, forKey: "sampleMinutesResultSave")
-        
-        UserDefaults.standard.set(sampleTimeSeconds, forKey: "sampleSettingSave")
-
-        
     }
     
     @IBAction func setButton(_ sender: Any) {

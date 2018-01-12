@@ -80,9 +80,7 @@ class RoundOneViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
         
         roundOneTimeSeconds = minutesResult * 60
-        UserDefaults.standard.set(minutesResult, forKey: "roundOneMinutesResultSave")
-        UserDefaults.standard.set(roundOneTimeSeconds, forKey: "roundOneSettingSave")
-    }
+        }
 
     @IBAction func setButton(_ sender: Any) {
         

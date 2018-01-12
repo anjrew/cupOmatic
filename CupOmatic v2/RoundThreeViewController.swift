@@ -83,8 +83,6 @@ class RoundThreeViewController: UIViewController, UIPickerViewDataSource, UIPick
             
         }
         roundThreeTimeSeconds = minutesResult * 60
-        UserDefaults.standard.set(minutesResult, forKey: "roundThreeMinutesResultSave")
-        UserDefaults.standard.set(roundThreeTimeSeconds, forKey: "roundThreeSettingSave")
     }
     
     @IBAction func setButton(_ sender: Any) {

@@ -51,7 +51,6 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selection = bowls[row]
         numberOfBowls = Int(bowls[row])!
-        UserDefaults.standard.set(numberOfBowls, forKey: "numberOfBowlsSave")
         print(numberOfBowls)
     }
     

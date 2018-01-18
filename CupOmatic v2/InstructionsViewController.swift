@@ -9,11 +9,12 @@
 import UIKit
 import MessageUI
 
-class InstructionsViewController: UIViewController, MFMessageComposeViewControllerDelegate{
+class InstructionsViewController: UIViewController, MFMailComposeViewControllerDelegate{
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         switch result.rawValue {
         case MFMailComposeResult.cancelled.rawValue :
             print("Cancelled")
+            
             
         case MFMailComposeResult.failed.rawValue :
             print("Failed")
@@ -33,6 +34,14 @@ class InstructionsViewController: UIViewController, MFMessageComposeViewControll
         
         self.dismiss(animated: true, completion: nil)
     }
+
+    private func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: Error?) {
+        // Check the result or perform other tasks.
+        
+        // Dismiss the mail compose view controller.
+        controller.dismiss(animated: true, completion: nil)
+    }
+
     
  
     @IBAction func composeEmailButton(_ sender: Any) {
@@ -45,7 +54,7 @@ class InstructionsViewController: UIViewController, MFMessageComposeViewControll
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
+            mail.mailComposeDelegate = self
             mail.setToRecipients(["info@cupomatic.net"])
             mail.setSubject("Cupomatic Feedback")
             mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)

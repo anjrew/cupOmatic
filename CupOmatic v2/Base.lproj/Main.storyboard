@@ -105,7 +105,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more information, positive or negative feedback, " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1L-Cg-5uu">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more information, positive or negative feedback,  email me:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1L-Cg-5uu">
                                                 <rect key="frame" x="30" y="890" width="255" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="b4o-CQ-5Vp"/>
@@ -114,18 +114,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3v7-CX-msf">
-                                                <rect key="frame" x="180" y="921" width="100" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="AvH-yP-Vkg"/>
-                                                    <constraint firstAttribute="height" constant="30" id="hh1-Dh-Jbp"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <state key="normal" title="email me!"/>
-                                                <connections>
-                                                    <action selector="composeEmailButton:" destination="Tbj-pY-gZp" eventType="touchUpInside" id="pW1-Gc-EtZ"/>
-                                                </connections>
-                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  info@cupomatic.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-7Z-KOZ">
+                                                <rect key="frame" x="52" y="955.5" width="212" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -148,12 +142,12 @@
                                             <constraint firstItem="tNP-AR-PFc" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="Upb-W3-JQs"/>
                                             <constraint firstItem="C1d-5W-iAf" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="VSk-2J-BGa"/>
                                             <constraint firstItem="ugb-VH-6yM" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="Wn9-t0-9xG"/>
+                                            <constraint firstItem="WCM-7Z-KOZ" firstAttribute="top" secondItem="6CG-NK-Vmr" secondAttribute="bottom" constant="75" id="Wsi-4v-Seu"/>
+                                            <constraint firstItem="WCM-7Z-KOZ" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="Y7n-qE-JpB"/>
                                             <constraint firstItem="Wvs-Tw-gDF" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="csV-CR-3EX"/>
-                                            <constraint firstItem="3v7-CX-msf" firstAttribute="leading" secondItem="C1L-Cg-5uu" secondAttribute="leading" constant="150" id="d2h-wp-fgi"/>
                                             <constraint firstAttribute="trailing" secondItem="Wvs-Tw-gDF" secondAttribute="trailing" constant="30" id="eUl-QX-GuR"/>
                                             <constraint firstAttribute="trailing" secondItem="FF8-mR-5Xw" secondAttribute="trailing" constant="30" id="gKt-22-Hxm"/>
                                             <constraint firstItem="Gc8-JQ-74v" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="h5R-rr-jLt"/>
-                                            <constraint firstItem="3v7-CX-msf" firstAttribute="top" secondItem="6CG-NK-Vmr" secondAttribute="bottom" constant="40.5" id="hJs-sZ-2ci"/>
                                             <constraint firstAttribute="trailing" secondItem="Wvs-Tw-gDF" secondAttribute="trailing" constant="30" id="ixE-gP-pSb"/>
                                             <constraint firstAttribute="height" constant="992" id="jAd-i9-HsV"/>
                                             <constraint firstItem="FF8-mR-5Xw" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="jPd-VR-5lg"/>

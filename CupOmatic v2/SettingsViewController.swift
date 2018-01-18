@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         NSAttributedStringKey.font: UIFont(name: "Arial", size: 30)
     ]
     
+    @IBOutlet var tableViewHeightContsraint: NSLayoutConstraint!
     var parentTimer : ParentTimer?
     @IBOutlet var saveChangesButton: UIButton!
     
@@ -117,12 +118,41 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return timeString
     }
     
+    func updateTableView(){
+        
+        if advancedMode == false {
+            tableViewCells = ["Advanced Mode","Interval","Break","Vibrate"]
+            tableViewDetails = ["","","",""]
+            tableSegues = ["advancedMode","interval","break","vibrate"]
+            tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
+            tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)
+            tableViewHeightContsraint.constant = 200
+            
+        }else{
+            tableViewCells = ["Advanced Mode","Interval","Break", "Sample","First Round","Second Round","Third Round","Vibrate"]
+            tableViewDetails = ["","","","","","","",""]
+            tableSegues = ["advancedMode","interval","break","sample","roundOne","roundTwo","roundThree","vibrate"]
+            
+            tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
+            tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)
+            tableViewDetails[3] = convertSecsmmss(timeInput: sampleSetting)
+            tableViewDetails[4] = convertSecsmmss(timeInput: roudnOneSetting)
+            tableViewDetails[5] = convertSecsmmss(timeInput: roundTwoSetting)
+            tableViewDetails[6] = convertSecsmmss(timeInput: roundThreeSetting)
+            tableViewHeightContsraint.constant = 400
+
+        }
+        
+    }
+    
    
 
     override func viewDidLoad() {
        super.viewDidLoad()
 
         self.navigationItem.title = "Settings"
+        
+        updateTableView()
       
         
        //Switch assignments
@@ -150,17 +180,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         alarmSoundDic = UserDefaults.standard.object(forKey: "alarmSoundSave") as! [String : Int]
         alarmSound = alarmSoundDic["Sound"]!
 
-        tableViewDetails[1] = convertSecsmmss(timeInput: intervalSetting)
-        tableViewDetails[2] = convertSecsmmss(timeInput: breakSetting)
-        tableViewDetails[3] = convertSecsmmss(timeInput: sampleSetting)
-        tableViewDetails[4] = convertSecsmmss(timeInput: roudnOneSetting)
-        tableViewDetails[5] = convertSecsmmss(timeInput: roundTwoSetting)
-        tableViewDetails[6] = convertSecsmmss(timeInput: roundThreeSetting)
-       
-        
-
-        identitys = ["bowlsViewController","intervalViewController","breakViewController","sampleViewController",
-                     "firstRoundViewController","secondRoundViewController","thirdRoundViewController"]
+//        identitys = ["bowlsViewController","intervalViewController","breakViewController","sampleViewController",
+//                     "firstRoundViewController","secondRoundViewController","thirdRoundViewController"]
         
         // Do any additional setup after loading the view.
     }
@@ -173,6 +194,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         
+        updateTableView()
         self.navigationController?.isNavigationBarHidden = true
         
         self.advancedSwitch.isOn = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
@@ -188,7 +210,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
  
-      
+      updateTableView()
 
         var cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let switchCell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath)
@@ -199,44 +221,31 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 switchCell.accessoryView = advancedSwitch
                 return switchCell
             
-        }else if indexPath.row == 7 {
+        }else if indexPath.row == tableViewCells.count - 1 {
             switchCell.textLabel!.text = "Vibrate"
             switchCell.accessoryView = vibrateSwitch
             return switchCell
             
-            
         } else {
-            
-            if advancedMode == true{
+        
                 cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
                 cell.backgroundColor = self.view.backgroundColor
                 cell.textLabel?.text = tableViewCells[indexPath.row]
                 cell.detailTextLabel?.text = tableViewDetails[indexPath.row]
                 return cell
-            }else{
-                if (indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 5 || indexPath.row == 6){
-                    cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
-                    cell.backgroundColor = self.view.backgroundColor
-                    cell.textLabel?.text = tableViewCells[indexPath.row]
-                    cell.detailTextLabel?.text = "Disabled"
-                    return cell
-                }else{
-                    cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
-                    cell.backgroundColor = self.view.backgroundColor
-                    cell.textLabel?.text = tableViewCells[indexPath.row]
-                    cell.detailTextLabel?.text = tableViewDetails[indexPath.row]
-                    return cell
-                }
-            }
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        updateTableView()
+        
         return tableViewCells.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        updateTableView()
         if advancedMode == false{
             if (indexPath.row < tableSegues.count - 1 && indexPath.row != 0 && indexPath.row != 3 && indexPath.row != 4 && indexPath.row != 5 && indexPath.row != 6){
                 performSegue(withIdentifier: tableSegues[indexPath.row], sender: self)

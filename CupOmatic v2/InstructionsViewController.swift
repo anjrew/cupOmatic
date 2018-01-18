@@ -7,9 +7,56 @@
 //
 
 import UIKit
+import MessageUI
 
-class InstructionsViewController: UIViewController {
+class InstructionsViewController: UIViewController, MFMessageComposeViewControllerDelegate{
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result.rawValue {
+        case MFMailComposeResult.cancelled.rawValue :
+            print("Cancelled")
+            
+        case MFMailComposeResult.failed.rawValue :
+            print("Failed")
+            
+        case MFMailComposeResult.saved.rawValue :
+            print("Saved")
+            
+        case MFMailComposeResult.sent.rawValue :
+            print("Sent")
+            
+            
+            
+        default: break
+            
+            
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+ 
+    @IBAction func composeEmailButton(_ sender: Any) {
+        sendEmail()
+    }
+    
 
+    
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
+            mail.setToRecipients(["info@cupomatic.net"])
+            mail.setSubject("Cupomatic Feedback")
+            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+            present(mail, animated: true)
+            
+        } else {
+            // show failure alert
+        }
+    }
+    
+   
     @IBOutlet var scrollView: UIScrollView!
     
     
@@ -34,6 +81,8 @@ class InstructionsViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         
     }
+    
+  
     
 
     /*

@@ -608,7 +608,7 @@
 				DEVELOPMENT_TEAM = V97H765GZ8;
 				INFOPLIST_FILE = "CupOmatic v2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rinson.CupOmatic-v2";
+				PRODUCT_BUNDLE_IDENTIFIER = net.rinson.cupomatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -624,7 +624,7 @@
 				DEVELOPMENT_TEAM = V97H765GZ8;
 				INFOPLIST_FILE = "CupOmatic v2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rinson.CupOmatic-v2";
+				PRODUCT_BUNDLE_IDENTIFIER = net.rinson.cupomatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

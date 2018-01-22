@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import Foundation
 import MessageUI
 
 class InstructionsViewController: UIViewController, MFMailComposeViewControllerDelegate{
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+    
+    func messageComposeViewController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult) {
+        
+        controller.dismiss(animated: true, completion: nil)
         switch result.rawValue {
         case MFMailComposeResult.cancelled.rawValue :
             print("Cancelled")
-            
             
         case MFMailComposeResult.failed.rawValue :
             print("Failed")
@@ -45,13 +48,43 @@ class InstructionsViewController: UIViewController, MFMailComposeViewControllerD
     
  
     @IBAction func composeEmailButton(_ sender: Any) {
-        sendEmail()
+        sendEmailOne()
+        configureMailConposeViewController()
+        showSendMailErrorAlert()
     }
     
+    
+// Methord 1
+    
+    func sendEmailOne(){
+        
+        let mailConposeViewController = MFMailComposeViewController()
+        if MFMailComposeViewController.canSendMail(){
+            self.present(mailConposeViewController, animated: true, completion: nil)
+        }else{
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configureMailConposeViewController() -> MFMailComposeViewController {
+        let mailcomposerVC = MFMailComposeViewController()
+        mailcomposerVC.mailComposeDelegate = self
+        mailcomposerVC.setToRecipients(["info@cupomatic.net"])
+        mailcomposerVC.setSubject("Cupomatic Feedback")
+        mailcomposerVC.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+        return mailcomposerVC
+    }
 
+    func showSendMailErrorAlert(){
+        
+        let sendMailErrorAlert = UIAlertController(title: "Could not send mail", message: "your device must have", preferredStyle: .alert)
+        
+        sendMailErrorAlert.show(self, sender: Any?.self)
+    }
     
+// Methord 2
     
-    func sendEmail() {
+    func sendEmailtwo() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self

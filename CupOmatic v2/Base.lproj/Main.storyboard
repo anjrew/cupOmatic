@@ -100,13 +100,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CG-NK-Vmr">
-                                                <rect key="frame" x="85" y="832.5" width="145" height="48"/>
+                                                <rect key="frame" x="85" y="833" width="145" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more information, positive or negative feedback,  email me:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1L-Cg-5uu">
-                                                <rect key="frame" x="30" y="890" width="255" height="70"/>
+                                                <rect key="frame" x="30" y="891" width="255" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="b4o-CQ-5Vp"/>
                                                 </constraints>
@@ -115,7 +115,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  info@cupomatic.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-7Z-KOZ">
-                                                <rect key="frame" x="52" y="955.5" width="212" height="26.5"/>
+                                                <rect key="frame" x="52" y="956" width="212" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

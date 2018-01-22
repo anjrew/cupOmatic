@@ -144,6 +144,7 @@ class ParentTimer {
             
             UserDefaults.standard.set(["Index": 20, "Sound": 1336], forKey: "alarmSoundSave")
             
+            UserDefaults.standard.set(0, forKey: "runs")
             UserDefaults.standard.set(4, forKey: "startTimerSetting")
             
             UserDefaults.standard.set(true, forKey: "isInitiated")

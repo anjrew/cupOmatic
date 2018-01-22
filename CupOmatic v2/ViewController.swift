@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import StoreKit
+
 
 class ViewController: UIViewController{
    
@@ -17,6 +19,7 @@ class ViewController: UIViewController{
     ]
     
     var advancedMode = false
+    var runs = 0
    
     var vibrate = false
 
@@ -47,7 +50,11 @@ class ViewController: UIViewController{
             parentTimer?.reset()
             parentTimer?.setMainTimerStatus(status: false)
             changeButton()
-          
+            runs += 1
+            UserDefaults.standard.set(runs, forKey: "runs")
+            print("Runs: \(runs)")
+            appStoreReview()
+            
         }
     }
     @IBOutlet weak var getReadystop: UIButton!
@@ -208,7 +215,7 @@ class ViewController: UIViewController{
             UserDefaults.standard.set(["Index": 20, "Sound": 1336], forKey: "alarmSoundSave")
             
             UserDefaults.standard.set(4, forKey: "startTimerSetting")
-            
+            UserDefaults.standard.set(0, forKey: "runs")
             UserDefaults.standard.set(true, forKey: "isInitiated")
         }
     }
@@ -226,10 +233,10 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-      
+        
         parentTimer?.isKeyPresentInUserDefaults()
         isKeyPresentInUserDefaults()
+        runs = UserDefaults.standard.object(forKey: "runs") as! Int
  //       UINavigationBar.appearance().titleTextAttributes = attrs
         print("Timer Segue status = \(timerSegue)")
         advancedMode = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
@@ -272,6 +279,14 @@ class ViewController: UIViewController{
         
         changeButton()
 
+    }
+    
+    func appStoreReview(){
+        if runs % 5 == 0 {
+            if #available( iOS 10.3,*){
+                SKStoreReviewController.requestReview()
+            }
+        }
     }
 
 

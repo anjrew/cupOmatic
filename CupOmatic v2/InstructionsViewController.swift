@@ -12,6 +12,11 @@ import MessageUI
 
 class InstructionsViewController: UIViewController, MFMailComposeViewControllerDelegate{
     
+    @IBAction func resetuserDefaults(_ sender: Any) {
+        if let appDomain = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: appDomain)
+        }
+    }
     func messageComposeViewController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult) {
         
         controller.dismiss(animated: true, completion: nil)

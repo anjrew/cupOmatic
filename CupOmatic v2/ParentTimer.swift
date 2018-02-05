@@ -466,8 +466,7 @@ class ParentTimer {
     func vibrateProcess(){
         
         if vibrate == true{
-            
-            AudioServicesPlaySystemSound(SystemSoundID(1020))
+            AudioServicesPlaySystemSound(SystemSoundID(4095))
         }
     }
     

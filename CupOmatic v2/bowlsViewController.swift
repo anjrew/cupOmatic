@@ -101,7 +101,7 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
         
     }
 

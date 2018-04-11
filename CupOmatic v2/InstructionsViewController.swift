@@ -53,8 +53,8 @@ class InstructionsViewController: UIViewController, MFMailComposeViewControllerD
     
  
     @IBAction func composeEmailButton(_ sender: Any) {
-        sendEmailOne()
         configureMailConposeViewController()
+        sendEmailOne()
         showSendMailErrorAlert()
     }
     

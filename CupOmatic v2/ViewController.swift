@@ -101,9 +101,6 @@ class ViewController: UIViewController{
     
     func advancedModeUpdate(){
         if advancedMode == false{
-//            let rightConstraint = breakProgress.trailingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -15)
-//            let breakProgressConstraits: [NSLayoutConstraint] = [rightConstraint]
-//            NSLayoutConstraint.activate(breakProgressConstraits)
             breakProgress.isHidden = true
         }
     }
@@ -150,16 +147,11 @@ class ViewController: UIViewController{
     
     func updateIntervalViews(){
         
-        
         if parentTimer?.intervalTimer?.active == false {
-        //    intervalProgress.percentLabelFormat = ""
             intervalProgress.setProgress(progress: 0.0, animated: false)
         }else{
-       //     intervalProgress.percentLabelFormat = parentTimer!.intervalTimer.getTimeLabel()
             intervalProgress.setProgress(progress: (parentTimer?.intervalTimer?.getIntervalPercentage())!, animated: false)
         }
-        
-      
     }
     
     

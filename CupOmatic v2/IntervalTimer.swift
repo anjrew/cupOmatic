@@ -31,30 +31,19 @@ class IntervalTimer {
         
         if bowlAmount > 0 {
               time -= 1
-  //          second -= 1
-            
-            
-//            if second.truncatingRemainder(dividingBy: 1) == 0{
-//
-//                    time -= 1
-//
+
                    if time == 0{
-//
                         time = timeSetting
                         bowlAmount -= 1
-//                        second = Float(timeSetting * 1)
                     }
-//            }
 
         }else if (bowlAmount == 0) {
         
             invalidateIntervalTimer()
-            //time = 0
             reset()
                     
         }else{
             print("YOU SHOULDNT BE HERE")
-            //bowlAmount -= 1
         }
         
         parentTimer?.viewController?.updateIntervalViews()
@@ -76,7 +65,6 @@ class IntervalTimer {
             self.time = self.timeSetting
             self.bowlAmount = bowlSetting
             self.active = true
-          //  self.second = Float(timeSetting * 1)
         }
     
     func invalidateIntervalTimer(){
@@ -102,18 +90,11 @@ class IntervalTimer {
     
     func getTimeLabel() -> String{
         return String(Int(trunc(( Double(time) / Double(timeUnit) ) )) )
-        
     }
-    
-//    func getseconds() -> Float{
-//
-//        return second
-//
-//    }
+
     
     func getIntervalPercentage() -> CGFloat {
-        
-       // return CGFloat((Float(timeSetting * 1) - getseconds() ) / Float(timeSetting * 1))
+    
         if(time == 0 ){
             return 0
         }
@@ -121,7 +102,6 @@ class IntervalTimer {
     }
     
     func setBowlAmount(){
-        
         
     }
 }

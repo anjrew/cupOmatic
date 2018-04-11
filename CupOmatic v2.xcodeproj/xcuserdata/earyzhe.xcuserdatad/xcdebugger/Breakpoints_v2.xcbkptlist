@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "538479117.4697959"
+            timestampString = "545165466.351426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "538479117.471109"
+            timestampString = "545165466.352182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "538479117.471859"
+            timestampString = "545165466.352669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.846598"
+            timestampString = "545165466.353148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "reset()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.858235"
+            timestampString = "545165466.353222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -130,7 +130,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ParentTimer.swift"
-            timestampString = "539548007.437657"
+            timestampString = "545165466.353279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -193,7 +193,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ParentTimer.swift"
-            timestampString = "539548007.437788"
+            timestampString = "545165466.35358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -272,7 +272,7 @@
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/breakViewController.swift"
-                  timestampString = "538343706.7636141"
+                  timestampString = "545162581.2104909"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -287,7 +287,7 @@
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/breakViewController.swift"
-                  timestampString = "538343706.772418"
+                  timestampString = "545162581.21294"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -302,12 +302,12 @@
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/breakViewController.swift"
-                  timestampString = "538343706.777348"
+                  timestampString = "545162581.215209"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "676">
+                  offsetFromSymbolStart = "684">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -317,12 +317,12 @@
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/breakViewController.swift"
-                  timestampString = "538343706.792787"
+                  timestampString = "545162581.217178"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "601">
+                  offsetFromSymbolStart = "609">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -430,11 +430,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.858796"
+            timestampString = "545165466.353898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "getIntervalPercentage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -446,11 +446,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.859158"
+            timestampString = "545165466.353954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "getIntervalPercentage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,11 +462,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.859503"
+            timestampString = "545165466.354028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -476,11 +476,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.859833"
+            timestampString = "545165466.354081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.8601739"
+            timestampString = "545165466.354131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -504,11 +504,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.860499"
+            timestampString = "545165466.3542"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -518,27 +518,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.860832"
+            timestampString = "545165466.35426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.861179"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "decreaseTimer()"
-            landmarkType = "7">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -596,11 +580,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.861593"
+            timestampString = "545165466.354327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "getTimeLabel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -612,7 +596,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.861961"
+            timestampString = "545165466.3543791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -628,23 +612,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.862327"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "decreaseTimer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CupOmatic v2/IntervalTimer.swift"
-            timestampString = "540576361.8626879"
+            timestampString = "545165466.3544281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -656,11 +624,27 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupOmatic v2/IntervalTimer.swift"
+            timestampString = "545165466.354494"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "decreaseTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "538479117.473497"
+            timestampString = "545165466.354545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -738,7 +722,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ParentTimer.swift"
-            timestampString = "539548007.438187"
+            timestampString = "545165466.355027"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -754,11 +738,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "538479117.474396"
+            timestampString = "545165466.355288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -770,11 +754,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "538479117.475149"
+            timestampString = "545165466.3557791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -786,7 +770,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "538479117.47578"
+            timestampString = "545165466.356517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -802,7 +786,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/TimerCell.swift"
-            timestampString = "537469731.2838989"
+            timestampString = "545161075.043119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"

@@ -205,76 +205,77 @@ class ParentTimer {
                 }else{
                     
                        //in advanced mode controlling timers and progressbars for the rounds.
-                    
-                    if (i < 5){
-                       
-
-
-                        if (timers[i].getTimerSetting() < timers[i+1].getTimerSetting()){
-                          
-                            if (timers[i].getTimerSetting() > mainTimer) {
-                                
-                                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
-                                    timers[i].playSound()
-                                }
-                                
-                                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
-                                    audio.playGetReady()
-                                }
-                                
-                            } else if (timers[i].getTimerSetting() == mainTimer){
-                                viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
-                                viewController?.intervalProgress.title = timers[i].getLabel()
-                                
-                                AudioServicesPlaySystemSound(SystemSoundID(1256))
-                                vibrateProcess()
-                                
-                            } else {
-                                
-                                viewController?.intervalProgress.percentLabelFormat = getRoundTime(timerIndex: i)
-                                viewController?.intervalProgress.setProgress(progress: getRoundsPercentage(timerIndex: i), animated: true)
-                               
-                                if(timers[i].getTimePassed() == alarmWarning){
+                    if intervalTimer?.active != true{
+                        if (i < 5){
+                            if (timers[i].getTimerSetting() < timers[i+1].getTimerSetting()){
+                              
+                                if (timers[i].getTimerSetting() > mainTimer) {
+                                    
+                                    if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
+                                        timers[i].playSound()
+                                    }
+                                    
+                                    if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
+                                        audio.playGetReady()
+                                    }
+                                    
+                                } else if (timers[i].getTimerSetting() == mainTimer){
+                                    viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
+                                    viewController?.intervalProgress.title = timers[i].getLabel()
+                                    
                                     AudioServicesPlaySystemSound(SystemSoundID(1256))
                                     vibrateProcess()
+                                    
+                                } else {
+                                    
+                                    viewController?.intervalProgress.percentLabelFormat = getRoundTime(timerIndex: i)
+                                    viewController?.intervalProgress.setProgress(progress: getRoundsPercentage(timerIndex: i), animated: true)
+                                    viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
+                                    viewController?.intervalProgress.title = timers[i].getLabel()
+                                    
+                                    if(timers[i].getTimePassed() == alarmWarning){
+                                        AudioServicesPlaySystemSound(SystemSoundID(1256))
+                                        vibrateProcess()
+                                    }
                                 }
-                                
                             }
-                        }
-                    }else{
-                        
-                        // Final Round interval progress ui
-                        
-                            if (timers[i].getTimerSetting() > mainTimer) {
-                                
-                                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
-                                    timers[i].playSound()
-                                }
-                                
-                                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
-                                    audio.playGetReady()
-                                }
-                                
-                            } else if (timers[i].getTimerSetting() == mainTimer){
-                                viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
-                                viewController?.intervalProgress.title = timers[i].getLabel()
-                                
-                                AudioServicesPlaySystemSound(SystemSoundID(1256))
-                                vibrateProcess()
-                                
-                            } else {
-                                
-                               
-                                viewController?.intervalProgress.percentLabelFormat = ""
-                                viewController?.intervalProgress.setProgress(progress: 1.0, animated: true)
-                                
-                                if(timers[i].getTimePassed() == alarmWarning){
+                        }else{
+                            
+                            // Final Round interval progress ui
+                            
+                                if (timers[i].getTimerSetting() > mainTimer) {
+                                    
+                                    if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
+                                        timers[i].playSound()
+                                    }
+                                    
+                                    if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
+                                        audio.playGetReady()
+                                    }
+                                    
+                                } else if (timers[i].getTimerSetting() == mainTimer){
+                                    viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
+                                    viewController?.intervalProgress.title = timers[i].getLabel()
+                                    
                                     AudioServicesPlaySystemSound(SystemSoundID(1256))
                                     vibrateProcess()
+                                    
+                                } else {
+                                    
+                                   
+                                    viewController?.intervalProgress.percentLabelFormat = ""
+                                    viewController?.intervalProgress.setProgress(progress: 1.0, animated: true)
+                                    viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
+                                    viewController?.intervalProgress.title = timers[i].getLabel()
+                                    
+                                    if(timers[i].getTimePassed() == alarmWarning){
+                                        AudioServicesPlaySystemSound(SystemSoundID(1256))
+                                        vibrateProcess()
+                                    }
+                                    
                                 }
-                                
                             }
-                        }
+                    }
                 }
             }
             
@@ -502,7 +503,7 @@ class ParentTimer {
             timerOne = timers[timerIndex].getTimerSetting()
             timerTwo = timers[timerIndex+1].getTimerSetting()
             timeInt = (timerTwo-timerOne) - (getMainTime() - timerOne)
-            time = String(timeInt)
+            time = convertSecsmmss(timeInput:timeInt)
             
         }else{
             

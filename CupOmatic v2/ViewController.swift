@@ -280,6 +280,12 @@ class ViewController: UIViewController{
             }
         }
     }
+    
+    func updateIntervalViewsForRounds(){
+        if parentTimer?.intervalTimer?.active == false {
+            intervalProgress.setProgress(progress: 0.0, animated: false)
+        }
+    }
 
 
 }

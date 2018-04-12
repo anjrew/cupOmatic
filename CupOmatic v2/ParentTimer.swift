@@ -162,13 +162,11 @@ class ParentTimer {
         viewController?.updateProgressViews()
         
         
-        print(getMainIntervalPercentage())
-        
-        print(String(mainTimer) + " Main Timer")
+//        print(getMainIntervalPercentage())
+//
+//        print(String(mainTimer) + " Main Timer")
         
         viewController?.mainTimerLabel.text = getMainTimerString(timerInput: mainTimer)
-        
-        
         
         // arrangeing viewcontroller toolbar depending on parent timer status
         
@@ -191,130 +189,105 @@ class ParentTimer {
                 
                 if i < 2 {
                     
-                    if (timers[i].getTimerSetting()) > mainTimer {
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
-                        
-                        if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
-                            timer.playSound()
-                        }
-                        
-                        if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
-                            audio.playGetReady()
-                        }
-                        
-                    } else if (timers[i].getTimerSetting() == mainTimer){
-                        
-                        intervalTimer?.timer.invalidate()
-                        intervalTimer?.reset()
-                        intervalTimer?.startTimer()
-                        timers[i].activate()
-                        AudioServicesPlaySystemSound(SystemSoundID(1256))
-                        vibrateProcess()
-                        
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
-                        
-                    } else {
-                        
-                        if(timers[i].getTimePassed() == alarmWarning){
-                            AudioServicesPlaySystemSound(SystemSoundID(1256))
-                            vibrateProcess()
-                        }
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
-                    }
+                    updatePourBreakAndSampleUI(i: i)
                     
+//                    print("In Basic mode")
                 }
-                
             }else{
                 
-                if i <= 2 {
+                //in advanced mode controlling timers and progressbars up to sample.
+                
+                if i < 3 {
                     
-                    if (timers[i].getTimerSetting()) > mainTimer {
-                        
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
-                        
-                        if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
-                            timer.playSound()
-                        }
-                        
-                        if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
-                            audio.playGetReady()
-                        }
-                        
-                    } else if (timers[i].getTimerSetting() == mainTimer){
-                        
-                        intervalTimer?.timer.invalidate()
-                        intervalTimer?.reset()
-                        intervalTimer?.startTimer()
-                        timers[i].activate()
-                        AudioServicesPlaySystemSound(SystemSoundID(1256))
-                        vibrateProcess()
-                        
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
-                        
-                    } else {
-                        
-                        if(timers[i].getTimePassed() == alarmWarning){
-                            AudioServicesPlaySystemSound(SystemSoundID(1256))
-                            vibrateProcess()
-                        }
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
-                    }
+                     updatePourBreakAndSampleUI(i: i)
+//                      print("In Advanced mode pour breaka and sample Section")
                     
                 }else{
                     
-                    if (timers[i].getTimerSetting()) > mainTimer {
-                        
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time Until " + convertSecsmmss(timeInput: timers[i].getTimerSetting() - mainTimer))
-                        
-                        if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
-                            timer.playSound()
-                        }
-                        
-                        if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
-                            audio.playGetReady()
-                        }
-                        
-                    } else if (timers[i].getTimerSetting() == mainTimer){
-                        viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
-                        viewController?.intervalProgress.title = timers[i].getLabel()
-//                        viewController?.intervalProgress.percentLabelFormat = "Taste"
-//                        viewController?.intervalProgress.setProgress(progress: 1.0, animated: false)
-                        
-                        AudioServicesPlaySystemSound(SystemSoundID(1256))
-                        vibrateProcess()
-                        
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
-                        
-                    } else {
-                        
-                        if(timers[i].getTimePassed() == alarmWarning){
-                            AudioServicesPlaySystemSound(SystemSoundID(1256))
-                            vibrateProcess()
-                        }
-                        
-                        print("Label " + timers[i].getLabel() + " - Bowls passed " + String(timers[i].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[i].getTimePassed())))
-                    }
+                       //in advanced mode controlling timers and progressbars for the rounds.
                     
+                    if (i < 5){
+                       
+
+
+                        if (timers[i].getTimerSetting() < timers[i+1].getTimerSetting()){
+                          
+                            if (timers[i].getTimerSetting() > mainTimer) {
+                                
+                                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
+                                    timers[i].playSound()
+                                }
+                                
+                                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
+                                    audio.playGetReady()
+                                }
+                                
+                            } else if (timers[i].getTimerSetting() == mainTimer){
+                                viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
+                                viewController?.intervalProgress.title = timers[i].getLabel()
+                                
+                                AudioServicesPlaySystemSound(SystemSoundID(1256))
+                                vibrateProcess()
+                                
+                            } else {
+                                
+                                viewController?.intervalProgress.percentLabelFormat = getRoundTime(timerIndex: i)
+                                viewController?.intervalProgress.setProgress(progress: getRoundsPercentage(timerIndex: i), animated: true)
+                               
+                                if(timers[i].getTimePassed() == alarmWarning){
+                                    AudioServicesPlaySystemSound(SystemSoundID(1256))
+                                    vibrateProcess()
+                                }
+                                
+                            }
+                        }
+                    }else{
+                        
+                        // Final Round interval progress ui
+                        
+                            if (timers[i].getTimerSetting() > mainTimer) {
+                                
+                                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
+                                    timers[i].playSound()
+                                }
+                                
+                                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
+                                    audio.playGetReady()
+                                }
+                                
+                            } else if (timers[i].getTimerSetting() == mainTimer){
+                                viewController?.intervalProgress.titleLabel.text = timers[i].getLabel()
+                                viewController?.intervalProgress.title = timers[i].getLabel()
+                                
+                                AudioServicesPlaySystemSound(SystemSoundID(1256))
+                                vibrateProcess()
+                                
+                            } else {
+                                
+                               
+                                viewController?.intervalProgress.percentLabelFormat = ""
+                                viewController?.intervalProgress.setProgress(progress: 1.0, animated: true)
+                                
+                                if(timers[i].getTimePassed() == alarmWarning){
+                                    AudioServicesPlaySystemSound(SystemSoundID(1256))
+                                    vibrateProcess()
+                                }
+                                
+                            }
+                        }
                 }
             }
             
             timer.decreaseTimer()
-            
-            i += 1
+            if(i < timers.count){
+                i += 1
+                }
         }
         
     }
     
     func getMainIntervalPercentage() -> CGFloat{
-        print("Interval time = \(String(describing: intervalTimer?.time)) - Bowl Count = \(String(describing: intervalTimer?.bowlAmount))")
+        
         return intervalTimer!.getIntervalPercentage()
         
     }
@@ -459,8 +432,6 @@ class ParentTimer {
             }
             
             if (startTime == -1){
-                
-                
                 startTimer.invalidate()
                 startMainTimer()
                 
@@ -511,7 +482,104 @@ class ParentTimer {
         }
     }
     
+    func printTimersToLog(timer:Int){
+        
+         print("Label " + timers[timer].getLabel() + " - Bowls passed " + String(timers[timer].getBowlsPassed()) + " - Time passed " + convertSecsmmss(timeInput:(timers[timer].getTimePassed())))
+    }
     
+    func printMainIntervalTime(){
+        print("Interval time = \(String(describing: intervalTimer?.time)) - Bowl Count = \(String(describing: intervalTimer?.bowlAmount))")
+    }
     
+    func getRoundTime(timerIndex:Int) -> String {
+        var timerOne = Int()
+        var time = String()
+        var timeInt = Int()
+        var timerTwo =  Int()
+        
+        if (timerIndex <= timers.count){
+            print("Get RoundTime Timer Number " + String(timerIndex) + " of " + String(timers.count))
+            timerOne = timers[timerIndex].getTimerSetting()
+            timerTwo = timers[timerIndex+1].getTimerSetting()
+            timeInt = (timerTwo-timerOne) - (getMainTime() - timerOne)
+            time = String(timeInt)
+            
+        }else{
+            
+        time = "Final Taste"
+        }
+        
+        return time
+    }
+    
+    func getRoundsPercentage(timerIndex:Int) -> CGFloat{
+        var timerOne = Int()
+        var timerTwo = Int()
+        var timeInt = Double()
+        var timeDifference = Int()
+        var timeGone = Int()
+        var percentage = CGFloat()
+        
+        
+            timerOne = timers[timerIndex].getTimerSetting()
+            timerTwo = timers[timerIndex+1].getTimerSetting()
+            timeGone = getMainTime() - timerOne
+            timeDifference = timerTwo - timerOne
+            timeInt = Double(timeGone) / Double(timeDifference)
+            percentage = CGFloat(timeInt)
+        
+        print("TOP")
+        print(timeDifference)
+        print(timeGone)
+        print(timerOne)
+        print(timerTwo)
+        print(timeInt)
+        print(percentage)
+        return percentage
+    }
+    
+    func updateIntervalProgressBarWithRounds(timerIndex:Int){
+        getRoundTime(timerIndex: timerIndex)
+        getRoundsPercentage(timerIndex: timerIndex)
+    }
+    
+    func updatePourBreakAndSampleUI(i:Int){
+        
+        if i <= 2 {
+            
+            if (timers[i].getTimerSetting()) > mainTimer {
+                
+                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 1 )){
+                    timers[i].playSound()
+                }
+                
+                if (timers[i].getTimerSetting() - mainTimer == (alarmWarning + 10 )){
+                    audio.playGetReady()
+                }
+                
+            } else if (timers[i].getTimerSetting() == mainTimer){
+                
+                intervalTimer?.timer.invalidate()
+                intervalTimer?.reset()
+                intervalTimer?.startTimer()
+                timers[i].activate()
+                AudioServicesPlaySystemSound(SystemSoundID(1256))
+                vibrateProcess()
+                
+            } else {
+                
+                if(timers[i].getTimePassed() == alarmWarning){
+                    AudioServicesPlaySystemSound(SystemSoundID(1256))
+                    vibrateProcess()
+                }
+                
+            }
+            
+        }
+    }
+    
+//    func contolForRoundsTimerAndProgressBar(i:Int) {
+//        <#function body#>
+//    }
     
 } 

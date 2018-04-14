@@ -503,7 +503,12 @@ class ParentTimer {
             timerOne = timers[timerIndex].getTimerSetting()
             timerTwo = timers[timerIndex+1].getTimerSetting()
             timeInt = (timerTwo-timerOne) - (getMainTime() - timerOne)
-            time = convertSecsmmss(timeInput:timeInt)
+            
+            if(timeInt > 60){
+                time = convertSecsmmss(timeInput:timeInt)
+            }else{
+                time = String(timeInt)
+            }
             
         }else{
             
@@ -579,8 +584,5 @@ class ParentTimer {
         }
     }
     
-//    func contolForRoundsTimerAndProgressBar(i:Int) {
-//        <#function body#>
-//    }
     
 } 

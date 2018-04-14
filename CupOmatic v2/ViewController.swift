@@ -54,6 +54,7 @@ class ViewController: UIViewController{
             UserDefaults.standard.set(runs, forKey: "runs")
             print("Runs: \(runs)")
             appStoreReview()
+            initialProgressView()
             
         }
     }
@@ -160,7 +161,7 @@ class ViewController: UIViewController{
         intervalProgress.percentLabelFormat = ""
         intervalProgress.setProgress(progress: 0.0, animated: false)
 
-        pourProgress.percentLabelFormat = String(parentTimer!.timers[0].getBowlsPassed() - 1)
+        pourProgress.percentLabelFormat = String(0)
         pourProgress.setProgress(progress: 0, animated: true)
         
         breakProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())

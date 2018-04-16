@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1003,11 +1004,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="75" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-Lz-Vac">
-                                <rect key="frame" x="0.0" y="30" width="375" height="152"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="120"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="kDZ-vH-cCz"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="v8U-Q0-XVE"/>
+                                    <constraint firstAttribute="height" priority="750" constant="150" id="1ys-J4-M04"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="kDZ-vH-cCz"/>
+                                    <constraint firstAttribute="height" constant="120" id="v8U-Q0-XVE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="220"/>
                                 <nil key="textColor"/>
@@ -1087,14 +1089,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-Uv-ztQ" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="279" width="200" height="200"/>
+                                <rect key="frame" x="74" y="262" width="227" height="217"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="0fu-96-19N"/>
-                                    <constraint firstAttribute="width" constant="200" id="6zG-IC-gs7"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="230" id="agd-Ie-wh6"/>
-                                    <constraint firstAttribute="height" constant="200" id="hpO-OU-7rr"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="lKo-jV-yBZ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wza-n9-x8J"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="Feh-Uv-ztQ" secondAttribute="height" multiplier="1:1" constant="60" id="jYU-9y-l2F"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="Feh-Uv-ztQ" secondAttribute="height" multiplier="1:1" constant="10" id="oAG-3l-JbU"/>
+                                    <constraint firstAttribute="width" secondItem="Feh-Uv-ztQ" secondAttribute="height" multiplier="1:1" priority="750" constant="10" id="s1Z-Um-AdO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Interval"/>
@@ -1137,7 +1136,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-21-o7y">
-                                <rect key="frame" x="85" y="200" width="205" height="64"/>
+                                <rect key="frame" x="85" y="168" width="205" height="64"/>
                                 <color key="backgroundColor" red="0.0" green="0.83317057291666663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="LmW-hc-QfW"/>
@@ -1154,26 +1153,29 @@
                         </subviews>
                         <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="5co-4T-yTk" secondAttribute="leading" constant="120" id="3su-vq-9aW"/>
+                            <constraint firstItem="JP8-21-o7y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="18" id="0nQ-eW-07p"/>
                             <constraint firstItem="JP8-21-o7y" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" priority="750" constant="85" id="4Jr-QP-Dkz"/>
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="top" relation="lessThanOrEqual" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="8qB-h1-0hi"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="bXo-uz-KxY" secondAttribute="bottom" constant="50" id="94j-ui-WQa"/>
                             <constraint firstItem="Feh-Uv-ztQ" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="CFc-lM-ffl"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="JP8-21-o7y" secondAttribute="trailing" priority="750" constant="85" id="EOb-bj-Maw"/>
                             <constraint firstItem="iJf-RA-F9U" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="GJa-Sq-P0J"/>
-                            <constraint firstItem="JP8-21-o7y" firstAttribute="top" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="18" id="KrU-bE-2Em"/>
+                            <constraint firstItem="JP8-21-o7y" firstAttribute="top" secondItem="1hB-Lz-Vac" secondAttribute="bottom" priority="750" constant="18" id="GZB-FQ-ei3"/>
+                            <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="1000" id="KrU-bE-2Em"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="iJf-RA-F9U" secondAttribute="bottom" constant="50" id="N4e-k7-rRr"/>
+                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" priority="750" constant="8" id="PkM-jv-D2j"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" constant="10" id="T6Y-fI-9fI"/>
+                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="top" secondItem="JP8-21-o7y" secondAttribute="bottom" priority="750" constant="15" id="TMS-9V-1dl"/>
+                            <constraint firstItem="JP8-21-o7y" firstAttribute="top" relation="lessThanOrEqual" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="30" id="TjE-SR-JYp"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="iJf-RA-F9U" secondAttribute="trailing" constant="20" id="WJH-av-ls0"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="trailing" secondItem="5co-4T-yTk" secondAttribute="trailing" id="WlJ-HW-RYX"/>
-                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="top" secondItem="JP8-21-o7y" secondAttribute="bottom" constant="15" id="ZU8-yE-y1w"/>
+                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JP8-21-o7y" secondAttribute="bottom" constant="30" id="ZU8-yE-y1w"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" id="ZnT-aY-e88"/>
                             <constraint firstItem="JP8-21-o7y" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="dLA-xm-5Ql"/>
-                            <constraint firstItem="bXo-uz-KxY" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" constant="8" id="fmv-0B-W5H"/>
+                            <constraint firstItem="bXo-uz-KxY" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" priority="750" constant="8" id="fmv-0B-W5H"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="V67-9e-LnD" secondAttribute="bottom" constant="50" id="h7W-NS-lvd"/>
-                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" constant="8" id="l6e-8E-sdm"/>
+                            <constraint firstItem="V67-9e-LnD" firstAttribute="top" relation="lessThanOrEqual" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" constant="8" id="l6e-8E-sdm"/>
                             <constraint firstItem="V67-9e-LnD" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" constant="20" id="lRp-hu-bMs"/>
-                            <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Feh-Uv-ztQ" secondAttribute="trailing" constant="120" id="mKg-7J-HhV"/>
                             <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="rCt-ov-k8Y"/>
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="sZS-V9-7E1"/>
                         </constraints>
@@ -1220,7 +1222,7 @@
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eut-8D-baN"/>
+        <segue reference="hhP-3Z-Nsb"/>
         <segue reference="gL3-Oa-54D"/>
     </inferredMetricsTieBreakers>
 </document>

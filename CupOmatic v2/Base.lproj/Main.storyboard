@@ -998,13 +998,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-Lz-Vac">
-                                <rect key="frame" x="0.0" y="30" width="375" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="40" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-Lz-Vac">
+                                <rect key="frame" x="0.0" y="30" width="375" height="152"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="kDZ-vH-cCz"/>
+                                    <constraint firstAttribute="height" priority="750" constant="120" id="kDZ-vH-cCz"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="v8U-Q0-XVE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="100"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="220"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
@@ -1058,21 +1059,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-21-o7y">
-                                <rect key="frame" x="75.5" y="180" width="224" height="64"/>
-                                <color key="backgroundColor" red="0.0" green="0.83317057291666663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="224" id="D5J-9d-mfN"/>
-                                    <constraint firstAttribute="height" constant="64" id="LmW-hc-QfW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="36"/>
-                                <state key="normal" title="Get Ready">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getReadyStopButton:" destination="7rI-60-MoE" eventType="touchUpInside" id="lXf-6h-zlR"/>
-                                </connections>
-                            </button>
                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJf-RA-F9U" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
                                 <rect key="frame" x="255" y="487" width="100" height="130"/>
                                 <constraints>
@@ -1097,10 +1083,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-Uv-ztQ" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="81" y="254" width="213" height="225"/>
+                                <rect key="frame" x="87.5" y="279" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="242.94999999999999" id="agd-Ie-wh6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="0fu-96-19N"/>
+                                    <constraint firstAttribute="width" constant="200" id="6zG-IC-gs7"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="230" id="agd-Ie-wh6"/>
+                                    <constraint firstAttribute="height" constant="200" id="hpO-OU-7rr"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="lKo-jV-yBZ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wza-n9-x8J"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Interval"/>
@@ -1142,27 +1132,44 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-21-o7y">
+                                <rect key="frame" x="85" y="200" width="205" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.83317057291666663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="LmW-hc-QfW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="SQD-zp-WZr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="34"/>
+                                <state key="normal" title="Get Ready">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getReadyStopButton:" destination="7rI-60-MoE" eventType="touchUpInside" id="lXf-6h-zlR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JP8-21-o7y" firstAttribute="top" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="30" id="11O-Xh-GyT"/>
-                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" priority="750" constant="81" id="3su-vq-9aW"/>
+                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="5co-4T-yTk" secondAttribute="leading" constant="120" id="3su-vq-9aW"/>
+                            <constraint firstItem="JP8-21-o7y" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" priority="750" constant="85" id="4Jr-QP-Dkz"/>
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="top" relation="lessThanOrEqual" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="8qB-h1-0hi"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="bXo-uz-KxY" secondAttribute="bottom" constant="50" id="94j-ui-WQa"/>
                             <constraint firstItem="Feh-Uv-ztQ" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="CFc-lM-ffl"/>
+                            <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="JP8-21-o7y" secondAttribute="trailing" priority="750" constant="85" id="EOb-bj-Maw"/>
                             <constraint firstItem="iJf-RA-F9U" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="GJa-Sq-P0J"/>
+                            <constraint firstItem="JP8-21-o7y" firstAttribute="top" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="18" id="KrU-bE-2Em"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="iJf-RA-F9U" secondAttribute="bottom" constant="50" id="N4e-k7-rRr"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" constant="10" id="T6Y-fI-9fI"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="iJf-RA-F9U" secondAttribute="trailing" constant="20" id="WJH-av-ls0"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="trailing" secondItem="5co-4T-yTk" secondAttribute="trailing" id="WlJ-HW-RYX"/>
-                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="top" secondItem="JP8-21-o7y" secondAttribute="bottom" constant="10" id="ZU8-yE-y1w"/>
+                            <constraint firstItem="Feh-Uv-ztQ" firstAttribute="top" secondItem="JP8-21-o7y" secondAttribute="bottom" constant="15" id="ZU8-yE-y1w"/>
                             <constraint firstItem="1hB-Lz-Vac" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" id="ZnT-aY-e88"/>
                             <constraint firstItem="JP8-21-o7y" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="dLA-xm-5Ql"/>
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" constant="8" id="fmv-0B-W5H"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="V67-9e-LnD" secondAttribute="bottom" constant="50" id="h7W-NS-lvd"/>
                             <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="Feh-Uv-ztQ" secondAttribute="bottom" constant="8" id="l6e-8E-sdm"/>
                             <constraint firstItem="V67-9e-LnD" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" constant="20" id="lRp-hu-bMs"/>
-                            <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="Feh-Uv-ztQ" secondAttribute="trailing" priority="750" constant="81" id="mKg-7J-HhV"/>
+                            <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Feh-Uv-ztQ" secondAttribute="trailing" constant="120" id="mKg-7J-HhV"/>
                             <constraint firstItem="V67-9e-LnD" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="rCt-ov-k8Y"/>
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="sZS-V9-7E1"/>
                         </constraints>
@@ -1209,6 +1216,7 @@
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0wm-su-Cc1"/>
         <segue reference="eut-8D-baN"/>
         <segue reference="gL3-Oa-54D"/>
     </inferredMetricsTieBreakers>

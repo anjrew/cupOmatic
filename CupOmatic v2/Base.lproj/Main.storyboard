@@ -402,7 +402,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of bowls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-XJ-ZUQ">
-                                <rect key="frame" x="0.0" y="120" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -410,14 +410,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" id="3do-I5-2ks"/>
+                            <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" priority="750" id="3do-I5-2ks"/>
                             <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="7Z5-gT-d6y"/>
-                            <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" secondItem="1wt-dF-m1B" secondAttribute="top" constant="100" id="KvU-NL-yuR"/>
+                            <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1wt-dF-m1B" secondAttribute="top" constant="30" id="AXw-qb-fxr"/>
+                            <constraint firstItem="Hpn-CQ-fXi" firstAttribute="top" secondItem="ceZ-Ez-xjD" secondAttribute="bottom" constant="35" id="DZY-X5-qaJ"/>
                             <constraint firstItem="1wt-dF-m1B" firstAttribute="trailing" secondItem="v5Z-XJ-ZUQ" secondAttribute="trailing" id="NEH-tg-KzB"/>
                             <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="leading" secondItem="1wt-dF-m1B" secondAttribute="leading" id="RKs-Wg-pSn"/>
                             <constraint firstItem="Hpn-CQ-fXi" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="VF8-h7-VyI"/>
                             <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="leading" secondItem="1wt-dF-m1B" secondAttribute="leading" id="VuK-wu-fxz"/>
+                            <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" secondItem="1wt-dF-m1B" secondAttribute="top" priority="750" constant="80" id="bSA-Ll-phj"/>
+                            <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="1wt-dF-m1B" secondAttribute="top" constant="80" id="kaa-t0-pSf"/>
                             <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="trailing" secondItem="1wt-dF-m1B" secondAttribute="trailing" id="mag-Ar-cLu"/>
+                            <constraint firstItem="ceZ-Ez-xjD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="v5Z-XJ-ZUQ" secondAttribute="bottom" constant="30" id="r0d-9K-gAB"/>
                             <constraint firstItem="1wt-dF-m1B" firstAttribute="bottom" secondItem="Hpn-CQ-fXi" secondAttribute="bottom" constant="60" id="ywa-eO-xNB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1wt-dF-m1B"/>
@@ -998,11 +1002,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="40" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-Lz-Vac">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="75" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-Lz-Vac">
                                 <rect key="frame" x="0.0" y="30" width="375" height="152"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="750" constant="120" id="kDZ-vH-cCz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="kDZ-vH-cCz"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="v8U-Q0-XVE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="220"/>
@@ -1216,7 +1220,6 @@
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0wm-su-Cc1"/>
         <segue reference="eut-8D-baN"/>
         <segue reference="gL3-Oa-54D"/>
     </inferredMetricsTieBreakers>

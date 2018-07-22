@@ -72,14 +72,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HN-yg-aNO">
-                                                <rect key="frame" x="84" y="697" width="149" height="28"/>
+                                                <rect key="frame" x="83.5" y="717" width="149" height="28"/>
                                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvs-Tw-gDF">
-                                                <rect key="frame" x="30" y="504.5" width="255" height="142.5"/>
-                                                <string key="text">These are the small circular progress views at the bottom of the screen. They indicate how many bowls the specific action should have already been performed on at that given moment.</string>
+                                                <rect key="frame" x="30" y="504.5" width="255" height="162.5"/>
+                                                <string key="text">These are the small circular progress views at the bottom of the screen. They indicate how many bowls the specific action should have already been performed on at that given moment. Pour (Pr), Break (Br) and Sample (Sa) are displayed.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.cupomatic.net" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWe-Pp-LL8">
-                                                <rect key="frame" x="63" y="1051" width="190" height="30"/>
+                                                <rect key="frame" x="62.5" y="1051" width="190" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="J0X-Sg-fxp"/>
                                                 </constraints>
@@ -117,8 +117,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  info@cupomatic.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-7Z-KOZ">
-                                                <rect key="frame" x="52" y="958.5" width="212" height="27"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-7Z-KOZ">
+                                                <rect key="frame" x="157.5" y="985.5" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -129,6 +129,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h97-KA-6jf">
+                                                <rect key="frame" x="57" y="956" width="202" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="  info@cupomatic.net"/>
+                                                <connections>
+                                                    <action selector="composeEmailButton:" destination="Tbj-pY-gZp" eventType="touchUpInside" id="PsW-U0-wzH"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -152,9 +160,9 @@
                                             <constraint firstItem="tNP-AR-PFc" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="Upb-W3-JQs"/>
                                             <constraint firstItem="C1d-5W-iAf" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="VSk-2J-BGa"/>
                                             <constraint firstItem="WCM-7Z-KOZ" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="Y7n-qE-JpB"/>
-                                            <constraint firstItem="ZK0-IW-gUf" firstAttribute="top" secondItem="Wvs-Tw-gDF" secondAttribute="bottom" constant="88" id="ZrZ-81-nX7"/>
                                             <constraint firstItem="Wvs-Tw-gDF" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="csV-CR-3EX"/>
                                             <constraint firstAttribute="trailing" secondItem="Wvs-Tw-gDF" secondAttribute="trailing" constant="30" id="eUl-QX-GuR"/>
+                                            <constraint firstItem="4Hx-2f-OBi" firstAttribute="top" secondItem="h97-KA-6jf" secondAttribute="bottom" constant="13.5" id="fbk-xu-DGi"/>
                                             <constraint firstAttribute="trailing" secondItem="FF8-mR-5Xw" secondAttribute="trailing" constant="30" id="gKt-22-Hxm"/>
                                             <constraint firstItem="Gc8-JQ-74v" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="h5R-rr-jLt"/>
                                             <constraint firstItem="5HN-yg-aNO" firstAttribute="top" secondItem="Wvs-Tw-gDF" secondAttribute="bottom" constant="50" id="iQU-HK-6DI"/>
@@ -167,11 +175,13 @@
                                             <constraint firstItem="Wvs-Tw-gDF" firstAttribute="top" secondItem="C1d-5W-iAf" secondAttribute="bottom" constant="10" id="pdP-q8-7v2"/>
                                             <constraint firstItem="Gc8-JQ-74v" firstAttribute="top" secondItem="VFq-m5-Trm" secondAttribute="top" constant="50" id="pep-jP-8SQ"/>
                                             <constraint firstItem="6CG-NK-Vmr" firstAttribute="top" secondItem="ZK0-IW-gUf" secondAttribute="bottom" constant="50" id="rWw-qt-Ugx"/>
+                                            <constraint firstItem="h97-KA-6jf" firstAttribute="centerX" secondItem="VFq-m5-Trm" secondAttribute="centerX" id="sS2-Ta-lLX"/>
                                             <constraint firstItem="Wvs-Tw-gDF" firstAttribute="top" secondItem="C1d-5W-iAf" secondAttribute="bottom" constant="10" id="tTh-JH-d62"/>
                                             <constraint firstItem="BU3-kt-I6x" firstAttribute="leading" secondItem="VFq-m5-Trm" secondAttribute="leading" constant="30" id="uVI-zj-qHY"/>
                                             <constraint firstItem="KWe-Pp-LL8" firstAttribute="centerX" secondItem="5HN-yg-aNO" secondAttribute="centerX" id="vHk-P6-coh"/>
                                             <constraint firstItem="4Hx-2f-OBi" firstAttribute="top" secondItem="WCM-7Z-KOZ" secondAttribute="bottom" constant="23" id="vlJ-eo-JHW"/>
                                             <constraint firstAttribute="trailing" secondItem="ZK0-IW-gUf" secondAttribute="trailing" constant="30" id="vmg-dY-mfd"/>
+                                            <constraint firstItem="h97-KA-6jf" firstAttribute="top" secondItem="C1L-Cg-5uu" secondAttribute="bottom" constant="8" id="xEL-FE-QXO"/>
                                             <constraint firstAttribute="trailing" secondItem="BU3-kt-I6x" secondAttribute="trailing" constant="30" id="yGk-mm-YPP"/>
                                         </constraints>
                                     </view>
@@ -1027,7 +1037,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.f%"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Pour"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Po"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
@@ -1053,7 +1063,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.f%"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Break"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Br"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
@@ -1076,7 +1086,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="percentLabelFormat" value="%.0f%"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Sample"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Sa"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
@@ -1096,7 +1106,7 @@
                                     <constraint firstAttribute="width" secondItem="Feh-Uv-ztQ" secondAttribute="height" multiplier="1:1" priority="750" constant="10" id="s1Z-Um-AdO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Interval"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Int"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
@@ -1222,7 +1232,7 @@
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hhP-3Z-Nsb"/>
-        <segue reference="gL3-Oa-54D"/>
+        <segue reference="eut-8D-baN"/>
+        <segue reference="mnZ-iE-MeT"/>
     </inferredMetricsTieBreakers>
 </document>

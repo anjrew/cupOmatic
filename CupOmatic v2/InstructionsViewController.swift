@@ -17,9 +17,9 @@ class InstructionsViewController: UIViewController, MFMailComposeViewControllerD
             UserDefaults.standard.removePersistentDomain(forName: appDomain)
         }
     }
-    func messageComposeViewController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult) {
-        
-        controller.dismiss(animated: true, completion: nil)
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error!) {
+        // Check the result or perform other tasks.
         switch result.rawValue {
         case MFMailComposeResult.cancelled.rawValue :
             print("Cancelled")
@@ -33,21 +33,11 @@ class InstructionsViewController: UIViewController, MFMailComposeViewControllerD
         case MFMailComposeResult.sent.rawValue :
             print("Sent")
             
-            
-            
         default: break
             
-            
         }
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-
-    private func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: Error?) {
-        // Check the result or perform other tasks.
-        
         // Dismiss the mail compose view controller.
-        controller.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
     

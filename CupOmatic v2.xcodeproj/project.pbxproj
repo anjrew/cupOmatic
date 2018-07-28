@@ -19,6 +19,7 @@
 		D22103F41FC4AFD5009C5143 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22103F31FC4AFC8009C5143 /* AVFoundation.framework */; };
 		D234925A1FEEE80500298627 /* MKMagneticProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23492591FEEE80400298627 /* MKMagneticProgress.swift */; };
 		D23A0D7A201678DE000EB0A8 /* Get ready final.wav in Resources */ = {isa = PBXBuildFile; fileRef = D23A0D79201678DD000EB0A8 /* Get ready final.wav */; };
+		D24D9783210CA33600EC774F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D24D9782210CA33600EC774F /* MessageUI.framework */; };
 		D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E321FBCF4C80054B918 /* greenButton.png */; };
 		D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E341FBCFA6C0054B918 /* redButton.png */; };
 		D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E361FBD70920054B918 /* reButtonWithShadow.png */; };
@@ -81,6 +82,7 @@
 		D22103F51FC4AFDD009C5143 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D23492591FEEE80400298627 /* MKMagneticProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MKMagneticProgress.swift; path = "/Users/earyzhe/Dropbox/dev/iOS apps/Cup0matic/CupOmatic_v2/CupOmatic v2.3 (Github)/cupOmatic/MKMagneticProgress.swift"; sourceTree = "<absolute>"; };
 		D23A0D79201678DD000EB0A8 /* Get ready final.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Get ready final.wav"; sourceTree = "<group>"; };
+		D24D9782210CA33600EC774F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D26C9E321FBCF4C80054B918 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
 		D26C9E341FBCFA6C0054B918 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
 		D26C9E361FBD70920054B918 /* reButtonWithShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reButtonWithShadow.png; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D24D9783210CA33600EC774F /* MessageUI.framework in Frameworks */,
 				D22103F41FC4AFD5009C5143 /* AVFoundation.framework in Frameworks */,
 				D26C9E3A1FBD8BBA0054B918 /* ios-circular-progress-bar-master in Frameworks */,
 			);
@@ -164,6 +167,7 @@
 		D26C9E381FBD8BB80054B918 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D24D9782210CA33600EC774F /* MessageUI.framework */,
 				D22103F51FC4AFDD009C5143 /* AudioToolbox.framework */,
 				D22103F31FC4AFC8009C5143 /* AVFoundation.framework */,
 				D26C9E3B1FBD8C7E0054B918 /* QuartzCore.framework */,

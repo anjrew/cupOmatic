@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "553897374.5671901"
+            timestampString = "554476958.0311069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "244"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "553897374.567258"
+            timestampString = "554476958.031183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "553897374.567304"
+            timestampString = "554476958.0312361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -272,12 +272,12 @@
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/breakViewController.swift"
-                  timestampString = "545209525.187624"
+                  timestampString = "554476958.196932"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "97">
+                  offsetFromSymbolStart = "88">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -287,12 +287,12 @@
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/breakViewController.swift"
-                  timestampString = "545209525.1912349"
+                  timestampString = "554476958.1989909"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "98">
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -302,12 +302,12 @@
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/breakViewController.swift"
-                  timestampString = "545209525.194914"
+                  timestampString = "554476958.201071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "684">
+                  offsetFromSymbolStart = "548">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -317,12 +317,12 @@
                   moduleName = "CupOmatic v2"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/earyzhe/Dropbox/dev/iOS%20apps/Cup0matic/CupOmatic_v2/CupOmatic%20v2.3%20(Github)/cupOmatic/CupOmatic%20v2/breakViewController.swift"
-                  timestampString = "545209525.197384"
+                  timestampString = "554476958.2032861"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "609">
+                  offsetFromSymbolStart = "504">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -644,7 +644,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "553897374.567564"
+            timestampString = "554476958.031926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -738,7 +738,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "553897374.5676219"
+            timestampString = "554476958.032011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "234"
@@ -754,7 +754,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "553897374.567664"
+            timestampString = "554476958.03206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "230"
@@ -770,7 +770,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CupOmatic v2/ViewController.swift"
-            timestampString = "553897374.567705"
+            timestampString = "554476958.032113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -809,6 +809,38 @@
             endingLineNumber = "1"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupOmatic v2/InstructionsViewController.swift"
+            timestampString = "554476958.032241"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "composeEmailButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupOmatic v2/InstructionsViewController.swift"
+            timestampString = "554476958.03306"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "composeEmailButton(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

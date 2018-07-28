@@ -138,8 +138,8 @@ class ViewController: UIViewController{
             
         }else{
             
-            sampleProgress.title = "Break"
-            sampleProgress.titleLabel.text = "Break"
+            sampleProgress.title = "Br"
+            sampleProgress.titleLabel.text = "Br"
             sampleProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
             sampleProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
             

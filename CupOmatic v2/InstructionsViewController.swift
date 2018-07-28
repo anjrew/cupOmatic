@@ -53,9 +53,7 @@ class InstructionsViewController: UIViewController, MFMailComposeViewControllerD
     
  
     @IBAction func composeEmailButton(_ sender: Any) {
-        configureMailConposeViewController()
         sendEmailOne()
-        showSendMailErrorAlert()
     }
     
     
@@ -63,7 +61,7 @@ class InstructionsViewController: UIViewController, MFMailComposeViewControllerD
     
     func sendEmailOne(){
         
-        let mailConposeViewController = MFMailComposeViewController()
+        let mailConposeViewController = configureMailComposeViewController()
         if MFMailComposeViewController.canSendMail(){
             self.present(mailConposeViewController, animated: true, completion: nil)
         }else{
@@ -71,12 +69,12 @@ class InstructionsViewController: UIViewController, MFMailComposeViewControllerD
         }
     }
     
-    func configureMailConposeViewController() -> MFMailComposeViewController {
+    func configureMailComposeViewController() -> MFMailComposeViewController {
         let mailcomposerVC = MFMailComposeViewController()
         mailcomposerVC.mailComposeDelegate = self
         mailcomposerVC.setToRecipients(["info@cupomatic.net"])
         mailcomposerVC.setSubject("Cupomatic Feedback")
-        mailcomposerVC.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+        mailcomposerVC.setMessageBody("You're so awesome!", isHTML: false)
         return mailcomposerVC
     }
 
@@ -87,22 +85,7 @@ class InstructionsViewController: UIViewController, MFMailComposeViewControllerD
         sendMailErrorAlert.show(self, sender: Any?.self)
     }
     
-// Methord 2
-    
-    func sendEmailtwo() {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["info@cupomatic.net"])
-            mail.setSubject("Cupomatic Feedback")
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-            present(mail, animated: true)
-            
-        } else {
-            // show failure alert
-        }
-    }
-    
+
    
     @IBOutlet var scrollView: UIScrollView!
     

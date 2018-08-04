@@ -20,6 +20,8 @@
 		D234925A1FEEE80500298627 /* MKMagneticProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23492591FEEE80400298627 /* MKMagneticProgress.swift */; };
 		D23A0D7A201678DE000EB0A8 /* Get ready final.wav in Resources */ = {isa = PBXBuildFile; fileRef = D23A0D79201678DD000EB0A8 /* Get ready final.wav */; };
 		D24D9783210CA33600EC774F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D24D9782210CA33600EC774F /* MessageUI.framework */; };
+		D25C84502112CA1B00CE3B19 /* HelpStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25C844F2112CA1B00CE3B19 /* HelpStoryBoard.storyboard */; };
+		D25C84522112CA5B00CE3B19 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25C84512112CA5B00CE3B19 /* InfoViewController.swift */; };
 		D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E321FBCF4C80054B918 /* greenButton.png */; };
 		D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E341FBCFA6C0054B918 /* redButton.png */; };
 		D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D26C9E361FBD70920054B918 /* reButtonWithShadow.png */; };
@@ -40,7 +42,6 @@
 		D29CABCE1FAF85AC008EB8EF /* AlarmSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CABCD1FAF85AC008EB8EF /* AlarmSoundViewController.swift */; };
 		D2D077181FAE24AE00812949 /* backButtonIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D077171FAE24AD00812949 /* backButtonIcon.png */; };
 		D2D0771A1FAE2C2B00812949 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D077191FAE2C2B00812949 /* SettingsViewController.swift */; };
-		D2D0771C1FAE2C6000812949 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0771B1FAE2C6000812949 /* InstructionsViewController.swift */; };
 		D2D0771E1FAE435100812949 /* bowlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0771D1FAE435100812949 /* bowlsViewController.swift */; };
 		D2D077201FAE435B00812949 /* intervalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0771F1FAE435B00812949 /* intervalViewController.swift */; };
 		D2D077221FAE436400812949 /* breakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D077211FAE436400812949 /* breakViewController.swift */; };
@@ -83,6 +84,8 @@
 		D23492591FEEE80400298627 /* MKMagneticProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MKMagneticProgress.swift; path = "/Users/earyzhe/Dropbox/dev/iOS apps/Cup0matic/CupOmatic_v2/CupOmatic v2.3 (Github)/cupOmatic/MKMagneticProgress.swift"; sourceTree = "<absolute>"; };
 		D23A0D79201678DD000EB0A8 /* Get ready final.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Get ready final.wav"; sourceTree = "<group>"; };
 		D24D9782210CA33600EC774F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D25C844F2112CA1B00CE3B19 /* HelpStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpStoryBoard.storyboard; sourceTree = "<group>"; };
+		D25C84512112CA5B00CE3B19 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		D26C9E321FBCF4C80054B918 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
 		D26C9E341FBCFA6C0054B918 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
 		D26C9E361FBD70920054B918 /* reButtonWithShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reButtonWithShadow.png; sourceTree = "<group>"; };
@@ -111,7 +114,6 @@
 		D2A769A51FAB031D00B2756D /* CupOmatic v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CupOmatic v2.entitlements"; sourceTree = "<group>"; };
 		D2D077171FAE24AD00812949 /* backButtonIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButtonIcon.png; sourceTree = "<group>"; };
 		D2D077191FAE2C2B00812949 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		D2D0771B1FAE2C6000812949 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		D2D0771D1FAE435100812949 /* bowlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bowlsViewController.swift; sourceTree = "<group>"; };
 		D2D0771F1FAE435B00812949 /* intervalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = intervalViewController.swift; sourceTree = "<group>"; };
 		D2D077211FAE436400812949 /* breakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = breakViewController.swift; sourceTree = "<group>"; };
@@ -222,7 +224,8 @@
 				D2D0772F1FAF41AC00812949 /* RoundTwoViewController.swift */,
 				D2D077311FAF41C000812949 /* RoundThreeViewController.swift */,
 				D2D0772D1FAF152900812949 /* RoundViewController.swift */,
-				D2D0771B1FAE2C6000812949 /* InstructionsViewController.swift */,
+				D25C84512112CA5B00CE3B19 /* InfoViewController.swift */,
+				D25C844F2112CA1B00CE3B19 /* HelpStoryBoard.storyboard */,
 				D288BD4F1FA877B20050BB48 /* Main.storyboard */,
 				D288BD521FA877B20050BB48 /* Assets.xcassets */,
 				D288BD541FA877B20050BB48 /* LaunchScreen.storyboard */,
@@ -388,6 +391,7 @@
 				D26C9E351FBCFA6E0054B918 /* redButton.png in Resources */,
 				D2D077181FAE24AE00812949 /* backButtonIcon.png in Resources */,
 				D22103ED1FC4A1B8009C5143 /* Sample.wav in Resources */,
+				D25C84502112CA1B00CE3B19 /* HelpStoryBoard.storyboard in Resources */,
 				D22103EE1FC4A1B8009C5143 /* Round 1.wav in Resources */,
 				D22103EF1FC4A1B8009C5143 /* Pour.wav in Resources */,
 				D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */,
@@ -423,7 +427,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D0771C1FAE2C6000812949 /* InstructionsViewController.swift in Sources */,
 				D2D0772C1FAF109E00812949 /* RoundOneViewController.swift in Sources */,
 				D2D0771E1FAE435100812949 /* bowlsViewController.swift in Sources */,
 				D288BD8F1FA8BC040050BB48 /* ParentTimer.swift in Sources */,
@@ -437,6 +440,7 @@
 				D2D0771A1FAE2C2B00812949 /* SettingsViewController.swift in Sources */,
 				D2D077321FAF41C000812949 /* RoundThreeViewController.swift in Sources */,
 				D2D077301FAF41AC00812949 /* RoundTwoViewController.swift in Sources */,
+				D25C84522112CA5B00CE3B19 /* InfoViewController.swift in Sources */,
 				D288BD911FA8C0270050BB48 /* TimerCell.swift in Sources */,
 				D2D0772E1FAF152900812949 /* RoundViewController.swift in Sources */,
 				D234925A1FEEE80500298627 /* MKMagneticProgress.swift in Sources */,

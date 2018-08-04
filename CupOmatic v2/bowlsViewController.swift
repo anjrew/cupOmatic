@@ -14,10 +14,12 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     var bowls = ["1"]
     var selection: String = ""
     
+    @IBOutlet var popupView: UIView!
+    
     @IBOutlet var startButton: UIButton!
     
     func setupStartButton(){
-        startButton.layer.cornerRadius = 65.0
+        startButton.layer.cornerRadius = 50.0
         startButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         startButton.layer.shadowRadius = 2;
         startButton.layer.shadowOpacity = 0.5;
@@ -65,10 +67,12 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         
         self.navigationItem.title = "Bowl Settings"
         numberOfBowls = UserDefaults.standard.object(forKey: "numberOfBowlsSave") as! Int
+        
         count()
         bowlsPickerview.dataSource = self
         bowlsPickerview.delegate = self
         bowlsPickerview.selectRow(numberOfBowls-1, inComponent: 0, animated: true)
+        popupView.layer.cornerRadius = 10
         print(numberOfBowls)
         
         setupStartButton()

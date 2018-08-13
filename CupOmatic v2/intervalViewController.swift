@@ -9,10 +9,10 @@
 import UIKit
 
 class intervalViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
- 
+    
     var intervalTime = 20
     
-
+    
     @IBOutlet var intervalPickerView: UIPickerView!
     
     var dataBase = [[String]]()
@@ -21,20 +21,20 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var seconds = ["0"]
     var secondsLabel = ["sec"]
     var settingsViewController = SettingsViewController()
-    
+    var delegate: ReloadTableViewDelegate?
     var selection: String = ""
     var minutesResult = 0
     var secondsResult = 0
     
     func count() {
-    
+        
         var i = 0
         while (i < 59) {
             
             i += 1
             minutes.append(String(i))
             seconds.append(String(i))
-        
+            
         }
     }
     
@@ -50,7 +50,7 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-       return dataBase.count
+        return dataBase.count
         
     }
     
@@ -60,21 +60,21 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dataBase[component][row]
-   }
+    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(component)
         print(row)
         
-            switch (component) {
-            case 0:
-                minutesResult = Int(dataBase[component][row])!
-                print(minutesResult)
-            case 2:
-                secondsResult = Int(dataBase[component][row])!
-                print(secondsResult)
-            default:break
-           
+        switch (component) {
+        case 0:
+            minutesResult = Int(dataBase[component][row])!
+            print(minutesResult)
+        case 2:
+            secondsResult = Int(dataBase[component][row])!
+            print(secondsResult)
+        default:break
+            
         }
         intervalTime = (minutesResult * 60) + secondsResult
     }
@@ -85,29 +85,29 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
         UserDefaults.standard.set(minutesResult, forKey: "minutesResultSave")
         UserDefaults.standard.set(secondsResult, forKey: "secondsResultSave")
         print(intervalTime)
-        //settingsViewController.reloadSettingsTableView()
-
+        delegate?.reloadTableView()
+        
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let settingsViewController = segue.destination as? SettingsViewController{
                 
                 settingsViewController.intervalSetting = intervalTime
-                            }
+            }
         }
         
         
     }
     
-        
     
     
     
     
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "Interval settings"
-
+        
         
         intervalTime = UserDefaults.standard.object(forKey: "intervalSettingSave") as! Int
         minutesResult = UserDefaults.standard.object(forKey: "minutesResultSave") as! Int
@@ -117,7 +117,7 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
         updatePickerView()
         intervalPickerView.dataSource = self
         intervalPickerView.delegate = self
- 
+        
         intervalPickerView.selectRow(minutesResult, inComponent: 0, animated: true)
         intervalPickerView.selectRow(secondsResult, inComponent: 2, animated: true)
         
@@ -129,22 +129,22 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.navigationController?.isNavigationBarHidden = true
         
     }
-   
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

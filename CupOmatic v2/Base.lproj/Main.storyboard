@@ -217,7 +217,7 @@
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="setButton:" destination="Wqm-zK-hXO" eventType="touchUpInside" id="NVp-7S-0DL"/>
-                                            <segue destination="7rI-60-MoE" kind="show" identifier="bowlToMain" id="eut-8D-baN"/>
+                                            <segue destination="7rI-60-MoE" kind="show" identifier="bowlsViewcontroller" id="pWC-EC-PXj"/>
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-Ez-xjD">
@@ -239,7 +239,7 @@
                                     <constraint firstItem="Hpn-CQ-fXi" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="Mye-u9-pxb"/>
                                     <constraint firstItem="ceZ-Ez-xjD" firstAttribute="top" secondItem="v5Z-XJ-ZUQ" secondAttribute="bottom" constant="30" id="Yg5-MV-toZ"/>
                                     <constraint firstItem="Hpn-CQ-fXi" firstAttribute="top" secondItem="ceZ-Ez-xjD" secondAttribute="bottom" constant="30" id="cmN-wf-12g"/>
-                                    <constraint firstAttribute="width" priority="750" constant="300" id="gaJ-fT-0Qv"/>
+                                    <constraint firstAttribute="width" constant="300" id="gaJ-fT-0Qv"/>
                                     <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" secondItem="kli-TA-9yP" secondAttribute="top" constant="30" id="ggY-Rb-NFt"/>
                                     <constraint firstAttribute="height" constant="450" id="vEn-J7-8tc"/>
                                 </constraints>
@@ -248,8 +248,6 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2969285103" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kli-TA-9yP" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" id="AFt-64-pZ9"/>
-                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" id="DC2-7E-qk7"/>
-                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="iKI-cq-Ueg"/>
                             <constraint firstItem="kli-TA-9yP" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="pxj-Su-W3w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1wt-dF-m1B"/>
@@ -1065,7 +1063,7 @@
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eut-8D-baN"/>
-        <segue reference="IQb-fb-zGh"/>
+        <segue reference="pWC-EC-PXj"/>
+        <segue reference="dzC-7d-pmy"/>
     </inferredMetricsTieBreakers>
 </document>

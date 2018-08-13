@@ -29,6 +29,7 @@ class IntervalTimer {
     
     @objc func decreaseTimer(){
         
+        
         if bowlAmount > 0 {
               time -= 1
 

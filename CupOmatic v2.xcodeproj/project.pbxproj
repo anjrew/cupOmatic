@@ -47,9 +47,10 @@
 		D2D077221FAE436400812949 /* breakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D077211FAE436400812949 /* breakViewController.swift */; };
 		D2D077241FAE436B00812949 /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D077231FAE436B00812949 /* sampleViewController.swift */; };
 		D2D0772C1FAF109E00812949 /* RoundOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0772B1FAF109E00812949 /* RoundOneViewController.swift */; };
-		D2D0772E1FAF152900812949 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0772D1FAF152900812949 /* RoundViewController.swift */; };
 		D2D077301FAF41AC00812949 /* RoundTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0772F1FAF41AC00812949 /* RoundTwoViewController.swift */; };
 		D2D077321FAF41C000812949 /* RoundThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D077311FAF41C000812949 /* RoundThreeViewController.swift */; };
+		D2DD0E8E2121B96E0094FEF0 /* ReloadTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD0E8D2121B96E0094FEF0 /* ReloadTableViewDelegate.swift */; };
+		D2DD0E902121BE280094FEF0 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD0E8F2121BE280094FEF0 /* NotificationNameExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,9 +120,10 @@
 		D2D077211FAE436400812949 /* breakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = breakViewController.swift; sourceTree = "<group>"; };
 		D2D077231FAE436B00812949 /* sampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
 		D2D0772B1FAF109E00812949 /* RoundOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundOneViewController.swift; sourceTree = "<group>"; };
-		D2D0772D1FAF152900812949 /* RoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
 		D2D0772F1FAF41AC00812949 /* RoundTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTwoViewController.swift; sourceTree = "<group>"; };
 		D2D077311FAF41C000812949 /* RoundThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundThreeViewController.swift; sourceTree = "<group>"; };
+		D2DD0E8D2121B96E0094FEF0 /* ReloadTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTableViewDelegate.swift; sourceTree = "<group>"; };
+		D2DD0E8F2121BE280094FEF0 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +211,9 @@
 				D22103DA1FC4A0FF009C5143 /* Audio */,
 				D288BD891FA8ADD60050BB48 /* Icons */,
 				D288BD4B1FA877B10050BB48 /* AppDelegate.swift */,
+				D2DD0E8F2121BE280094FEF0 /* NotificationNameExtension.swift */,
 				D288BD4D1FA877B20050BB48 /* ViewController.swift */,
+				D2DD0E8D2121B96E0094FEF0 /* ReloadTableViewDelegate.swift */,
 				D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */,
 				D22103D21FC21591009C5143 /* IntervalTimer.swift */,
 				D288BD901FA8C0270050BB48 /* TimerCell.swift */,
@@ -223,7 +227,6 @@
 				D2D0772B1FAF109E00812949 /* RoundOneViewController.swift */,
 				D2D0772F1FAF41AC00812949 /* RoundTwoViewController.swift */,
 				D2D077311FAF41C000812949 /* RoundThreeViewController.swift */,
-				D2D0772D1FAF152900812949 /* RoundViewController.swift */,
 				D25C84512112CA5B00CE3B19 /* InfoViewController.swift */,
 				D25C844F2112CA1B00CE3B19 /* HelpStoryBoard.storyboard */,
 				D288BD4F1FA877B20050BB48 /* Main.storyboard */,
@@ -437,15 +440,16 @@
 				D288BD4C1FA877B10050BB48 /* AppDelegate.swift in Sources */,
 				D2D077241FAE436B00812949 /* sampleViewController.swift in Sources */,
 				D22103D31FC21591009C5143 /* IntervalTimer.swift in Sources */,
+				D2DD0E8E2121B96E0094FEF0 /* ReloadTableViewDelegate.swift in Sources */,
 				D2D0771A1FAE2C2B00812949 /* SettingsViewController.swift in Sources */,
 				D2D077321FAF41C000812949 /* RoundThreeViewController.swift in Sources */,
 				D2D077301FAF41AC00812949 /* RoundTwoViewController.swift in Sources */,
 				D25C84522112CA5B00CE3B19 /* InfoViewController.swift in Sources */,
 				D288BD911FA8C0270050BB48 /* TimerCell.swift in Sources */,
-				D2D0772E1FAF152900812949 /* RoundViewController.swift in Sources */,
 				D234925A1FEEE80500298627 /* MKMagneticProgress.swift in Sources */,
 				D29CABCE1FAF85AC008EB8EF /* AlarmSoundViewController.swift in Sources */,
 				D29CABCC1FAF7A03008EB8EF /* Audio.swift in Sources */,
+				D2DD0E902121BE280094FEF0 /* NotificationNameExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,8 @@ class RoundThreeViewController: UIViewController, UIPickerViewDataSource, UIPick
     var selection: String = ""
     var minutesResult = 0
     var switchStatus = true
+    var delegate = ReloadTableViewDelegate.self
+
     
     @IBOutlet var roundThreePickerView: UIPickerView!
     @IBAction func roundThreeSwitch(_ sender: UISwitch){
@@ -31,14 +33,8 @@ class RoundThreeViewController: UIViewController, UIPickerViewDataSource, UIPick
             switchStatus = false
             print(switchStatus)
         }
-        
-        
     }
-    
-    
-    
-    
-    
+  
     func count() {
         
         var i = 0
@@ -92,10 +88,14 @@ class RoundThreeViewController: UIViewController, UIPickerViewDataSource, UIPick
         UserDefaults.standard.set(minutesResult, forKey: "roundThreeMinutesResultSave")
         print(roundThreeTimeSeconds)
         
+
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         self.navigationItem.title = "Round Three settings"
         count()

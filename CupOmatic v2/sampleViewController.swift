@@ -11,6 +11,8 @@ import UIKit
 class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
 
     var switchStatus = true
+    var delegate: ReloadTableViewDelegate?
+
     
     @IBAction func sampleSwitch(_ sender: UISwitch) {
         
@@ -101,6 +103,7 @@ class sampleViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         UserDefaults.standard.set(minutesResult, forKey: "sampleMinutesResultSave")
     
         print(sampleTimeSeconds)
+        delegate?.reloadTableView()
     }
     
     

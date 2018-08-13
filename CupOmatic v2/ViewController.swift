@@ -12,7 +12,7 @@ import StoreKit
 
 
 class ViewController: UIViewController{
-   
+    
     let attrs = [
         NSAttributedStringKey.foregroundColor: UIColor.black,
         NSAttributedStringKey.font: UIFont(name: "Arial", size: 20)
@@ -20,9 +20,10 @@ class ViewController: UIViewController{
     
     var advancedMode = false
     var runs = 0
-   
+    var bowlSetting: Int?
+    
     var vibrate = false
-
+    
     
     var parentTimer : ParentTimer?
     var timerSegue = false
@@ -31,7 +32,7 @@ class ViewController: UIViewController{
     
     @IBOutlet var mainTimerLabel: UILabel!
     
-//   toolbar items
+    //   toolbar items
     
     @IBOutlet var bottomToolBar: UINavigationBar!
     @IBAction func settingsButton(_ sender: Any) {
@@ -61,24 +62,28 @@ class ViewController: UIViewController{
     @IBOutlet weak var getReadystop: UIButton!
     
     func changeButton(){
-
+        
         if parentTimer?.getMainTimerStatus() == true {
             
-        self.getReadystop.setTitle("Stop", for: UIControlState.normal)
-        self.getReadystop.backgroundColor = UIColor(red: 200.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
-      
+            self.getReadystop.setTitle("Stop", for: UIControlState.normal)
+            self.getReadystop.backgroundColor = UIColor(red: 200.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+            
             
         } else {
-        
+            
             getReadystop.setTitle("Get Ready ", for: UIControlState.normal)
             self.getReadystop.backgroundColor = UIColor(red: 10.0/255.0, green: 200.0/255.0, blue: 10.0/255.0, alpha: 1.0)
             
         }
     }
-  
-
+    
+    
     @objc func start(){
-                
+        parentTimer?.setIntervalBowls(bowlAmount: bowlSetting!)
+        parentTimer?.setTimerCellBowls(bowlAmount: bowlSetting!)
+        parentTimer?.bowl = bowlSetting!
+     
+        
         if parentTimer?.initiateMainTimer == true {
             parentTimer?.startStartTimer()
             parentTimer?.initiateMainTimer = false
@@ -86,11 +91,11 @@ class ViewController: UIViewController{
             
         }else{
             
-                parentTimer?.invalidateMainTimer()
-                parentTimer?.initiateMainTimer = true
-                parentTimer?.setMainTimerStatus(status: false)
-          
-            }
+            parentTimer?.invalidateMainTimer()
+            parentTimer?.initiateMainTimer = true
+            parentTimer?.setMainTimerStatus(status: false)
+            
+        }
     }
     
     // `timer outlets
@@ -106,9 +111,9 @@ class ViewController: UIViewController{
         }
     }
     
- 
+    
     func updateProgressViews(){
-
+        
         //intervalProgress
         
         if parentTimer?.intervalTimer?.active == false {
@@ -116,7 +121,7 @@ class ViewController: UIViewController{
             
         }else{
             intervalProgress.percentLabelFormat = (parentTimer!.intervalTimer?.getTimeLabel())!
-           
+            
         }
         
         updateIntervalViews()
@@ -124,15 +129,15 @@ class ViewController: UIViewController{
         pourProgress.percentLabelFormat = String(parentTimer!.timers[0].getBowlsPassed())
         pourProgress.setProgress(progress: parentTimer!.timers[0].getPercentage(), animated: true)
         pourProgress.titleLabel.sizeToFit()
-
+        
         breakProgress.percentLabelFormat = String(parentTimer!.timers[1].getBowlsPassed())
         breakProgress.setProgress(progress: parentTimer!.timers[1].getPercentage(), animated: true)
         breakProgress.titleLabel.adjustsFontSizeToFitWidth = true
         
-      
+        
         
         if advancedMode == true {
-
+            
             sampleProgress.percentLabelFormat = String(parentTimer!.timers[2].getBowlsPassed())
             sampleProgress.setProgress(progress: parentTimer!.timers[2].getPercentage(), animated: true)
             
@@ -160,7 +165,7 @@ class ViewController: UIViewController{
         
         intervalProgress.percentLabelFormat = ""
         intervalProgress.setProgress(progress: 0.0, animated: false)
-
+        
         pourProgress.percentLabelFormat = String(0)
         pourProgress.setProgress(progress: 0, animated: true)
         
@@ -223,14 +228,13 @@ class ViewController: UIViewController{
         getReadystop.layer.shadowRadius = 2;
         getReadystop.layer.shadowOpacity = 0.5;
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         parentTimer?.isKeyPresentInUserDefaults()
         isKeyPresentInUserDefaults()
         runs = UserDefaults.standard.object(forKey: "runs") as! Int
- //       UINavigationBar.appearance().titleTextAttributes = attrs
         print("Timer Segue status = \(timerSegue)")
         advancedMode = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
         vibrate = UserDefaults.standard.object(forKey: "vibrate") as! Bool
@@ -238,11 +242,11 @@ class ViewController: UIViewController{
         print("Vibrate mode = \(vibrate)")
         
         if parentTimer == nil{
-            parentTimer = ParentTimer(viewController : self)
+            parentTimer = ParentTimer(viewController : self,  bowlSetting: bowlSetting)
         }
         
         if timerSegue == true {
-          //  bottomToolBar.removeConstraints(bottomToolBar.constraints)
+            //  bottomToolBar.removeConstraints(bottomToolBar.constraints)
             bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
             start()
         }else{
@@ -256,13 +260,12 @@ class ViewController: UIViewController{
         initialProgressView()
         
         advancedModeUpdate()
+     
         
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        NotificationCenter.default.addObserver(forName: .saveBowlsNumber, object: nil, queue: OperationQueue.main){(notification) in
+            let bowlView = notification.object as! bowlsViewController
+            self.bowlSetting =  bowlView.numberOfBowls
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -271,7 +274,7 @@ class ViewController: UIViewController{
         self.navigationController?.isNavigationBarHidden = true
         
         changeButton()
-
+        
     }
     
     func appStoreReview(){
@@ -287,7 +290,7 @@ class ViewController: UIViewController{
             intervalProgress.setProgress(progress: 0.0, animated: false)
         }
     }
-
-
+    
+    
 }
 

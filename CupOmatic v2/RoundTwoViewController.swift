@@ -17,6 +17,8 @@ class RoundTwoViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var selection: String = ""
     var minutesResult = 0
     var switchStatus = true
+    var delegate: ReloadTableViewDelegate?
+
     
     @IBOutlet var roundTwoPickerView: UIPickerView!
     @IBAction func roundTwoSwitch(_ sender: UISwitch){
@@ -85,6 +87,7 @@ class RoundTwoViewController: UIViewController, UIPickerViewDataSource, UIPicker
         UserDefaults.standard.set(roundTwoTimeSeconds, forKey: "roundTwoSettingSave")
         UserDefaults.standard.set(minutesResult, forKey: "roundTwoMinutesResultSave")
         print(roundTwoTimeSeconds)
+        delegate?.reloadTableView()
         
     }
     

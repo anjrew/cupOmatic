@@ -17,12 +17,13 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         UserDefaults.standard.synchronize()
         
     }
-    
+        
     
     @IBOutlet var breakPickerView: UIPickerView!
     
     var audioCodes = Audio().getListOfCodes()
-    
+    var delegate: ReloadTableViewDelegate?
+
     var timeDataBase = [[String]]()
     var minutes = ["1"]
     var mins = 0
@@ -97,6 +98,7 @@ class breakViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         UserDefaults.standard.set(breakTimeSeconds, forKey: "breakSettingSave")
         UserDefaults.standard.set(minutesResult, forKey: "breakMinutesResultSave")
         print(breakTimeSeconds)
+        delegate?.reloadTableView()
         
         
     }

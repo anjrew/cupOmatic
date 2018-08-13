@@ -8,7 +8,12 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ReloadTableViewDelegate {
+    func reloadTableView() {
+        viewDidLoad()
+        reloadSettingsTableView()
+    }
+    
     
     let attrs = [
         NSAttributedStringKey.foregroundColor: UIColor.black,
@@ -84,7 +89,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func reloadSettingsTableView(){
     
-    //    settingsTableViewOutlet.reloadData()
+        settingsTableViewOutlet.reloadData()
         
     }
     
@@ -179,11 +184,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         alarmSoundDic = UserDefaults.standard.object(forKey: "alarmSoundSave") as! [String : Int]
         alarmSound = alarmSoundDic["Sound"]!
-
-//        identitys = ["bowlsViewController","intervalViewController","breakViewController","sampleViewController",
-//                     "firstRoundViewController","secondRoundViewController","thirdRoundViewController"]
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -194,6 +194,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         
+        reloadSettingsTableView()
         updateTableView()
         self.navigationController?.isNavigationBarHidden = true
         
@@ -261,16 +262,4 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func getAlarmwarning() -> Int {
         return alarmWarning
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

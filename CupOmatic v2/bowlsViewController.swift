@@ -71,51 +71,28 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         count()
         bowlsPickerview.dataSource = self
         bowlsPickerview.delegate = self
-        bowlsPickerview.selectRow(numberOfBowls-1, inComponent: 0, animated: true)
+        bowlsPickerview.selectRow(numberOfBowls - 1, inComponent: 0, animated: true)
         popupView.layer.cornerRadius = 10
         print(numberOfBowls)
         
         setupStartButton()
-
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DestViewController: ViewController = segue.destination as! ViewController
         DestViewController.timerSegue = true
-//        DestViewController.bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
-     
+        DestViewController.bowlSetting = numberOfBowls
     }
     
     @IBAction func setButton(_ sender: Any) {
-        
+        NotificationCenter.default.post(name:.saveBowlsNumber, object: self)
         UserDefaults.standard.set(numberOfBowls, forKey: "numberOfBowlsSave")
-    
-
-        
+   
     }
-    
-    
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         
         self.navigationController?.isNavigationBarHidden = false
-        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

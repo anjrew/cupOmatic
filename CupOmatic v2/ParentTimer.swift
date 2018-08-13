@@ -31,10 +31,10 @@ class ParentTimer {
     var startTimerSetting = 4
     var startTimer = Timer()
     var startTime = Int()
-    var bowlSetting = Int ()
     var running = false
     
-    init(viewController : ViewController){
+    init(viewController : ViewController, bowlSetting : Int?){
+        if bowlSetting != nil{self.bowl = bowlSetting!}
         self.advancedMode = UserDefaults.standard.object(forKey: "advancedMode") as! Bool
         self.vibrate = UserDefaults.standard.object(forKey: "vibrate") as! Bool
         self.viewController = viewController
@@ -76,7 +76,7 @@ class ParentTimer {
     // Get Settings
     
     func getbowlSetting() -> Int {
-        return bowlSetting
+        return bowl
     }
     
     func getIntervalSetting() -> Int {
@@ -150,8 +150,6 @@ class ParentTimer {
             UserDefaults.standard.set(true, forKey: "isInitiated")
         }
     }
-    
-    
     
     // Main Timer
     
@@ -584,5 +582,14 @@ class ParentTimer {
         }
     }
     
+    func setTimerCellBowls(bowlAmount: Int){
+        for timerCell in timers{
+            timerCell.bowlCount = bowlAmount
+        }
+    }
     
+    func setIntervalBowls(bowlAmount: Int){
+        intervalTimer?.bowlSetting = bowlAmount
+        intervalTimer?.bowlAmount = bowlAmount
+    }
 } 

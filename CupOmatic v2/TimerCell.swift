@@ -25,7 +25,7 @@ class TimerCell{
     var player: AVAudioPlayer?
         
     init(label: String, interval: Int, timerSetting: Int, bowlCount:Int, iD: String){
-       
+    
         self.label = label
         self.bowlCount = bowlCount
         self.timerSetting = timerSetting
@@ -152,6 +152,8 @@ class TimerCell{
             print(error.localizedDescription)
         }
     }
+    
+    
     
 }
 

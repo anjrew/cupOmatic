@@ -9,11 +9,18 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ReloadTableViewDelegate {
+    
     func reloadTableView() {
         viewDidLoad()
         reloadSettingsTableView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        reloadTableView()
+    }
+    
+
+ 
     
     let attrs = [
         NSAttributedStringKey.foregroundColor: UIColor.black,
@@ -88,9 +95,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func reloadSettingsTableView(){
-    
         settingsTableViewOutlet.reloadData()
-        
     }
     
     func convertSecsmmss(timeInput: Int) -> String{

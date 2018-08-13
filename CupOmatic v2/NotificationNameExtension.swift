@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name{
     
     static let saveBowlsNumber = NSNotification.Name(rawValue: "saveBowlsNumber")
+    
 }

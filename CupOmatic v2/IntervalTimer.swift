@@ -11,8 +11,6 @@ import UIKit
 
 class IntervalTimer {
 
-  
-    
     var timeSetting: Int
     var bowlSetting: Int
     var timer = Timer()

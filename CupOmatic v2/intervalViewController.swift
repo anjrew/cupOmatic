@@ -89,7 +89,6 @@ class intervalViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let settingsViewController = segue.destination as? SettingsViewController{
-                
                 settingsViewController.intervalSetting = intervalTime
             }
         }

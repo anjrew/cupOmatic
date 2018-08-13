@@ -247,8 +247,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2969285103" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" id="AFt-64-pZ9"/>
-                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="pxj-Su-W3w"/>
+                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="03B-Y8-EXH"/>
+                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" id="6wz-2m-VGg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1wt-dF-m1B"/>
                     </view>

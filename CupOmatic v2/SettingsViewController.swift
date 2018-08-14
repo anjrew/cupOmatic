@@ -19,9 +19,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         reloadTableView()
     }
     
-
- 
-    
     let attrs = [
         NSAttributedStringKey.foregroundColor: UIColor.black,
         NSAttributedStringKey.font: UIFont(name: "Arial", size: 30)

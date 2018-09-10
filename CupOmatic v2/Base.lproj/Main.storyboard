@@ -14,10 +14,12 @@
         <!--HelpStoryBoard-->
         <scene sceneID="M74-tj-SG5">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="InfoViewControllerRef" storyboardName="HelpStoryBoard" id="9vP-pq-wW4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="InfoViewControllerRef" storyboardName="HelpStoryBoard" id="9vP-pq-wW4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="GAv-4R-Vcq"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Moi-mp-shc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="-1084"/>
+            <point key="canvasLocation" x="505" y="-553"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="JK3-hC-3zm">
@@ -200,55 +202,40 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kli-TA-9yP">
                                 <rect key="frame" x="38" y="109" width="300" height="450"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of bowls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-XJ-ZUQ">
-                                        <rect key="frame" x="40" y="30" width="220" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of bowls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-XJ-ZUQ">
+                                        <rect key="frame" x="40" y="30" width="220" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-CQ-fXi">
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-CQ-fXi">
                                         <rect key="frame" x="100" y="330" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.83317057289999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="1xP-iA-uNS"/>
-                                            <constraint firstAttribute="width" constant="100" id="Rbe-sP-uIC"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="28"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="setButton:" destination="Wqm-zK-hXO" eventType="touchUpInside" id="NVp-7S-0DL"/>
-                                            <segue destination="7rI-60-MoE" kind="show" identifier="bowlsViewcontroller" id="pWC-EC-PXj"/>
                                         </connections>
                                     </button>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-Ez-xjD">
-                                        <rect key="frame" x="100" y="92" width="100" height="208"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="208" id="MJI-C6-hYQ"/>
-                                            <constraint firstAttribute="width" constant="100" id="RtD-e2-hPY"/>
-                                        </constraints>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-Ez-xjD">
+                                        <rect key="frame" x="100" y="96" width="100" height="208"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Wqm-zK-hXO" id="z5J-Qa-P7p"/>
                                         </connections>
                                     </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="8RF-v0-os9"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hpn-CQ-fXi" secondAttribute="bottom" constant="20" id="CnY-vD-32S"/>
-                                    <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="JLN-bm-ITP"/>
-                                    <constraint firstItem="Hpn-CQ-fXi" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="Mye-u9-pxb"/>
-                                    <constraint firstItem="ceZ-Ez-xjD" firstAttribute="top" secondItem="v5Z-XJ-ZUQ" secondAttribute="bottom" constant="30" id="Yg5-MV-toZ"/>
-                                    <constraint firstItem="Hpn-CQ-fXi" firstAttribute="top" secondItem="ceZ-Ez-xjD" secondAttribute="bottom" constant="30" id="cmN-wf-12g"/>
-                                    <constraint firstAttribute="width" constant="300" id="gaJ-fT-0Qv"/>
-                                    <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" secondItem="kli-TA-9yP" secondAttribute="top" constant="30" id="ggY-Rb-NFt"/>
-                                    <constraint firstAttribute="height" constant="450" id="vEn-J7-8tc"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2969285103" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="03B-Y8-EXH"/>
-                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" id="6wz-2m-VGg"/>
+                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="0tE-tJ-yod"/>
+                            <constraint firstItem="kli-TA-9yP" firstAttribute="top" secondItem="1wt-dF-m1B" secondAttribute="top" constant="89" id="NOo-Zr-iKC"/>
+                            <constraint firstItem="kli-TA-9yP" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" id="dxD-OX-59W"/>
+                            <constraint firstItem="kli-TA-9yP" firstAttribute="leading" secondItem="1wt-dF-m1B" secondAttribute="leading" constant="38" id="sDa-Kj-nyj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1wt-dF-m1B"/>
                     </view>
@@ -261,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yp-jA-KsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616.8" y="812.74362818590714"/>
+            <point key="canvasLocation" x="-311" y="1162"/>
         </scene>
         <!--Round One View Controller-->
         <scene sceneID="uYA-JT-mua">
@@ -970,7 +957,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="Help_Icon-App-29x29" id="BiS-KP-QsK">
                                             <connections>
-                                                <segue destination="9vP-pq-wW4" kind="show" id="4gk-wO-oLA"/>
+                                                <segue destination="9vP-pq-wW4" kind="push" id="mZv-2I-24g"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1063,7 +1050,7 @@
         <image name="SettingsIcon-App-29x29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pWC-EC-PXj"/>
-        <segue reference="dzC-7d-pmy"/>
+        <segue reference="hhP-3Z-Nsb"/>
+        <segue reference="gL3-Oa-54D"/>
     </inferredMetricsTieBreakers>
 </document>

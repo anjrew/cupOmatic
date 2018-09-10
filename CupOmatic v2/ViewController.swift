@@ -38,8 +38,14 @@ class ViewController: UIViewController{
     @IBAction func settingsButton(_ sender: Any) {
     }
     
-    @IBAction func infoButton(_ sender: Any) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if let nextVc = segue.destination as? bowlsViewController{
+            nextVc.delegate =  self
+        }
     }
+
     @IBAction func getReadyStopButton(_ sender: Any) {
         
         if parentTimer?.getMainTimerStatus() == false {
@@ -245,13 +251,7 @@ class ViewController: UIViewController{
             parentTimer = ParentTimer(viewController : self,  bowlSetting: bowlSetting)
         }
         
-        if timerSegue == true {
-            //  bottomToolBar.removeConstraints(bottomToolBar.constraints)
-            bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
-            start()
-        }else{
-            bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 44, width: view.frame.size.width, height: 375)
-        }
+        
         
         setupGoStopButton()
         mainTimerLabel.text = parentTimer?.getMainTimerString(timerInput: (parentTimer?.mainTimer)! )
@@ -270,12 +270,20 @@ class ViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         
+        if timerSegue == true {
+            //  bottomToolBar.removeConstraints(bottomToolBar.constraints)
+            bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
+            start()
+        }else{
+            bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 44, width: view.frame.size.width, height: 375)
+        }
         updateProgressViews()
         self.navigationController?.isNavigationBarHidden = true
         
         changeButton()
         
     }
+    
     
     func appStoreReview(){
         if runs % 5 == 0 {
@@ -292,5 +300,15 @@ class ViewController: UIViewController{
     }
     
     
+}
+
+extension ViewController: BowlsPopupDelegate{
+    func passBackData(timerSegue: Bool, bowlSetting: Int) {
+        self.timerSegue = timerSegue
+        self.bowlSetting = bowlSetting
+        self.start()
+        self.changeButton()
+    }
+
 }
 

@@ -8,16 +8,24 @@
 
 import UIKit
 
+protocol BowlsPopupDelegate {
+    func passBackData(timerSegue: Bool, bowlSetting: Int)
+    
+    
+   
+}
+
 class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
     var numberOfBowls:Int = 0
     var bowls = ["1"]
     var selection: String = ""
+    var delegate: BowlsPopupDelegate?
     
     @IBOutlet var popupView: UIView!
     
     @IBOutlet var startButton: UIButton!
-    
+
     func setupStartButton(){
         startButton.layer.cornerRadius = 50.0
         startButton.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -73,20 +81,20 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         bowlsPickerview.delegate = self
         bowlsPickerview.selectRow(numberOfBowls - 1, inComponent: 0, animated: true)
         popupView.layer.cornerRadius = 10
+        popupView.center = self.view.center
         print(numberOfBowls)
         
         setupStartButton()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let DestViewController: ViewController = segue.destination as! ViewController
-        DestViewController.timerSegue = true
-        DestViewController.bowlSetting = numberOfBowls
+      
     }
     
     @IBAction func setButton(_ sender: Any) {
-        NotificationCenter.default.post(name:.saveBowlsNumber, object: self)
-        UserDefaults.standard.set(numberOfBowls, forKey: "numberOfBowlsSave")
+        delegate?.passBackData(timerSegue: true, bowlSetting: numberOfBowls)
+        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
    
     }
 

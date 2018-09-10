@@ -14,8 +14,18 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpNavBar()
+       
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setUpNavBar()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setUpNavBar()
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -32,6 +42,8 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections.count
     }
@@ -122,10 +134,32 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func setUpNavBar(){
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.title = "Info"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 25),NSAttributedStringKey.foregroundColor: UIColor.black]
-    }
+        self.navigationController?.title =  "Info"
+        
+       
+//            let screenSize: CGRect = UIScreen.main.bounds
+//
+//            let navItem = UINavigationItem(title: "Info")
+//            navItem.hidesBackButton = false
+//            navItem.backBarButtonItem?.action = #selector(done)
+//            let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(done))
+//            navItem.rightBarButtonItem = doneItem
+////            navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 50))
+//
+//            navigationBar.setItems([navItem], animated: false)
+//
+//            self.view.addSubview(navigationBar)
+        }
+
     
+    
+    
+    @objc func done(){
+        
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

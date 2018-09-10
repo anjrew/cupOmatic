@@ -213,10 +213,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-Ez-xjD">
-                                        <rect key="frame" x="100" y="100" width="100" height="200"/>
+                                        <rect key="frame" x="100" y="90" width="100" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="18D-CS-Nyf"/>
-                                            <constraint firstAttribute="height" constant="200" id="SuH-qU-Pkp"/>
+                                            <constraint firstAttribute="height" constant="150" id="SuH-qU-Pkp"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="Wqm-zK-hXO" id="z5J-Qa-P7p"/>
@@ -240,7 +240,7 @@
                                 <constraints>
                                     <constraint firstItem="Hpn-CQ-fXi" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="29S-s9-xxG"/>
                                     <constraint firstAttribute="width" constant="300" id="45z-Q0-Xuf"/>
-                                    <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerY" secondItem="kli-TA-9yP" secondAttribute="centerY" id="8Gc-lV-PiP"/>
+                                    <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerY" secondItem="kli-TA-9yP" secondAttribute="centerY" constant="-35" id="8Gc-lV-PiP"/>
                                     <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="RbS-9U-iNC"/>
                                     <constraint firstAttribute="bottom" secondItem="Hpn-CQ-fXi" secondAttribute="bottom" constant="30" id="VOn-Zy-0pV"/>
                                     <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="l39-RD-dbj"/>

@@ -92,6 +92,7 @@ class bowlsViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     @IBAction func setButton(_ sender: Any) {
+        UserDefaults.standard.set(numberOfBowls, forKey: "numberOfBowlsSave")
         delegate?.passBackData(timerSegue: true, bowlSetting: numberOfBowls)
         self.dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)

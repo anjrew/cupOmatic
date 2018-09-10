@@ -135,21 +135,7 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setUpNavBar(){
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 25),NSAttributedStringKey.foregroundColor: UIColor.black]
-        self.navigationController?.title =  "Info"
-        
-       
-//            let screenSize: CGRect = UIScreen.main.bounds
-//
-//            let navItem = UINavigationItem(title: "Info")
-//            navItem.hidesBackButton = false
-//            navItem.backBarButtonItem?.action = #selector(done)
-//            let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(done))
-//            navItem.rightBarButtonItem = doneItem
-////            navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 50))
-//
-//            navigationBar.setItems([navItem], animated: false)
-//
-//            self.view.addSubview(navigationBar)
+        self.title = "Info"
         }
 
     

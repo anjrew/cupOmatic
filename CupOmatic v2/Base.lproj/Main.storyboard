@@ -964,11 +964,11 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-21-o7y">
-                                <rect key="frame" x="85" y="168" width="205" height="64"/>
+                                <rect key="frame" x="87.5" y="168" width="200" height="64"/>
                                 <color key="backgroundColor" red="0.0" green="0.83317057291666663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="LmW-hc-QfW"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="SQD-zp-WZr"/>
+                                    <constraint firstAttribute="width" constant="200" id="SQD-zp-WZr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="34"/>
                                 <state key="normal" title="Get Ready">
@@ -982,11 +982,9 @@
                         <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JP8-21-o7y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="18" id="0nQ-eW-07p"/>
-                            <constraint firstItem="JP8-21-o7y" firstAttribute="leading" secondItem="5co-4T-yTk" secondAttribute="leading" priority="750" constant="85" id="4Jr-QP-Dkz"/>
                             <constraint firstItem="bXo-uz-KxY" firstAttribute="top" relation="lessThanOrEqual" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="8qB-h1-0hi"/>
                             <constraint firstItem="5co-4T-yTk" firstAttribute="bottom" secondItem="bXo-uz-KxY" secondAttribute="bottom" constant="50" id="94j-ui-WQa"/>
                             <constraint firstItem="Feh-Uv-ztQ" firstAttribute="centerX" secondItem="l0Y-CZ-a72" secondAttribute="centerX" id="CFc-lM-ffl"/>
-                            <constraint firstItem="5co-4T-yTk" firstAttribute="trailing" secondItem="JP8-21-o7y" secondAttribute="trailing" priority="750" constant="85" id="EOb-bj-Maw"/>
                             <constraint firstItem="iJf-RA-F9U" firstAttribute="top" secondItem="5co-4T-yTk" secondAttribute="top" priority="750" constant="467" id="GJa-Sq-P0J"/>
                             <constraint firstItem="JP8-21-o7y" firstAttribute="top" secondItem="1hB-Lz-Vac" secondAttribute="bottom" priority="750" constant="18" id="GZB-FQ-ei3"/>
                             <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="1hB-Lz-Vac" secondAttribute="bottom" constant="1000" id="KrU-bE-2Em"/>

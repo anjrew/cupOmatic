@@ -261,19 +261,18 @@ class ViewController: UIViewController{
         
         advancedModeUpdate()
      
-        
-        NotificationCenter.default.addObserver(forName: .saveBowlsNumber, object: nil, queue: OperationQueue.main){(notification) in
-            let bowlView = notification.object as! bowlsViewController
-            self.bowlSetting =  bowlView.numberOfBowls
-        }
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
+        setupView()
+    }
+   
+    func setupView(){
         
         if timerSegue == true {
             //  bottomToolBar.removeConstraints(bottomToolBar.constraints)
             bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 0, width: view.frame.size.width, height:0 )
-            start()
         }else{
             bottomToolBar.frame = CGRect(x: 0, y: view.frame.size.height - 44, width: view.frame.size.width, height: 375)
         }
@@ -308,6 +307,8 @@ extension ViewController: BowlsPopupDelegate{
         self.bowlSetting = bowlSetting
         self.start()
         self.changeButton()
+        setupView()
+
     }
 
 }

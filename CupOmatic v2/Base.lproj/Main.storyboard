@@ -200,42 +200,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kli-TA-9yP">
-                                <rect key="frame" x="38" y="109" width="948" height="1148"/>
+                                <rect key="frame" x="362" y="483" width="300" height="400"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of bowls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-XJ-ZUQ">
-                                        <rect key="frame" x="40" y="30" width="220" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of bowls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-XJ-ZUQ">
+                                        <rect key="frame" x="40" y="30" width="220" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="dT8-7q-2c1"/>
+                                            <constraint firstAttribute="height" constant="40" id="hPC-M5-KII"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-CQ-fXi">
-                                        <rect key="frame" x="100" y="330" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-Ez-xjD">
+                                        <rect key="frame" x="100" y="100" width="100" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="18D-CS-Nyf"/>
+                                            <constraint firstAttribute="height" constant="200" id="SuH-qU-Pkp"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Wqm-zK-hXO" id="z5J-Qa-P7p"/>
+                                        </connections>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-CQ-fXi">
+                                        <rect key="frame" x="100" y="270" width="100" height="100"/>
                                         <color key="backgroundColor" red="0.0" green="0.83317057289999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="B1D-0F-mxx"/>
+                                            <constraint firstAttribute="width" constant="100" id="Lxi-Wf-Z7b"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="28"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="setButton:" destination="Wqm-zK-hXO" eventType="touchUpInside" id="NVp-7S-0DL"/>
                                         </connections>
                                     </button>
-                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-Ez-xjD">
-                                        <rect key="frame" x="100" y="96" width="100" height="208"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="Wqm-zK-hXO" id="z5J-Qa-P7p"/>
-                                        </connections>
-                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Hpn-CQ-fXi" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="29S-s9-xxG"/>
+                                    <constraint firstAttribute="width" constant="300" id="45z-Q0-Xuf"/>
+                                    <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerY" secondItem="kli-TA-9yP" secondAttribute="centerY" id="8Gc-lV-PiP"/>
+                                    <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="RbS-9U-iNC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hpn-CQ-fXi" secondAttribute="bottom" constant="30" id="VOn-Zy-0pV"/>
+                                    <constraint firstItem="ceZ-Ez-xjD" firstAttribute="centerX" secondItem="kli-TA-9yP" secondAttribute="centerX" id="l39-RD-dbj"/>
+                                    <constraint firstAttribute="height" constant="400" id="pWI-wU-kMU"/>
+                                    <constraint firstItem="v5Z-XJ-ZUQ" firstAttribute="top" secondItem="kli-TA-9yP" secondAttribute="top" constant="30" id="rL7-Rv-nTL"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2969285103" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kli-TA-9yP" firstAttribute="centerX" secondItem="sk4-PF-e66" secondAttribute="centerX" id="0tE-tJ-yod"/>
-                            <constraint firstItem="kli-TA-9yP" firstAttribute="top" secondItem="1wt-dF-m1B" secondAttribute="top" constant="89" id="NOo-Zr-iKC"/>
                             <constraint firstItem="kli-TA-9yP" firstAttribute="centerY" secondItem="sk4-PF-e66" secondAttribute="centerY" id="dxD-OX-59W"/>
-                            <constraint firstItem="kli-TA-9yP" firstAttribute="leading" secondItem="1wt-dF-m1B" secondAttribute="leading" constant="38" id="sDa-Kj-nyj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1wt-dF-m1B"/>
                     </view>
@@ -828,11 +845,11 @@
         <scene sceneID="s4K-qO-swq">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="7rI-60-MoE" customClass="ViewController" customModule="CupOmatic_v2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleAspectFit" id="l0Y-CZ-a72">
+                    <view key="view" contentMode="scaleAspectFit" ambiguous="YES" id="l0Y-CZ-a72">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="75" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-Lz-Vac">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="75" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-Lz-Vac">
                                 <rect key="frame" x="0.0" y="30" width="1024" height="120"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -844,7 +861,7 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <view tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="V67-9e-LnD" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V67-9e-LnD" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
                                 <rect key="frame" x="20" y="1186" width="100" height="130"/>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -871,7 +888,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-uz-KxY" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                            <view tag="2" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-uz-KxY" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
                                 <rect key="frame" x="462" y="1186" width="100" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="Ccf-Z1-9dT"/>
@@ -894,7 +911,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJf-RA-F9U" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                            <view tag="3" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJf-RA-F9U" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
                                 <rect key="frame" x="904" y="1186" width="100" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="IMD-Vz-hhB"/>
@@ -917,8 +934,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-Uv-ztQ" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
-                                <rect key="frame" x="49" y="262" width="926" height="916"/>
+                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-Uv-ztQ" customClass="MKMagneticProgress" customModule="CupOmatic_v2" customModuleProvider="target">
+                                <rect key="frame" x="398.5" y="262" width="227" height="916"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="Feh-Uv-ztQ" secondAttribute="height" multiplier="1:1" constant="60" id="jYU-9y-l2F"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="Feh-Uv-ztQ" secondAttribute="height" multiplier="1:1" constant="10" id="oAG-3l-JbU"/>
@@ -963,7 +980,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-21-o7y">
+                            <button opaque="NO" tag="-1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-21-o7y">
                                 <rect key="frame" x="412" y="168" width="200" height="64"/>
                                 <color key="backgroundColor" red="0.0" green="0.83317057291666663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>

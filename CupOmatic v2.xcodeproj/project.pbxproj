@@ -38,6 +38,8 @@
 		D288BD8D1FA8AE070050BB48 /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = D288BD8C1FA8AE070050BB48 /* Reset.png */; };
 		D288BD8F1FA8BC040050BB48 /* ParentTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */; };
 		D288BD911FA8C0270050BB48 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288BD901FA8C0270050BB48 /* TimerCell.swift */; };
+		D297865E2146E69A00594ECC /* Interval.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D297865D2146E69A00594ECC /* Interval.storyboard */; };
+		D29786612146E8F700594ECC /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D297865F2146E8F700594ECC /* Popup.storyboard */; };
 		D29CABCC1FAF7A03008EB8EF /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CABCB1FAF7A03008EB8EF /* Audio.swift */; };
 		D29CABCE1FAF85AC008EB8EF /* AlarmSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CABCD1FAF85AC008EB8EF /* AlarmSoundViewController.swift */; };
 		D2D077181FAE24AE00812949 /* backButtonIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D077171FAE24AD00812949 /* backButtonIcon.png */; };
@@ -110,6 +112,8 @@
 		D288BD8C1FA8AE070050BB48 /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
 		D288BD8E1FA8BC040050BB48 /* ParentTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTimer.swift; sourceTree = "<group>"; };
 		D288BD901FA8C0270050BB48 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
+		D297865D2146E69A00594ECC /* Interval.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interval.storyboard; sourceTree = "<group>"; };
+		D29786602146E8F700594ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "CupOmatic v2/Base.lproj/Popup.storyboard"; sourceTree = "<group>"; };
 		D29CABCB1FAF7A03008EB8EF /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		D29CABCD1FAF85AC008EB8EF /* AlarmSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSoundViewController.swift; sourceTree = "<group>"; };
 		D2A769A51FAB031D00B2756D /* CupOmatic v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CupOmatic v2.entitlements"; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		D288BD3F1FA877B10050BB48 = {
 			isa = PBXGroup;
 			children = (
+				D297865F2146E8F700594ECC /* Popup.storyboard */,
+				D297865D2146E69A00594ECC /* Interval.storyboard */,
 				D22103D61FC37E8D009C5143 /* SwitchTableViewCell.swift */,
 				D23492591FEEE80400298627 /* MKMagneticProgress.swift */,
 				D22103D71FC37E8D009C5143 /* SwitchTableViewCell.xib */,
@@ -387,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D29786612146E8F700594ECC /* Popup.storyboard in Resources */,
 				D22103F21FC4A1B8009C5143 /* Round 2.wav in Resources */,
 				D26C9E331FBCF4C90054B918 /* greenButton.png in Resources */,
 				D288BD561FA877B20050BB48 /* LaunchScreen.storyboard in Resources */,
@@ -398,6 +405,7 @@
 				D22103EE1FC4A1B8009C5143 /* Round 1.wav in Resources */,
 				D22103EF1FC4A1B8009C5143 /* Pour.wav in Resources */,
 				D26C9E371FBD70930054B918 /* reButtonWithShadow.png in Resources */,
+				D297865E2146E69A00594ECC /* Interval.storyboard in Resources */,
 				D22103D91FC37E8D009C5143 /* SwitchTableViewCell.xib in Resources */,
 				D288BD881FA8ADCA0050BB48 /* Stop.png in Resources */,
 				D288BD531FA877B20050BB48 /* Assets.xcassets in Resources */,
@@ -499,6 +507,14 @@
 				D288BD551FA877B20050BB48 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D297865F2146E8F700594ECC /* Popup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D29786602146E8F700594ECC /* Base */,
+			);
+			name = Popup.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

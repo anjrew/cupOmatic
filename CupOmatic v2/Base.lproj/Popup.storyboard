@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Break View Controller-->
+        <scene sceneID="E3s-Jc-tnQ">
+            <objects>
+                <viewController storyboardIdentifier="breakViewController" id="lkc-Si-G5k" customClass="breakViewController" customModule="CupOmatic_v2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IK6-dx-irV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfM-rh-E0p">
+                                <rect key="frame" x="157" y="596" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="8ja-D3-5aC"/>
+                                    <constraint firstAttribute="height" constant="40" id="qP0-kj-4KC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setButton:" destination="lkc-Si-G5k" eventType="touchUpInside" id="Gao-Sw-tyz"/>
+                                    <segue destination="kta-6G-YmJ" kind="show" id="dzC-7d-pmy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3c-Xl-GnM">
+                                <rect key="frame" x="241" y="356" width="32" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFs-Tp-v44">
+                                <rect key="frame" x="157" y="260" width="100" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Z7y-V8-Duu"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="lkc-Si-G5k" id="YCo-cV-NSg"/>
+                                </connections>
+                            </pickerView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFi-1l-JzI">
+                                <rect key="frame" x="0.0" y="26" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fyy-8g-kBl"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="DA7-lr-bvi">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="T76-bi-fRA">
+                                            <connections>
+                                                <segue destination="kta-6G-YmJ" kind="show" id="r9J-w9-ZlS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8h-WO-QGN">
+                                <rect key="frame" x="0.0" y="120" width="414" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Advanced Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugb-VH-6yM">
+                                <rect key="frame" x="-166" y="42" width="294" height="28"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aFi-1l-JzI" firstAttribute="trailing" secondItem="x4H-S0-nJj" secondAttribute="trailing" id="0Ow-HX-Z3w"/>
+                            <constraint firstItem="rfM-rh-E0p" firstAttribute="centerX" secondItem="IK6-dx-irV" secondAttribute="centerX" id="4ni-Hf-172"/>
+                            <constraint firstItem="x4H-S0-nJj" firstAttribute="bottom" secondItem="rfM-rh-E0p" secondAttribute="bottom" constant="100" id="6qC-2A-uqK"/>
+                            <constraint firstItem="r8h-WO-QGN" firstAttribute="leading" secondItem="x4H-S0-nJj" secondAttribute="leading" id="DFS-LN-mfF"/>
+                            <constraint firstItem="ugb-VH-6yM" firstAttribute="centerX" secondItem="IK6-dx-irV" secondAttribute="centerX" constant="-226" id="Hpj-w5-mTo"/>
+                            <constraint firstItem="R3c-Xl-GnM" firstAttribute="centerX" secondItem="IK6-dx-irV" secondAttribute="centerX" constant="50" id="HzJ-Mu-miP"/>
+                            <constraint firstItem="aFi-1l-JzI" firstAttribute="leading" secondItem="x4H-S0-nJj" secondAttribute="leading" id="ICs-uv-IHd"/>
+                            <constraint firstItem="x4H-S0-nJj" firstAttribute="trailing" secondItem="r8h-WO-QGN" secondAttribute="trailing" id="JzW-R1-KyV"/>
+                            <constraint firstItem="r8h-WO-QGN" firstAttribute="top" secondItem="aFi-1l-JzI" secondAttribute="bottom" constant="50" id="MM5-DZ-lN7"/>
+                            <constraint firstItem="R3c-Xl-GnM" firstAttribute="centerY" secondItem="IK6-dx-irV" secondAttribute="centerY" id="S5b-Rg-2Nr"/>
+                            <constraint firstItem="ugb-VH-6yM" firstAttribute="leading" secondItem="IK6-dx-irV" secondAttribute="leading" constant="-166" id="XZF-4E-4UF"/>
+                            <constraint firstItem="YFs-Tp-v44" firstAttribute="centerX" secondItem="IK6-dx-irV" secondAttribute="centerX" id="hp4-mi-lDu"/>
+                            <constraint firstAttribute="trailing" secondItem="ugb-VH-6yM" secondAttribute="trailing" constant="286" id="ijH-Lp-REz"/>
+                            <constraint firstItem="aFi-1l-JzI" firstAttribute="top" secondItem="x4H-S0-nJj" secondAttribute="top" constant="6" id="njy-xH-FPN"/>
+                            <constraint firstItem="YFs-Tp-v44" firstAttribute="centerY" secondItem="IK6-dx-irV" secondAttribute="centerY" id="wJj-5Y-Ao6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x4H-S0-nJj"/>
+                    </view>
+                    <connections>
+                        <outlet property="breakPickerView" destination="YFs-Tp-v44" id="O08-CN-CTk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XFB-NI-FnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3317" y="-165"/>
+        </scene>
+        <!--UIViewController-Wo6-g6-XQV-->
+        <scene sceneID="I0Y-L9-hke">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-Wo6-g6-XQV" storyboardName="Main" referencedIdentifier="UIViewController-Wo6-g6-XQV" id="kta-6G-YmJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3g-oE-Y7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256.8" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dzC-7d-pmy"/>
+    </inferredMetricsTieBreakers>
+</document>

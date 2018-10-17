@@ -87,7 +87,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             UserDefaults.standard.set(false, forKey: "vibrate")
             self.tableView.reloadData()
             print("Vibrate mode = \(vibrate)")
-    
         }
     }
     

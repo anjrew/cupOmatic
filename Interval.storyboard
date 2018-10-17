@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j0I-dp-37E">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interval View Controller-->
+        <scene sceneID="O0m-Bg-Qty">
+            <objects>
+                <viewController storyboardIdentifier="intervalViewController" id="j0I-dp-37E" customClass="intervalViewController" customModule="CupOmatic_v2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wpn-Lx-1vo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zn-uH-YbP">
+                                <rect key="frame" x="62.5" y="225.5" width="250" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="VxC-KI-V8n"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="j0I-dp-37E" id="SVu-UT-0px"/>
+                                    <outlet property="delegate" destination="j0I-dp-37E" id="86T-9U-NQ3"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywg-QI-LEl">
+                                <rect key="frame" x="137.5" y="527" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ixx-Q9-nr2"/>
+                                    <constraint firstAttribute="width" constant="100" id="ik4-Tt-C6i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setButton:" destination="j0I-dp-37E" eventType="touchUpInside" id="bHT-i2-Omb"/>
+                                    <segue destination="tl7-53-ZsM" kind="show" id="RbY-Ac-ZwC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAt-kM-JGI">
+                                <rect key="frame" x="0.0" y="120" width="375" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NN7-Uf-xil">
+                                <rect key="frame" x="0.0" y="26" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Fjh-45-cd9"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="0wJ-xK-vhN">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uXb-hK-LC3">
+                                            <connections>
+                                                <segue destination="tl7-53-ZsM" kind="show" id="IQb-fb-zGh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8zn-uH-YbP" firstAttribute="centerX" secondItem="Wpn-Lx-1vo" secondAttribute="centerX" id="7yF-bT-fEh"/>
+                            <constraint firstItem="NN7-Uf-xil" firstAttribute="leading" secondItem="UvR-Z4-jS9" secondAttribute="leading" id="Eeo-cW-XNa"/>
+                            <constraint firstItem="8zn-uH-YbP" firstAttribute="centerY" secondItem="Wpn-Lx-1vo" secondAttribute="centerY" id="Gdb-8W-IWG"/>
+                            <constraint firstItem="hAt-kM-JGI" firstAttribute="top" secondItem="NN7-Uf-xil" secondAttribute="bottom" constant="50" id="R4q-K5-rDP"/>
+                            <constraint firstItem="NN7-Uf-xil" firstAttribute="trailing" secondItem="UvR-Z4-jS9" secondAttribute="trailing" id="SDc-9z-Lcj"/>
+                            <constraint firstItem="hAt-kM-JGI" firstAttribute="leading" secondItem="UvR-Z4-jS9" secondAttribute="leading" id="bWK-hZ-jRE"/>
+                            <constraint firstItem="Ywg-QI-LEl" firstAttribute="centerX" secondItem="Wpn-Lx-1vo" secondAttribute="centerX" id="cCv-nF-dES"/>
+                            <constraint firstItem="hAt-kM-JGI" firstAttribute="centerX" secondItem="Wpn-Lx-1vo" secondAttribute="centerX" id="eJq-Gl-7Kc"/>
+                            <constraint firstItem="UvR-Z4-jS9" firstAttribute="trailing" secondItem="hAt-kM-JGI" secondAttribute="trailing" id="eit-cf-lPi"/>
+                            <constraint firstItem="NN7-Uf-xil" firstAttribute="top" secondItem="UvR-Z4-jS9" secondAttribute="top" constant="6" id="gJO-hd-j4x"/>
+                            <constraint firstItem="8zn-uH-YbP" firstAttribute="centerX" secondItem="Wpn-Lx-1vo" secondAttribute="centerX" id="pEQ-a9-fJV"/>
+                            <constraint firstItem="UvR-Z4-jS9" firstAttribute="bottom" secondItem="Ywg-QI-LEl" secondAttribute="bottom" constant="100" id="pWJ-ga-ffQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UvR-Z4-jS9"/>
+                    </view>
+                    <connections>
+                        <outlet property="intervalPickerView" destination="8zn-uH-YbP" id="LVK-vN-maQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvx-Il-K5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2281" y="-552"/>
+        </scene>
+        <!--UIViewController-Wo6-g6-XQV-->
+        <scene sceneID="2Km-7C-zdO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-Wo6-g6-XQV" id="tl7-53-ZsM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5OJ-cK-IFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256.8" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IQb-fb-zGh"/>
+    </inferredMetricsTieBreakers>
+</document>
